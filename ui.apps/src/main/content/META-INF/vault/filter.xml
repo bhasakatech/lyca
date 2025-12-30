@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/lyca/clientlibs"/>
+    <filter root="/apps/lyca/components"/>
+    <filter root="/apps/lyca/i18n"/>
+</workspaceFilter>
