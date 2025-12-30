@@ -22,7 +22,7 @@
     <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
     <!-- ====================================================================== -->
     <parent>
-        <groupId>com.bhasaka.lyca</groupId>
+        <groupId>com.lyca</groupId>
         <artifactId>lyca</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -49,30 +49,30 @@
                 <artifactId>filevault-package-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <group>com.bhasaka.lyca</group>
+                    <group>com.lyca</group>
                     <packageType>container</packageType>
                     <!-- skip sub package validation for now as some vendor packages like CIF apps will not pass -->
                     <skipSubPackageValidation>true</skipSubPackageValidation>
                     <embeddeds>
                         <embedded>
-                            <groupId>com.bhasaka.lyca</groupId>
+                            <groupId>com.lyca</groupId>
                             <artifactId>lyca.ui.apps</artifactId>
                             <type>zip</type>
                             <target>/apps/lyca-packages/application/install</target>
                         </embedded>
                         <embedded>
-                            <groupId>com.bhasaka.lyca</groupId>
+                            <groupId>com.lyca</groupId>
                             <artifactId>lyca.core</artifactId>
                             <target>/apps/lyca-packages/application/install</target>
                         </embedded>
                         <embedded>
-                            <groupId>com.bhasaka.lyca</groupId>
+                            <groupId>com.lyca</groupId>
                             <artifactId>lyca.ui.content</artifactId>
                             <type>zip</type>
                             <target>/apps/lyca-packages/content/install</target>
                         </embedded>
                         <embedded>
-                            <groupId>com.bhasaka.lyca</groupId>
+                            <groupId>com.lyca</groupId>
                             <artifactId>lyca.ui.config</artifactId>
                             <type>zip</type>
                             <target>/apps/lyca-packages/application/install</target>
@@ -179,19 +179,19 @@
     <!-- ====================================================================== -->
     <dependencies>
         <dependency>
-            <groupId>com.bhasaka.lyca</groupId>
+            <groupId>com.lyca</groupId>
             <artifactId>lyca.ui.apps</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
         <dependency>
-            <groupId>com.bhasaka.lyca</groupId>
+            <groupId>com.lyca</groupId>
             <artifactId>lyca.ui.content</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
         </dependency>
         <dependency>
-            <groupId>com.bhasaka.lyca</groupId>
+            <groupId>com.lyca</groupId>
             <artifactId>lyca.ui.config</artifactId>
             <version>${project.version}</version>
             <type>zip</type>
