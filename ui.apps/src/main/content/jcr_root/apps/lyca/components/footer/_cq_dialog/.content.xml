@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Footer Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <!-- Footer Sections -->
+                    <footerSections
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Footer Sections"
+                        composite="{Boolean}true">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./footerSections">
+
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <!-- Section Title -->
+                                <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Section Title"
+                                    name="./title" />
+
+                                <!-- Section Links -->
+                                <links
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    fieldLabel="Links"
+                                    composite="{Boolean}true">
+
+                                    <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                                        name="./links">
+
+                                        <items jcr:primaryType="nt:unstructured">
+
+                                            <!-- Link Label -->
+                                            <label
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Link Label"
+                                                name="./label" />
+
+                                            <!-- Link URL -->
+                                            <url
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldLabel="Link URL"
+                                                name="./url" />
+
+                                        </items>
+                                    </field>
+                                </links>
+                            </items>
+                        </field>
+                    </footerSections>
+
+                    <!-- Lyca on the Go Section -->
+                    <onTheGo
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Lyca on the Go"
+                        composite="{Boolean}true">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./onTheGo">
+
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <!-- Image Path -->
+                                <icon
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Icon Image Path"
+                                    name="./icon" />
+
+                                <!-- URL -->
+                                <url
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Redirect URL"
+                                    name="./url" />
+
+                            </items>
+                        </field>
+                    </onTheGo>
+
+                    <!-- Signature Section -->
+                    <signature
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        fieldLabel="Signature">
+
+                        <items jcr:primaryType="nt:unstructured">
+
+                            <!-- Logo -->
+                            <signatureLogo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Signature Logo"
+                                name="./signatureLogo" />
+
+                            <!-- Copyright -->
+                            <copyright
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Copyright Text"
+                                name="./copyrightText" />
+
+                            <!-- Social Links (composite multifield) -->
+                            <socialLinks
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldLabel="Social Links"
+                                composite="{Boolean}true">
+
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./socialLinks">
+
+                                    <items jcr:primaryType="nt:unstructured">
+
+                                        <!-- Social Icon -->
+                                        <icon
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Social Icon"
+                                            name="./icon" />
+
+                                        <!-- Social URL -->
+                                        <url
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Social URL"
+                                            name="./url" />
+
+                                    </items>
+                                </field>
+                            </socialLinks>
+                        </items>
+                    </signature>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

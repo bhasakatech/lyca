@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Pricing Plans"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured">
+        <layout sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+        jcr:primaryType="nt:unstructured"/>
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- General Tab -->
+            <general jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                     jcr:title="General">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <heading
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Section Heading"
+                        jcr:primaryType="nt:unstructured"
+                        name="./heading"/>
+
+                    <planType
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        fieldLabel="Plan Type"
+                        jcr:primaryType="nt:unstructured"
+                        name="./planType">
+                        <items jcr:primaryType="nt:unstructured">
+                            <day30 jcr:primaryType="nt:unstructured" text="30-Day Plan" value="30day"/>
+                            <month12 jcr:primaryType="nt:unstructured" text="12-Month Plan" value="12month"/>
+                        </items>
+                    </planType>
+
+                    <findPlanLabel
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Find Plan CTA Label"
+                        jcr:primaryType="nt:unstructured"
+                        name="./findPlanLabel"/>
+
+                    <findPlanLink
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Find Plan CTA Link"
+                        jcr:primaryType="nt:unstructured"
+                        name="./findPlanLink"/>
+
+                    <viewAllLabel
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="View All CTA Label"
+                        jcr:primaryType="nt:unstructured"
+                        name="./viewAllLabel"/>
+
+                    <viewAllLink
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="View All CTA Link"
+                        jcr:primaryType="nt:unstructured"
+                        name="./viewAllLink"/>
+                </items>
+            </general>
+
+            <!-- Plans Tab -->
+            <plans jcr:primaryType="nt:unstructured"
+                   sling:resourceType="granite/ui/components/coral/foundation/container"
+                   jcr:title="Plan Cards">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <planItems
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Add Plan"
+                        jcr:primaryType="nt:unstructured"
+                        name="./planItems">
+
+                        <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:primaryType="nt:unstructured">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <planTitle sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                           fieldLabel="Plan Title"
+                                           jcr:primaryType="nt:unstructured"
+                                           name="./planTitle"/>
+
+                                <planPrice sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                           fieldLabel="Price"
+                                           jcr:primaryType="nt:unstructured"
+                                           name="./planPrice"/>
+
+                                <planData sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                          fieldLabel="Data/GB Info"
+                                          jcr:primaryType="nt:unstructured"
+                                          name="./planData"/>
+
+                                <planFeatures sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                              fieldLabel="Features"
+                                              jcr:primaryType="nt:unstructured"
+                                              name="./planFeatures"/>
+
+                                <planHighlight sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                                fieldLabel="Make it Popular Plan?"
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./planHighlight"/>
+
+                                <ctaLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                          fieldLabel="Button Label"
+                                          jcr:primaryType="nt:unstructured"
+                                          name="./ctaLabel"/>
+
+                                <ctaLink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                         fieldLabel="Button Link"
+                                         jcr:primaryType="nt:unstructured"
+                                         name="./ctaLink"/>
+
+                            </items>
+                        </field>
+                    </planItems>
+                </items>
+            </plans>
+
+        </items>
+    </content>
+</jcr:root>

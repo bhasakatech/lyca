@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="SIM Comparison Table"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- General Tab -->
+            <general jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                     jcr:title="Main Settings">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <heading sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                             fieldLabel="Heading"
+                             jcr:primaryType="nt:unstructured"
+                             name="./heading"/>
+
+                    <addMoreSimLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                     fieldLabel="Add More SIM CTA Label"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./addMoreSimLabel"/>
+
+                    <addMoreSimLink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Add More SIM CTA Link"
+                                    jcr:primaryType="nt:unstructured"
+                                    name="./addMoreSimLink"/>
+                </items>
+            </general>
+
+            <!-- Column Headers -->
+            <columnsTab jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:title="SIM Providers">
+                <items jcr:primaryType="nt:unstructured">
+                    <columns sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                             fieldLabel="Add SIM Provider"
+                             jcr:primaryType="nt:unstructured"
+                             name="./columns">
+
+                        <field sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                               name="./name"
+                               jcr:primaryType="nt:unstructured"
+                               fieldLabel="Provider Name"/>
+                    </columns>
+                </items>
+            </columnsTab>
+
+            <!-- Rows -->
+            <rowsTab jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                     jcr:title="Comparison Rows">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <rows sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                          fieldLabel="Add Feature Row"
+                          jcr:primaryType="nt:unstructured"
+                          name="./rows">
+
+                        <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                        jcr:primaryType="nt:unstructured">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <!-- Row Label (e.g., Monthly Cost, Data, Minutes) -->
+                                <label sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                       fieldLabel="Row Label"
+                                       jcr:primaryType="nt:unstructured"
+                                       name="./label"/>
+
+                                <!-- Row values for each column -->
+                                <values sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                        fieldLabel="Values for Each Column"
+                                        jcr:primaryType="nt:unstructured"
+                                        name="./values"/>
+                            </items>
+                        </field>
+                    </rows>
+                </items>
+            </rowsTab>
+
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Lyca Join And Recharge Section"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- LEFT SECTION -->
+            <leftTab jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                     jcr:title="Join Lyca">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <leftHeading sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                 fieldLabel="Left Heading"
+                                 jcr:primaryType="nt:unstructured"
+                                 name="./leftHeading"/>
+
+                    <leftSubText sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                 fieldLabel="Left Sub Text"
+                                 jcr:primaryType="nt:unstructured"
+                                 name="./leftSubText"/>
+
+                    <!-- Join Options Multifield -->
+                    <leftItems sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                               fieldLabel="Add Join Options"
+                               jcr:primaryType="nt:unstructured"
+                               name="./leftItems">
+                        <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                                jcr:primaryType="nt:unstructured">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <title sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                       fieldLabel="Option Title"
+                                       jcr:primaryType="nt:unstructured"
+                                       name="./title"/>
+
+                                <icon sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                      fieldLabel="Icon Path"
+                                      jcr:primaryType="nt:unstructured"
+                                      rootPath="/content/dam"
+                                      name="./icon"/>
+                            </items>
+                        </field>
+                    </leftItems>
+
+                </items>
+            </leftTab>
+
+            <!-- RIGHT SECTION -->
+            <rightTab jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/container"
+                      jcr:title="Already with Lyca">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <rightHeading sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                  fieldLabel="Right Heading"
+                                  jcr:primaryType="nt:unstructured"
+                                  name="./rightHeading"/>
+
+                    <rechargeLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                   fieldLabel="Recharge Label"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./rechargeLabel"/>
+                    <rechargeLink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                  fieldLabel="Recharge Link"
+                                  jcr:primaryType="nt:unstructured"
+                                  name="./rechargeLink"/>
+
+                    <renewLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Renew Plan Label"
+                                jcr:primaryType="nt:unstructured"
+                                name="./renewLabel"/>
+                    <renewLink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                               fieldLabel="Renew Plan Link"
+                               jcr:primaryType="nt:unstructured"
+                               name="./renewLink"/>
+
+                    <countryCode sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                 fieldLabel="Country Code"
+                                 jcr:primaryType="nt:unstructured"
+                                 name="./countryCode"/>
+
+                    <phonePlaceholder sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                      fieldLabel="Phone Placeholder"
+                                      jcr:primaryType="nt:unstructured"
+                                      name="./phonePlaceholder"/>
+
+                    <proceedLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                   fieldLabel="Proceed Button Label"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./proceedLabel"/>
+
+                    <appText sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                             fieldLabel="App Instruction Text"
+                             jcr:primaryType="nt:unstructured"
+                             name="./appText"/>
+
+                    <appLinkLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                  fieldLabel="App Link Label"
+                                  jcr:primaryType="nt:unstructured"
+                                  name="./appLinkLabel"/>
+                    <appLink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                             fieldLabel="App Link"
+                             jcr:primaryType="nt:unstructured"
+                             name="./appLink"/>
+                </items>
+            </rightTab>
+        </items>
+    </content>
+</jcr:root>

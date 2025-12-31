@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    xmlns:cq="http://www.day.com/jcr/cq/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+            <fields
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                fieldLabel="Header/Nav Bar Fields">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <!-- Logo Images -->
+                    <logoImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Logo Image"
+                        name="./logoImage"/>
+                    <logoMobileImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Logo Mobile Image"
+                        name="./logoMobileImage"/>
+
+                    <!-- Menu Icons -->
+                    <menuImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Menu Image"
+                        name="./menuImage"/>
+                    <menuMobileImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Menu Mobile Image"
+                        name="./menuMobileImage"/>
+
+                    <!-- Menu Links (multifield) -->
+                    <menuLinks
+                      jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                      fieldLabel="Menu Links">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Link Label"
+                            name="./linkLabel"/>
+                    </menuLinks>
+
+                    <!-- Quick Recharge -->
+                    <quickRechargeLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Quick Recharge Label"
+                        name="./quickRechargeLabel"/>
+                    <quickRechargeUrl
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Quick Recharge URL"
+                        name="./quickRechargeUrl"/>
+
+                    <!-- Profile -->
+                    <profileImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Profile Image"
+                        name="./profileImage"/>
+                    <profileDropdownImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Profile Dropdown Image"
+                        name="./profileDropdownImage"/>
+
+                    <!-- Cart -->
+                    <cartImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Cart Image"
+                        name="./cartImage"/>
+
+                    <!-- Country Selector -->
+                    <countryLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Country Label"
+                        name="./countryLabel"/>
+                    <countryImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Country Image"
+                        name="./countryImage"/>
+                    <countryDropdownImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Country Dropdown Image"
+                        name="./countryDropdownImage"/>
+
+                </items>
+            </fields>
+        </items>
+    </content>
+</jcr:root>

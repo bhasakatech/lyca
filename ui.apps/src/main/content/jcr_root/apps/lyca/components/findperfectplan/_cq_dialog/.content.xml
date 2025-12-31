@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          jcr:title="Find Perfect Plan"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- General Tab -->
+            <general jcr:primaryType="nt:unstructured"
+                     sling:resourceType="granite/ui/components/coral/foundation/container"
+                     jcr:title="Main Settings">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <heading sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                             fieldLabel="Section Title"
+                             jcr:primaryType="nt:unstructured"
+                             name="./heading"/>
+
+                    <resultHeading sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                   fieldLabel="Result Box Heading"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./resultHeading"/>
+
+                    <resultSubtext sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                   fieldLabel="Result Subtext"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./resultSubtext"/>
+
+                    <!-- Recommended Plan Area -->
+                    <recommendedPlanName sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                         fieldLabel="Plan Name"
+                                         jcr:primaryType="nt:unstructured"
+                                         name="./recommendedPlanName"/>
+
+                    <recommendedPlanData sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                         fieldLabel="Plan Data (e.g., 30GB)"
+                                         jcr:primaryType="nt:unstructured"
+                                         name="./recommendedPlanData"/>
+
+                    <recommendedPlanPrice sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                          fieldLabel="Plan Price (e.g., £10)"
+                                          jcr:primaryType="nt:unstructured"
+                                          name="./recommendedPlanPrice"/>
+
+                    <!-- CTA Buttons -->
+                    <primaryCTALabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                     fieldLabel="Primary CTA Label"
+                                     jcr:primaryType="nt:unstructured"
+                                     name="./primaryCTALabel"/>
+
+                    <primaryCTALink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="Primary CTA Link"
+                                    jcr:primaryType="nt:unstructured"
+                                    name="./primaryCTALink"/>
+
+                    <secondaryCTALabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                       fieldLabel="Secondary CTA Label"
+                                       jcr:primaryType="nt:unstructured"
+                                       name="./secondaryCTALabel"/>
+
+                    <secondaryCTALink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                      fieldLabel="Secondary CTA Link"
+                                      jcr:primaryType="nt:unstructured"
+                                      name="./secondaryCTALink"/>
+                </items>
+            </general>
+
+            <!-- Questions Tab -->
+            <questions jcr:primaryType="nt:unstructured"
+                       sling:resourceType="granite/ui/components/coral/foundation/container"
+                       jcr:title="Questions">
+                <items jcr:primaryType="nt:unstructured">
+
+                    <questionItems sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                   fieldLabel="Add Question"
+                                   jcr:primaryType="nt:unstructured"
+                                   name="./questions">
+
+                        <field sling:resourceType="granite/ui/components/coral/foundation/container"
+                               jcr:primaryType="nt:unstructured">
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <title sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                       fieldLabel="Question Title"
+                                       jcr:primaryType="nt:unstructured"
+                                       name="./title"/>
+
+                                <options sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                         fieldLabel="Answer Options"
+                                         jcr:primaryType="nt:unstructured"
+                                         name="./options"/>
+                            </items>
+                        </field>
+                    </questionItems>
+                </items>
+            </questions>
+
+        </items>
+    </content>
+</jcr:root>
