@@ -1,25 +1,25 @@
-  <section class="hero">
-      <div class="hero-content">
-        <div class="hero-text">
-          <h2>UNLIMITED</h2>
-          <h1>High-Speed Data</h1>
-          <img src="./Images/Group 2147224051.png" alt="Star Rating" class="hero-left-img" />
-          <div class="price">$18<span>/30 days</span></div>
-          <div class="hero-buttons">
-            <a href="#" class="btn-primary">Get it now</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <img
-            src="./Images/young-woman-wearing-embroidered-shirt 1.png"
-            alt="Hero Image"
-          />
-
-          <div class="hero-image-slider">
-            <span class="arrow">←</span>
-            <span class="count">1 / 3</span>
-            <span class="arrow">→</span>
-          </div>
-        </div>
+<sly data-sly-use.model="com.lyca.core.models.CarouselModel" />
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h2>${model.heading}</h2>
+      <h1>${model.subheading}</h1>
+      <!-- <img src="${model.starImage}" alt="Star Rating" class="hero-left-img" /> -->
+      <div class="price">${model.price}<span>${model.duration}</span></div>
+      <div class="hero-buttons">
+        <a href="${model.buttonLink}" class="btn-primary"
+          >${model.buttonText}</a
+        >
       </div>
-    </section>
+    </div>
+    <div class="hero-image">
+      <img src="${model.heroImage}" alt="Hero Image" />
+
+      <div class="hero-image-slider">
+        <span class="arrow">←</span>
+        <span class="count">1 / 3</span>
+        <span class="arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>

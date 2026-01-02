@@ -2,11 +2,11 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:primaryType="cq:Template">
     <jcr:content
-        cq:lastModified="{Date}2026-01-02T10:09:01.132+05:30"
+        cq:lastModified="{Date}2025-12-31T16:22:11.917+05:30"
         cq:lastModifiedBy="admin"
         cq:templateType="/conf/lyca/settings/wcm/template-types/page"
-        jcr:description="My Site Page Template"
+        jcr:description="Lyca Home Page Template"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Content Page"
+        jcr:title="Home Page"
         status="enabled"/>
 </jcr:root>

@@ -6,110 +6,147 @@
           jcr:title="Pricing Plans"
           sling:resourceType="cq/gui/components/authoring/dialog">
 
-    <content jcr:primaryType="nt:unstructured">
-        <layout sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
-        jcr:primaryType="nt:unstructured"/>
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+
         <items jcr:primaryType="nt:unstructured">
 
-            <!-- General Tab -->
-            <general jcr:primaryType="nt:unstructured"
-                     sling:resourceType="granite/ui/components/coral/foundation/container"
-                     jcr:title="General">
+            <!-- ⭐ GENERAL TAB -->
+            <general
+                jcr:primaryType="nt:unstructured"
+                jcr:title="General"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
                 <items jcr:primaryType="nt:unstructured">
 
                     <heading
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Section Heading"
                         jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Main Heading"
                         name="./heading"/>
 
-                    <planType
-                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
-                        fieldLabel="Plan Type"
+                    <!-- Toggle Labels -->
+                    <toggleLeftLabel
                         jcr:primaryType="nt:unstructured"
-                        name="./planType">
-                        <items jcr:primaryType="nt:unstructured">
-                            <day30 jcr:primaryType="nt:unstructured" text="30-Day Plan" value="30day"/>
-                            <month12 jcr:primaryType="nt:unstructured" text="12-Month Plan" value="12month"/>
-                        </items>
-                    </planType>
-
-                    <findPlanLabel
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="Find Plan CTA Label"
+                        fieldLabel="Toggle Left Label (e.g. 30-Day Plan)"
+                        name="./toggleLeftLabel"/>
+
+                    <toggleRightLabel
                         jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Toggle Right Label (e.g. 12-Month Plan)"
+                        name="./toggleRightLabel"/>
+
+                    <!-- Bottom CTA -->
+                    <findPlanLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Find Plan Button Text"
                         name="./findPlanLabel"/>
 
                     <findPlanLink
-                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="Find Plan CTA Link"
                         jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        rootPath="/content"
+                        fieldLabel="Find Plan Button Link"
                         name="./findPlanLink"/>
 
                     <viewAllLabel
-                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                        fieldLabel="View All CTA Label"
                         jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="View All Plans Button Text"
                         name="./viewAllLabel"/>
 
                     <viewAllLink
-                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        fieldLabel="View All CTA Link"
                         jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        rootPath="/content"
+                        fieldLabel="View All Plans Button Link"
                         name="./viewAllLink"/>
+
                 </items>
             </general>
 
-            <!-- Plans Tab -->
-            <plans jcr:primaryType="nt:unstructured"
-                   sling:resourceType="granite/ui/components/coral/foundation/container"
-                   jcr:title="Plan Cards">
+            <!-- ⭐ PLANS TAB -->
+            <plans
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Plan Cards"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
                 <items jcr:primaryType="nt:unstructured">
 
                     <planItems
-                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                        fieldLabel="Add Plan"
                         jcr:primaryType="nt:unstructured"
-                        name="./planItems">
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Add Pricing Plans">
 
-                        <field sling:resourceType="granite/ui/components/coral/foundation/container"
-                        jcr:primaryType="nt:unstructured">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container">
+
                             <items jcr:primaryType="nt:unstructured">
 
-                                <planTitle sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                           fieldLabel="Plan Title"
-                                           jcr:primaryType="nt:unstructured"
-                                           name="./planTitle"/>
+                                <planName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Plan Name (e.g. Starter, Essential)"
+                                    name="./planName"/>
 
-                                <planPrice sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                           fieldLabel="Price"
-                                           jcr:primaryType="nt:unstructured"
-                                           name="./planPrice"/>
+                                <planPrice
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Plan Price (e.g. $10.00)"
+                                    name="./planPrice"/>
 
-                                <planData sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                          fieldLabel="Data/GB Info"
-                                          jcr:primaryType="nt:unstructured"
-                                          name="./planData"/>
+                                <planPeriod
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Plan Period (e.g. /Month)"
+                                    name="./planPeriod"/>
 
-                                <planFeatures sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                                              fieldLabel="Features"
-                                              jcr:primaryType="nt:unstructured"
-                                              name="./planFeatures"/>
+                                <planDuration
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Plan Duration (e.g. 30GB Monthly Plan)"
+                                    name="./planDuration"/>
 
-                                <planHighlight sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                                                fieldLabel="Make it Popular Plan?"
-                                                jcr:primaryType="nt:unstructured"
-                                                name="./planHighlight"/>
+                                <!-- MULTIFIELD FEATURES -->
+                                <planFeatures
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                    composite="{Boolean}true"
+                                    fieldLabel="Plan Features">
 
-                                <ctaLabel sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                          fieldLabel="Button Label"
-                                          jcr:primaryType="nt:unstructured"
-                                          name="./ctaLabel"/>
+                                    <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        name="./feature"/>
+                                </planFeatures>
 
-                                <ctaLink sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                         fieldLabel="Button Link"
-                                         jcr:primaryType="nt:unstructured"
-                                         name="./ctaLink"/>
+                                <!-- POPULAR BADGE -->
+                                <planHighlight
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
+                                    fieldLabel="Mark as Popular Plan?"
+                                    name="./planHighlight"
+                                    value="true"/>
+
+                                <!-- CTA -->
+                                <ctaLabel
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="CTA Button Text"
+                                    name="./ctaLabel"/>
+
+                                <ctaLink
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                    fieldLabel="CTA Button Link"
+                                    rootPath="/content"
+                                    name="./ctaLink"/>
 
                             </items>
                         </field>

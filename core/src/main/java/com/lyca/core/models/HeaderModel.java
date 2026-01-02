@@ -1,8 +1,11 @@
 package com.lyca.core.models;
 
+import java.util.List;
+
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.*;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = { Resource.class,
@@ -23,9 +26,8 @@ public class HeaderModel {
     @ValueMapValue
     private String menuMobileImage;
 
-    // Simple multifield → list of strings
-    @ValueMapValue
-    private String[] linkLabel;
+    @ChildResource(name = "linkLabel")  
+    private List<MenuItems> linkLabel;
 
     // Quick Recharge
     @ValueMapValue
@@ -72,7 +74,7 @@ public class HeaderModel {
         return menuMobileImage;
     }
 
-    public String[] getLinkLabel() {
+    public List<MenuItems> getLinkLabel() {
         return linkLabel;
     }
 

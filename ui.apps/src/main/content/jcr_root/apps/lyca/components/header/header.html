@@ -1,15 +1,13 @@
 <sly data-sly-use.model="com.lyca.core.models.HeaderModel" />
 
 <header>
-      <nav>
-        <div class="nav-left-section">
-          <img src="./Images/Simplification.png" alt="Lyca Logo" class="logo" />
-          <ul class="nav-links">
-            <li><a href="#">Plans</a></li>
-            <li><a href="#">Help & Support</a></li>
-            <li><a href="#">Refer a Friend</a></li>
-          </ul>
-        </div>
-        <a href="#" class="nav-cta">Get Started</a>
-      </nav>
-    </header>
+  <nav>
+    <div class="nav-left-section">
+      <img src="${model.logoImage}" alt="Lyca Logo" class="logo" />
+      <ul class="nav-links" data-sly-list.menuItem="${model.linkLabel}">
+        <li><a href="${menuItem.url}">${menuItem.label}</a></li>
+      </ul>
+    </div>
+    <a href="${model.quickRechargeUrl}" class="nav-cta">${model.quickRechargeLabel}</a>
+  </nav>
+</header>

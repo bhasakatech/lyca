@@ -1,25 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
-    jcr:primaryType="nt:unstructured"
-    jcr:title="Properties"
-    sling:resourceType="cq/gui/components/authoring/dialog">
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Hero Section Properties"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+
         <items jcr:primaryType="nt:unstructured">
             <column
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container">
+
                 <items jcr:primaryType="nt:unstructured">
-                    <carouselImages
+
+                    <!-- Main Headings -->
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Heading (e.g., UNLIMITED)"
+                        name="./heading"/>
+
+                    <subheading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Subheading (e.g., High-Speed Data)"
+                        name="./subheading"/>
+
+                    <!-- Star Rating / Badge Image -->
+                    <starImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Rating / Badge Image"
+                        name="./starImage"
+                        rootPath="/content/dam"/>
+
+                    <!-- Price -->
+                    <price
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Price (e.g., $18)"
+                        name="./price"/>
+
+                    <duration
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Duration (e.g., /30 days)"
+                        name="./duration"/>
+
+                    <!-- Button Configuration -->
+                    <buttonText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Button Text"
+                        name="./buttonText"/>
+
+                    <buttonLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Button Link"
+                        name="./buttonLink"/>
+
+                    <!-- Hero Image -->
+                    <heroImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Hero Main Image"
+                        name="./heroImage"
+                        rootPath="/content/dam"/>
+
+                    <!-- Slider Images Multifield -->
+                    <sliderImages
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                        fieldLabel="Carousel Image">
-                            <field
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                                name="./carouselImages"/>
-                     </carouselImages>
+                        fieldLabel="Slider Images"
+                        composite="{Boolean}true">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            name="./sliderImages"
+                            rootPath="/content/dam"/>
+                    </sliderImages>
+
                 </items>
             </column>
         </items>
