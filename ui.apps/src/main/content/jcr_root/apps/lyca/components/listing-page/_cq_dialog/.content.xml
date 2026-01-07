@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+                <items jcr:primaryType="nt:unstructured">
+                    <sectionHeader
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Section Header"
+                        name="./sectionHeader"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                    <helpCards
+                        jcr:primaryType="nt:unstructured"
+                        fieldLabel="Help Cards"
+                        composite="true"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            name="./helpCards"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                            <items jcr:primaryType="nt:unstructured">
+                                <cardIcon
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Card Icon Image"
+                                    name="./cardIcon"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                <linkText1
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Link Text 1"
+                                    name="./linkText1"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                <linkUrl1
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Link URL 1"
+                                    name="./linkUrl1"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                                <linkText2
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Link Text 2"
+                                    name="./linkText2"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                <linkUrl2
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Link URL 2"
+                                    name="./linkUrl2"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                            </items>
+                        </field>
+                    </helpCards>
+                </items>
+            </column>
+        </items>
+    </content>
+</jcr:root>

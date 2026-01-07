@@ -27,8 +27,8 @@ body {
 }
 
 .nav {
-    max-width: 1035px;
-    margin: 0px auto 0px 40px;
+    /* max-width: 1035px; */
+    margin: 0px auto 0px 0px;
     padding: 12px 20px;
     display: flex;
     align-items: center;
@@ -145,10 +145,12 @@ body {
     box-sizing: border-box;
     width: 99vw;
     height: 484px;
+    background-color: #0f3cc933;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: space-between;
+    filter: drop-shadow(2px 4px 6px black);
 }
 
 @media screen and (min-width:1919px) {
@@ -322,7 +324,7 @@ body {
 }
 
 .hero-image {
-    width: 44vw;
+    width: 43.75vw;
     height: 484px;
     background: #fbbf24;
     border-radius: 400px 0 0 116px;
