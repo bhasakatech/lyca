@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/lyca-spa-react" mode="merge"/>
+    <filter root="/content/lyca-spa-react" mode="merge"/>
+    <filter root="/content/dam/lyca-spa-react" mode="merge">
+        <exclude pattern="/content/dam/lyca-spa-react(/.*)?"/>
+        <include pattern="/content/dam/lyca-spa-react/jcr:content(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/lyca-spa-react/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/lyca-spa-react" mode="merge"/>
+</workspaceFilter>
