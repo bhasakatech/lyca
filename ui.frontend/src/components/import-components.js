@@ -47,7 +47,6 @@ import {
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
 
-import Author from "./Author/Author";
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 //lazyload / code splitting example of an internal component
@@ -57,7 +56,7 @@ const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
 
-MapTo("lyca-spa-react/components/author")(Author);
+
  MapTo(
     "lyca-spa-react/components/content/hero-carousel"
 )(HeroCarousel);
