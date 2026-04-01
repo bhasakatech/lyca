@@ -18,6 +18,7 @@ import withAsyncImport from "../utils/withAsyncImport";
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
+import './JoinLyca/JoinLyca';
 
 import {MapTo} from '@adobe/aem-react-editable-components';
 
@@ -35,6 +36,8 @@ import {
     AccordionV1,AccordionV1IsEmptyFn,
 } from '@adobe/aem-core-components-react-spa';
 
+
+
 import {
     BreadCrumbV2,BreadCrumbV2IsEmptyFn,
     ButtonV1,ButtonV1IsEmptyFn,
@@ -46,6 +49,7 @@ import {
     SeparatorV1,SeparatorV1IsEmptyFn,
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+import JoinLyca from "./JoinLyca/JoinLyca";
 import PricePlan from "./PricePlan/PricePlan";
 
 //lazyload / code splitting example of an internal component
@@ -93,3 +97,4 @@ const TextEditConfig = {
 };
 
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
+
