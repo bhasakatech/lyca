@@ -17,6 +17,7 @@
                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                 fieldLabel="Lyca Logo"
                 name="./lycaLogo"
+                rootPath="/content/dam/lyca-spa-react"
                 required="{Boolean}true"/>
 
             <lycadescription
