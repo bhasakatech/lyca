@@ -1,0 +1,17 @@
+{
+  "test": {
+    "sling:resourceType": "lyca/components/join",
+    "title": "Sample Title",
+    "description": "Sample Description",
+    "ctaItems": {
+      "item0": {
+        "label": "CTA 1",
+        "link": "/content/page1"
+      },
+      "item1": {
+        "label": "CTA 2",
+        "link": "/content/page2"
+      }
+    }
+  }
+}
