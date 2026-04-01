@@ -1,5 +1,7 @@
 package com.adobe.aem.lyca.core.models;
 
+import com.adobe.aem.lyca.core.models.Impl.CtaItemImpl;
+import com.adobe.aem.lyca.core.models.Impl.LycaJoinModelImpl;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,22 +24,10 @@ class LycaJoinModelImplTest {
 
         context.addModelsForClasses(LycaJoinModelImpl.class, CtaItemImpl.class);
 
-        // Parent resource
-        context.create().resource("/content/test",
-                "sling:resourceType", LycaJoinModelImpl.RESOURCE_TYPE,
-                "title", "Sample Title",
-                "description", "Sample Description"
-        );
+        // Load JSON
+        context.load().json("/lycaJoinModel.json", "/content");
 
-        // Multifield child resources
-        context.create().resource("/content/test/ctaItems/item0",
-                "label", "CTA 1",
-                "link", "/content/page1");
-
-        context.create().resource("/content/test/ctaItems/item1",
-                "label", "CTA 2",
-                "link", "/content/page2");
-
+        // Set current resource
         context.currentResource("/content/test");
 
         model = context.request().adaptTo(LycaJoinModel.class);

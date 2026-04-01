@@ -100,7 +100,7 @@
   display: flex;              /* ✅ behave like button */
   align-items: center;
   justify-content: center;
- text-decoration: none; 
+  text-decoration: none; 
   padding: 14px 30px;         /* 🔥 increase size */
   min-width: 120px;           /* 🔥 keeps width consistent */
   height: 18px;               /* 🔥 uniform height */
@@ -181,6 +181,9 @@
 .left span,
 .left a {
   color: #ffffff;
+}
+.right h2 {
+  text-align: center;
 }
 .right h2,
 .right p,
@@ -280,8 +283,6 @@
   display: inline-block;
   margin-left: 8px;
 }
-
-
 
 
 .input-group {

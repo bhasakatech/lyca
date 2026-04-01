@@ -1,5 +1,7 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.Impl;
 
+import com.adobe.aem.lyca.core.models.CtaItem;
+import com.adobe.aem.lyca.core.models.LycaJoinModel;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import org.apache.sling.api.SlingHttpServletRequest;

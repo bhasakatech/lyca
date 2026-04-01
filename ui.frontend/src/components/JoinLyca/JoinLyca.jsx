@@ -6,15 +6,12 @@ const JoinLyca = (props) => {
   const [code, setCode] = useState("+91");
 
   return (
-
-    
-
     <div className="cta-card">
 
       {/* LEFT */}
       <div className="left">
         <h1 className="title">{props.title}</h1>
-        <p>{props.description}</p>
+         <div dangerouslySetInnerHTML={{ __html: props.description }}></div>
 
         <div className="icons">
           {props.ctaItems?.map((item, i) => (
@@ -67,13 +64,6 @@ const JoinLyca = (props) => {
       : "Enter lyca mobile number & get started"
   }
 />
-
-    {/* Mobile Input */}
-    {/* <input className="mobile-input"
-      value={mobile}
-      onChange={(e) => setMobile(e.target.value)}
-      placeholder="Enter lyca mobile number & get started"
-    /> */}
   </div>
 </div>
 

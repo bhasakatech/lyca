@@ -19,14 +19,12 @@ class CtaItemImplTest {
 
     @BeforeEach
     void setUp() {
-        // Resource with all fields populated
-        resourceWithValues = context.create().resource("/content/ctaItem1",
-                "icon", "sample-icon.png",
-                "label", "Click Me",
-                "link", "/content/page1");
+        // Load the single JSON file into /content
+        context.load().json("/ctaItem.json", "/content");
 
-        // Resource with no fields (to test null/default behavior)
-        resourceEmpty = context.create().resource("/content/ctaItemEmpty");
+        // Fetch resources
+        resourceWithValues = context.resourceResolver().getResource("/content/ctaItem1");
+        resourceEmpty = context.resourceResolver().getResource("/content/ctaItemEmpty");
     }
 
     @Test
@@ -44,7 +42,6 @@ class CtaItemImplTest {
     void testGettersWithNullValues() {
         CtaItem ctaItem = resourceEmpty.adaptTo(CtaItem.class);
         assertNotNull(ctaItem);
-
         // All fields are optional, should return null
         assertNull(ctaItem.getIcon());
         assertNull(ctaItem.getLabel());
