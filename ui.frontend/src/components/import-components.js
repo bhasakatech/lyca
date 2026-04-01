@@ -52,6 +52,8 @@ import {
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
 import LycaFeatureComponent from "./LycaFeatureComponent/LycaFeatureComponent";
+import Footer from "./Footer/Footer";
+
 import JoinLyca from "./JoinLyca/JoinLyca";
 
 //lazyload / code splitting example of an internal component
@@ -64,6 +66,8 @@ const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-reac
 MapTo('lyca-spa-react/components/lycafeaturecomponent')(LycaFeatureComponent);
 //custom component example by Bhaskar
 MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
+
+MapTo("lyca-spa-react/components/footer")(Footer);
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
