@@ -50,6 +50,7 @@ import {
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
 import JoinLyca from "./JoinLyca/JoinLyca";
+import PricePlan from "./PricePlan/PricePlan";
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -58,9 +59,7 @@ const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
 
-//custom component example by Bhaskar
-MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
-
+MapTo('lyca-spa-react/components/priceplan')(PricePlan);
 MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
 MapTo('lyca-spa-react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
