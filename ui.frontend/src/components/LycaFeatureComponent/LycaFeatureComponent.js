@@ -1,5 +1,5 @@
 import React from 'react';
-import './cards.css';
+import './LycaFeature.css';
 
 // export const CustomEditConfig = {
 //   emptyLabel: "Lyca Feature Component",
@@ -19,15 +19,15 @@ const LycaFeatureComponent = (props) => {
 
      <div className="feature-wrapper">
       
-      {/* Heading */}
+      
       <h1 className="main-heading">{props.heading}</h1>
 
-      {/* Cards */}
+     
       <div className="cards-container">
         {props.items.map((item, index) => (
           <div key={index} className="card">
             
-            {/* Icon */}
+            
             {item.icon && (
               <div className="icon-wrapper">
                 <a href={item.iconLink || '#'}>
@@ -36,10 +36,10 @@ const LycaFeatureComponent = (props) => {
               </div>
             )}
 
-            {/* Title */}
+            
             <h2 className="feature-name">{item.featureHeading || "Feature Name Missing"}</h2>
 
-            {/* Description */}
+           
             <div className="desc"
               dangerouslySetInnerHTML={
                 {

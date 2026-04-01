@@ -19,7 +19,7 @@ class FeatureItemTest {
         context.addModelsForClasses(FeatureItem.class);
     }
 
-    // ✅ Test all fields (FULL coverage)
+
     @Test
     void testAllFields() {
         context.load().json("/featureitem.json", "/content/test");
@@ -35,7 +35,6 @@ class FeatureItemTest {
         assertEquals("Test Heading", model.getFeatureHeading());
         assertEquals("<p>Test Description</p>", model.getFeatureDescription());
     }
-    // ✅ Test empty JSON (NULL branch)
     @Test
     void testNullValues() {
         context.load().json("/empty.json", "/content/empty");

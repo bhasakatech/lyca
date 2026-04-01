@@ -26,7 +26,7 @@ class LycaFeatureComponentImplTest {
         context.addModelsForPackage("com.adobe.aem.lyca.core.models");
     }
 
-    // ✅ FULL DATA TEST
+
     @Test
     void testFullData() {
         context.load().json("/lyca-full.json", "/content/test");
@@ -52,7 +52,7 @@ class LycaFeatureComponentImplTest {
         assertEquals(LycaFeatureComponentImpl.RESOURCE_TYPE, model.getExportedType());
     }
 
-    // ✅ EMPTY JSON (NULL BRANCH)
+
     @Test
     void testEmptyData() {
         context.load().json("/lyca-empty.json", "/content/empty");
