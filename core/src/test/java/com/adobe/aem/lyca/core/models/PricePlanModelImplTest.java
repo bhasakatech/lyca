@@ -1,4 +1,5 @@
-package com.adobe.aem.lyca.core.models.priceplan;
+package com.adobe.aem.lyca.core.models;
+import com.adobe.aem.lyca.core.models.impl.PricePlanModelImpl;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.Resource;
