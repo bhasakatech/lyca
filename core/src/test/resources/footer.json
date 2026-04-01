@@ -1,0 +1,75 @@
+{
+  "footer": {
+    "lycaLogo": "/content/dam/lyca-spa-react/images/lyca_mobile_logo.png",
+    "lycaDescription": "<p>Our motto is full of customer demand by making them satisfied.</p>",
+    "copyright": "<p>© 2023 LYCAMOBILE. All rights reserved</p>",
+
+    "footerLinks": {
+      "item0": {
+        "title": "Join Lyca Mobile",
+        "links": {
+          "item0": {
+            "navigationLabel": "Home",
+            "navigationURL": "#"
+          },
+          "item1": {
+            "navigationLabel": "Plans",
+            "navigationURL": "#"
+          },
+          "item2": {
+            "navigationLabel": "Coverage Map",
+            "navigationURL": "#"
+          },
+          "item3": {
+            "navigationLabel": "Bring Your Phone",
+            "navigationURL": "#"
+          }
+        }
+      },
+
+      "item1": {
+        "title": "Quick Links",
+        "links": {
+          "item0": {
+            "navigationLabel": "Shop",
+            "navigationURL": "#"
+          },
+          "item1": {
+            "navigationLabel": "Why Lycamobile?",
+            "navigationURL": "#"
+          },
+          "item2": {
+            "navigationLabel": "About Us",
+            "navigationURL": "#"
+          },
+          "item3": {
+            "navigationLabel": "Refer a Friend",
+            "navigationURL": "#"
+          }
+        }
+      },
+
+      "item2": {
+        "title": "Help & Support",
+        "links": {
+          "item0": {
+            "navigationLabel": "Help Center",
+            "navigationURL": "#"
+          },
+          "item1": {
+            "navigationLabel": "Contact Us",
+            "navigationURL": "#"
+          },
+          "item2": {
+            "navigationLabel": "Store Locator",
+            "navigationURL": "#"
+          },
+          "item3": {
+            "navigationLabel": "International Calling Rates",
+            "navigationURL": "#"
+          }
+        }
+      }
+    }
+  }
+}
