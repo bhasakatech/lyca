@@ -106,7 +106,7 @@ MapTo('lyca-spa-react/components/carousel')(CarouselV1, { isEmpty: CarouselV1IsE
 MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1IsEmptyFn });
 
 
-//lazy load of internal component (hello world)
+//lazy load of internal component (hello world).
 
 /**
  * Default Edit configuration for the Text component that interact with the Core Text component and sub-types
