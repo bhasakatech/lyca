@@ -19,6 +19,9 @@ import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
 
+import RecentBlogs from "./RecentBlogs/RecentBlogs";
+
+
 import {MapTo} from '@adobe/aem-react-editable-components';
 
 import {
@@ -55,6 +58,8 @@ const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-b
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
 
 
+MapTo('lyca-spa-react/components/recentBlogs')(RecentBlogs);
+
 MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
 MapTo('lyca-spa-react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
@@ -75,7 +80,6 @@ MapTo('lyca-spa-react/components/accordion')(AccordionV1, {isEmpty: AccordionV1I
 MapTo('lyca-spa-react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
 MapTo('lyca-spa-react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
-
 //lazy load of internal component (hello world)
 
 /**
@@ -90,5 +94,4 @@ const TextEditConfig = {
         return !props || !props.text || props.text.trim().length < 1;
     }
 };
-
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
