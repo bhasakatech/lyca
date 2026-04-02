@@ -5,45 +5,37 @@
     jcr:primaryType="nt:unstructured"
     sling:resourceType="cq/gui/components/authoring/dialog"
     jcr:title="Join Lyca Dialog">
-
     <content
      jcr:primaryType="nt:unstructured"
      sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-
             <title
                    jcr:primaryType="nt:unstructured"
                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                    fieldLabel="Title"
                    name="./title"/>
-
             <description 
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                         fieldLabel="Description" 
                         name="./description"
                         useFixedInlineToolbar="{Boolean}true"/>
-            <!-- Multifield -->
             <ctaItems jcr:primaryType="nt:unstructured"
                       sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
                       composite="{Boolean}true"
                       fieldLabel="CTA Items">
-
                 <field jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/container"
                         name="./ctaItems">
                     <items jcr:primaryType="nt:unstructured">
-
                         <icon jcr:primaryType="nt:unstructured"
                               sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                               fieldLabel="Icon"
                               name="./icon"/>
-
                         <label jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldLabel="Label" 
                                 name="./label"/>
-
                         <link jcr:primaryType="nt:unstructured"
                               sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                               fieldLabel="Link" 
@@ -51,7 +43,6 @@
                     </items>
                 </field>
             </ctaItems>
-
         </items>
     </content>
 </jcr:root>
