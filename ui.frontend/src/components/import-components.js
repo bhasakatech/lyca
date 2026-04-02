@@ -48,6 +48,10 @@ import {
 } from '@adobe/aem-core-components-react-base';
 
 
+
+
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
+
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
 
 //lazyload / code splitting example of an internal component
@@ -59,9 +63,16 @@ const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-reac
 
 
 
-MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
-MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
-MapTo('lyca-spa-react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
+MapTo(
+    "lyca-spa-react/components/content/hero-carousel"
+)(HeroCarousel);
+MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
+
+
+MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
+MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
+MapTo('lyca-spa-react/components/separator')(SeparatorV1, { isEmpty: SeparatorV1IsEmptyFn });
+
 
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
 
@@ -74,6 +85,14 @@ MapTo('lyca-spa-react/components/button')(ButtonV1, { isEmpty: ButtonV1IsEmptyFn
 MapTo('lyca-spa-react/components/teaser')(TeaserV1, { isEmpty: TeaserV1IsEmptyFn });
 MapTo('lyca-spa-react/components/image')(ImageV2, { isEmpty: ImageV2IsEmptyFn });
 MapTo('lyca-spa-react/components/title')(TitleV2, { isEmpty: TitleV2IsEmptyFn });
+
+
+
+MapTo('lyca-spa-react/components/button')(ButtonV1, { isEmpty: ButtonV1IsEmptyFn });
+MapTo('lyca-spa-react/components/teaser')(TeaserV1, { isEmpty: TeaserV1IsEmptyFn });
+MapTo('lyca-spa-react/components/image')(ImageV2, { isEmpty: ImageV2IsEmptyFn });
+MapTo('lyca-spa-react/components/title')(TitleV2, { isEmpty: TitleV2IsEmptyFn });
+
 
 
 MapTo('lyca-spa-react/components/breadcrumb')(BreadCrumbV2, { isEmpty: BreadCrumbV2IsEmptyFn });
