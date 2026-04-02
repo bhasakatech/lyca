@@ -53,6 +53,8 @@ import Footer from "./Footer/Footer";
 
 import JoinLyca from "./JoinLyca/JoinLyca";
 
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
+
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 
@@ -64,6 +66,10 @@ const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-reac
 MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 
 MapTo("lyca-spa-react/components/footer")(Footer);
+
+ MapTo(
+    "lyca-spa-react/components/content/hero-carousel"
+)(HeroCarousel);
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
