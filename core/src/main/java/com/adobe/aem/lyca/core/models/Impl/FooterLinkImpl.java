@@ -1,4 +1,4 @@
-package com.adobe.aem.lyca.core.models.Impl;
+package com.adobe.aem.lyca.core.models.impl;
 
 import com.adobe.aem.lyca.core.models.FooterLink;
 import org.apache.sling.api.resource.Resource;

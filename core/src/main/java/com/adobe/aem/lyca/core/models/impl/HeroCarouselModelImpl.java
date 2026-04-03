@@ -1,5 +1,7 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
+import com.adobe.aem.lyca.core.models.HeroCarouselModel;
+import com.adobe.aem.lyca.core.models.HeroSlide;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
