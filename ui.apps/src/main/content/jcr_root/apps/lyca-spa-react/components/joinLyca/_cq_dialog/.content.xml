@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    jcr:title="Join Lyca Dialog">
+    <content
+     jcr:primaryType="nt:unstructured"
+     sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <title
+                   jcr:primaryType="nt:unstructured"
+                   sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                   fieldLabel="Title"
+                   name="./title"/>
+            <description 
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldLabel="Description" 
+                        name="./description"
+                        useFixedInlineToolbar="{Boolean}true"/>
+            <ctaItems jcr:primaryType="nt:unstructured"
+                      sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                      composite="{Boolean}true"
+                      fieldLabel="CTA Items">
+                <field jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        name="./ctaItems">
+                    <items jcr:primaryType="nt:unstructured">
+                        <icon jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldLabel="Icon"
+                              name="./icon"/>
+                        <label jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Label" 
+                                name="./label"/>
+                        <link jcr:primaryType="nt:unstructured"
+                              sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                              fieldLabel="Link" 
+                              name="./link"/>
+                    </items>
+                </field>
+            </ctaItems>
+        </items>
+    </content>
+</jcr:root>

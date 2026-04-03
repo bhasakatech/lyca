@@ -1,0 +1,26 @@
+{
+  "slides": {
+    "item0": {
+      "preTitle": "Unlimited",
+      "title": "High-Speed Data",
+      "subtitle": "Your day, powered by speed",
+      "price": "$18",
+      "duration": "/30 days",
+      "ctaText": "Get it now",
+      "ctaLink": "/content/lyca/page1",
+      "bgImage": "/content/dam/lyca/banner1.png",
+      "bgColor": "rgb(0,72,190)"
+    },
+    "item1": {
+      "preTitle": "New Offer",
+      "title": "Unlimited Calls",
+      "subtitle": "Talk without limits",
+      "price": "$25",
+      "duration": "/30 days",
+      "ctaText": "Buy Now",
+      "ctaLink": "/content/lyca/page2",
+      "bgImage": "/content/dam/lyca/banner2.png",
+      "bgColor": "rgb(1,72,190)"
+    }
+  }
+}

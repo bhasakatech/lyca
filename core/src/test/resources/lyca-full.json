@@ -1,0 +1,17 @@
+{
+  "heading": "Main Heading",
+  "features": {
+    "item0": {
+      "icon": "icon1.png",
+      "iconLink": "/link1",
+      "featureHeading": "Feature 1",
+      "featureDescription": "<p>Desc 1</p>"
+    },
+    "item1": {
+      "icon": "icon2.png",
+      "iconLink": "/link2",
+      "featureHeading": "Feature 2",
+      "featureDescription": "<p>Desc 2</p>"
+    }
+  }
+}
