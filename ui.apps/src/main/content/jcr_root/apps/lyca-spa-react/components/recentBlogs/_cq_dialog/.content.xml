@@ -16,7 +16,8 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         fieldLabel="Blogs CF Path"
-                        name="./cfPath"/>
+                        name="./cfPath"
+                        rootPath="/content/dam/lyca-spa-react"/>
                 </items>
     </content>
 </jcr:root>
