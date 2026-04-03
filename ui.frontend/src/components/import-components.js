@@ -22,6 +22,9 @@ import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
 import './JoinLyca/JoinLyca';
 
+import RecentBlogs from "./RecentBlogs/RecentBlogs";
+
+
 import { MapTo } from '@adobe/aem-react-editable-components';
 
 import {
@@ -86,6 +89,8 @@ MapTo("lyca-spa-react/components/footer")(Footer);
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
 
 
+MapTo('lyca-spa-react/components/recentBlogs')(RecentBlogs);
+
 MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
 MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
 MapTo('lyca-spa-react/components/separator')(SeparatorV1, { isEmpty: SeparatorV1IsEmptyFn });
@@ -135,6 +140,5 @@ const TextEditConfig = {
         return !props || !props.text || props.text.trim().length < 1;
     }
 };
-
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
 
