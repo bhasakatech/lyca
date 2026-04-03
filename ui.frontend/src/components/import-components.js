@@ -63,9 +63,6 @@ const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-reac
 
 
 
-MapTo(
-    "lyca-spa-react/components/content/hero-carousel"
-)(HeroCarousel);
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
 
 
@@ -73,8 +70,6 @@ MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsE
 MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
 MapTo('lyca-spa-react/components/separator')(SeparatorV1, { isEmpty: SeparatorV1IsEmptyFn });
 
-
-MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
 MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
