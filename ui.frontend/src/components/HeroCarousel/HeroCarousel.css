@@ -68,7 +68,7 @@
   }
 }
 
-.pretitle {
+.hero-banner_pretitle {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 24px;
   /* Reduced */
@@ -83,12 +83,12 @@
   /* So it breaks to new line */
 }
 
-/* Remove original pretitle yellow line */
-.pretitle::after {
+/* Remove original hero-banner_pretitle yellow line */
+.hero-banner_pretitle::after {
   display: none !important;
 }
 
-.title {
+.hero-banner_title {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 58px;
   /* Reduced from 58px */
@@ -102,7 +102,7 @@
 }
 
 /* Enhanced Ribbon Style */
-.tagline {
+.hero-banner_tagline {
   position: relative;
   display: inline-block;
   background-color: #F8B524;
@@ -126,8 +126,8 @@
 }
 
 /* The ribbon folded tails */
-.tagline::before,
-.tagline::after {
+.hero-banner_tagline::before,
+.hero-banner_tagline::after {
   content: "";
   position: absolute;
   top: 10px;
@@ -138,7 +138,7 @@
   z-index: -1;
 }
 
-.tagline::before {
+.hero-banner_tagline::before {
   left: -30px;
   /* Stick out 30px */
   /* Rightmost 10px overlaps under the box for the dark fold */
@@ -155,7 +155,7 @@
     );
 }
 
-.tagline::after {
+.hero-banner_tagline::after {
   right: -30px;
   /* Stick out 30px */
   /* Leftmost 10px overlaps under the box for the dark fold */
@@ -172,8 +172,8 @@
     );
 }
 
-/* Price */
-.price {
+/* hero-banner_price */
+.hero-banner_price {
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 82px;
   /* Reduced from 64px */
@@ -189,7 +189,7 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
 }
 
-.price span {
+.hero-banner_price span {
   font-family: Arial, sans-serif;
   font-size: 24px;
   /* Reduced */
@@ -202,7 +202,7 @@
 }
 
 /* CTA */
-.cta-btn {
+.hero-banner_cta-btn {
   display: inline-block;
   background-color: #22C55E;
   padding: 21px 48px;
@@ -219,7 +219,7 @@
   transition: all 0.3s ease;
 }
 
-.cta-btn:hover {
+.hero-banner_cta-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
 }
@@ -348,11 +348,11 @@
     max-width: 55%;
   }
 
-  .title {
+  .hero-banner_title {
     font-size: 46px;
   }
 
-  .price {
+  .hero-banner_price {
     font-size: 60px;
   }
 }
@@ -363,51 +363,51 @@
     height: 340px;
   }
 
-  .pretitle {
+  .hero-banner_title {
     font-size: 18px;
   }
 
-  .title {
+  .hero-banner_title {
     font-size: 38px;
     margin-bottom: 20px;
   }
 
-  .price {
+  .hero-banner_price {
     font-size: 50px;
     margin-bottom: 20px;
   }
 
-  .price span {
+  .hero-banner_price span {
     font-size: 18px;
   }
 
-  .tagline {
+  .hero-banner_tagline {
     font-size: 16px;
     padding: 14px 40px;
     margin-bottom: 20px;
   }
 
-  .tagline::before,
-  .tagline::after {
+  .hero-banner_tagline::before,
+  .hero-banner_tagline::after {
     top: 8px;
     /* Downward shift scaled */
     width: 30px;
     /* Stick out 22px + overlap 8px */
   }
 
-  .tagline::before {
+  .hero-banner_tagline::before {
     left: -22px;
     background: linear-gradient(to right, #ECA214 22px, #A06400 22px);
     clip-path: polygon(0 0, 22px 0, 22px calc(100% - 8px), 30px 100%, 0 100%, 10px 50%);
   }
 
-  .tagline::after {
+  .hero-banner_tagline::after {
     right: -22px;
     background: linear-gradient(to right, #A06400 8px, #ECA214 8px);
     clip-path: polygon(8px 0, 30px 0, 20px 50%, 30px 100%, 0 100%, 8px calc(100% - 8px));
   }
 
-  .cta-btn {
+  .hero-banner_cta-btn {
     padding: 16px 36px;
     font-size: 14px;
   }
@@ -424,22 +424,22 @@
     max-width: 55%;
   }
 
-  .pretitle {
+  .hero-banner_pretitle {
     font-size: 14px;
     margin-bottom: 1px;
   }
 
-  .title {
+  .hero-banner_title {
     font-size: 24px;
     margin-bottom: 10px;
   }
 
-  .price {
+  .hero-banner_price {
     font-size: 34px;
     margin-bottom: 15px;
   }
 
-  .price span {
+  .hero-banner_price span {
     font-size: 14px;
   }
 
@@ -460,32 +460,32 @@
   border-radius: 0;
 }
 
-  .tagline {
+  .hero-banner_tagline {
     font-size: 11px;
     padding: 10px 24px;
     margin-bottom: 5px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
   }
 
-  .tagline::before,
-  .tagline::after {
+  .hero-banner_tagline::before,
+  .hero-banner_tagline::after {
     top: 6px;
     width: 20px;
   }
 
-  .tagline::before {
+  .hero-banner_tagline::before {
     left: -14px;
     background: linear-gradient(to right, #ECA214 14px, #A06400 14px);
     clip-path: polygon(0 0, 14px 0, 14px calc(100% - 6px), 20px 100%, 0 100%, 6px 50%);
   }
 
-  .tagline::after {
+  .hero-banner_tagline::after {
     right: -14px;
     background: linear-gradient(to right, #A06400 6px, #ECA214 6px);
     clip-path: polygon(6px 0, 20px 0, 14px 50%, 20px 100%, 0 100%, 6px calc(100% - 6px));
   }
 
-  .cta-btn {
+  .hero-banner_cta-btn {
     padding: 12px 24px;
     font-size: 12px;
   }

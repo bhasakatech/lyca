@@ -56,7 +56,7 @@ import Footer from "./Footer/Footer";
 
 import JoinLyca from "./JoinLyca/JoinLyca";
 
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
+
 
 
 

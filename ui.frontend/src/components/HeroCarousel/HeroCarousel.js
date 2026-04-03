@@ -52,20 +52,20 @@ const HeroCarousel = ({ slides = [] }) => {
 
       
         <div className="hero-content">
-          <p className="pretitle">{slide.preTitle}</p>
+          <p className="hero-banner_pretitle">{slide.preTitle}</p>
 
-          <h1 className="title">{slide.title}</h1>
+          <h1 className="hero-banner_title">{slide.title}</h1>
 
-          <div className="tagline">
+          <div className="hero-banner_tagline">
             {slide.subtitle}
           </div>
 
 
-          <div className="price">
+          <div className="hero-banner_price">
             {slide.price}<span>/{slide.duration}</span>
           </div>
 
-          <a href={slide.ctaLink} className="cta-btn">
+          <a href={slide.ctaLink} className="hero-banner_cta-btn">
             {slide.ctaText}
           </a>
         </div>
