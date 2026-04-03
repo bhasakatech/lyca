@@ -1,0 +1,172 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;;
+}
+
+.spa-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #002970;
+  padding: 12px 20px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  object-fit: contain;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.active-link{
+  color: #3AD37A;
+  text-decoration: underline;
+}
+
+.quick-btn {
+  background: #3AD37A;
+  padding: 8px 14px;
+  border-radius: 18px;
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.nav-btn:hover {
+  color: #002970;
+  text-decoration: underline;
+}
+
+
+/* Hamburger (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+/*ONLY MOBILE / TABLET CHANGE */
+@media (max-width: 768px) {
+
+  .spa-nav {
+    background-color: #0f3cc9;
+  }
+
+  .nav-left {
+    gap: 50px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide menu initially */
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: 190px;     
+    left: 190px;   
+    flex-direction: column;
+    padding: 12px 15px;
+    border-radius: 5px;
+    width: 200px; 
+    min-width: 120px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 2px 2px 8px 3px #000;
+  }
+
+  /* Show when clicked */
+  .nav-list.active {
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-list li {
+    font-size: 15px;
+  }
+
+  .nav-list li a {
+    text-decoration: none;
+    color: black;
+  }
+}
+
+@media (max-width: 426px){
+  .nav-left {
+    gap: 20px;
+  }
+
+  .nav-list {  
+    top: 200px;
+    left: 0; 
+    width: 100%;
+    padding: 10px 10px;
+    background-color: #0f3cc9;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .nav-list li {
+    align-items: center;
+    font-size: 15px;
+  }
+
+  .nav-list li a {
+    color: white;
+  }
+
+  .nav-list.active {
+    padding: 12px 20px;   
+  }
+}
+
+@media (max-width: 320px){
+  .nav-left {
+    gap: 25px;
+  }
+
+  .quick-btn {
+    width: 90px !important;
+  }
+
+  .logo {
+    width: 90px;
+    object-fit: contain;
+  }
+
+  .nav-list {  
+    top: 213px;
+  }
+}
