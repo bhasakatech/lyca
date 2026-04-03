@@ -46,6 +46,8 @@ import {
     SeparatorV1,SeparatorV1IsEmptyFn,
     ListV2,ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+import LycaWorldWide from "./LycaWorldWide/LycaWorldWide";
+
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -92,3 +94,4 @@ const TextEditConfig = {
 };
 
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
+MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
