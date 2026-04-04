@@ -22,6 +22,8 @@ import './JoinLyca/JoinLyca';
 
 import {MapTo} from '@adobe/aem-react-editable-components';
 
+import LycaHelpComponent  from "./LycaHelpComponent/LycaHelpComponent";
+
 import {
     CarouselV1IsEmptyFn
 } from '@adobe/aem-core-components-react-spa/dist/isEmptyFunctions';
@@ -85,6 +87,7 @@ MapTo('lyca-spa-react/components/accordion')(AccordionV1, {isEmpty: AccordionV1I
 MapTo('lyca-spa-react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
 MapTo('lyca-spa-react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
 
+MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
 
 //lazy load of internal component (hello world)
 
