@@ -1,12 +1,6 @@
 import React from 'react';
 import './LycaFeature.css';
 
-// export const CustomEditConfig = {
-//   emptyLabel: "Lyca Feature Component",
-//   isEmpty: function (props) {
-//     return !props || !props.heading;
-//   }
-// };
 
 const LycaFeatureComponent = (props) => {
 
@@ -24,7 +18,7 @@ const LycaFeatureComponent = (props) => {
 
      
       <div className="cards-container">
-        {props.items.map((item, index) => (
+        {(props.items || []).map((item, index) => (
           <div key={index} className="card">
             
             

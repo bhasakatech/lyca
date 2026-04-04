@@ -15,8 +15,6 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
 
-
-
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
@@ -56,14 +54,11 @@ import Footer from "./Footer/Footer";
 
 import JoinLyca from "./JoinLyca/JoinLyca";
 
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
-
-
-
 
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
+import TopInformationalBannerText from "./TopInformationalBannerText/TopInformationalBannerText";
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -81,6 +76,8 @@ MapTo("lyca-spa-react/components/footer")(Footer);
  MapTo(
     "lyca-spa-react/components/content/hero-carousel"
 )(HeroCarousel);
+
+MapTo("lyca-spa-react/components/topInformationalBannerTextComponent")(TopInformationalBannerText);
 
 
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
