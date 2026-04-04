@@ -1,0 +1,8 @@
+{
+  "ctaItem1": {
+    "icon": "sample-icon.png",
+    "label": "Click Me",
+    "link": "/content/page1"
+  },
+  "ctaItemEmpty": {}
+}
