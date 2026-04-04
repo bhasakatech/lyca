@@ -1,4 +1,4 @@
-package com.adobe.aem.lyca.core.models.Impl;
+package com.adobe.aem.lyca.core.models.impl;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
