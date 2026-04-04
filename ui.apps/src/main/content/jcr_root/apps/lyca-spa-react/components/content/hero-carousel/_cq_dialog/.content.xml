@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <slides
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                composite="{Boolean}true"
+                fieldLabel="Hero Carousel">
+                <field
+                    jcr:primaryType="nt:unstructured"
+                    jcr:title="Slide Item"
+                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                    name="./slides">
+                    <items jcr:primaryType="nt:unstructured">
+                        <preTitle
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Pre Title"
+                            name="./preTitle"/>
+                        <title
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Title"
+                            name="./title"/>
+                        <subtitle
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Subtitle"
+                            name="./subtitle"/>
+                        <price
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Price"
+                            name="./price"/>
+                        <duration
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="Duration"
+                            name="./duration"/>
+                        <ctaText
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldLabel="CTA Label"
+                            name="./ctaText"/>
+                        <ctaLink
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="CTA Link"
+                            name="./ctaLink"/>
+                        <bgImage
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Background Image"
+                            name="./bgImage"/>
+
+                         <bgColor
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/colorfield"
+                            fieldLabel="Background Color"
+                            jcr:description="Hex color code for background (e.g., #FFFFFF)"
+                            name="./bgColor"/>
+                    </items>
+                </field>
+            </slides>
+        </items>
+    </content>
+</jcr:root>

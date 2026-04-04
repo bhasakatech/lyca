@@ -64,6 +64,14 @@
                     </dependencies>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>filevault-package-maven-plugin</artifactId>
+                <version>1.4.0</version> <!-- updated -->
+                <extensions>true</extensions>
+            </plugin>
+
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
