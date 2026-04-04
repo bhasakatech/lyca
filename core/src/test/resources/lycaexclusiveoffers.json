@@ -1,0 +1,10 @@
+{
+  "lycaexclusiveoffers": {
+    "heading": "Sign up to get exclusive offers",
+    "inputPlaceholderText": "Enter your email address",
+    "ctaLabel": "Join our offers club",
+    "ctaLink": "#",
+    "description": "We would like to share relevant offers with you and keep you posted about our rewards and new products via email. You can change your mind at any time.",
+    "sling:resourceType": "lyca-spa-react/components/lycaexclusiveoffers"
+  }
+}
