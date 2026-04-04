@@ -1,0 +1,9 @@
+{
+  "topBanner": {
+    "sling:resourceType": "lyca-spa-react/components/topInformationalBannerTextComponent",
+    "text": "<p>Hello from JSON</p>"
+  },
+  "topBannerEmpty": {
+    "sling:resourceType": "lyca-spa-react/components/topInformationalBannerTextComponent"
+  }
+}
