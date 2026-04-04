@@ -1,0 +1,178 @@
+.perfact-plan-container {
+  background: #f5f7fa;
+  padding: 40px 80px;
+  text-align: center;
+}
+
+.perfact-plan-main-heading {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0a2540;
+  margin-bottom: 30px;
+}
+
+.questions-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.question-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 24px 38px 24px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-4px);
+}
+
+.question-count {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.option {
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #111827;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.option:hover {
+  border-color: #2563eb;
+  background-color: #f0f6ff;
+}
+
+.option.active {
+  border: 2px solid #2563eb;
+  background-color: #eef5ff;
+}
+
+.check {
+  color: #22c55e;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.perfact-plan-card {
+  background: #0d47a1;
+  border-radius: 20px;
+  padding: 20px 30px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.perfact-plan-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.perfact-plan-heading {
+  line-height: 25px;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.perfact-plan-subtitle {
+  line-height: 25px;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.perfact-plan-box {
+  background: linear-gradient(135deg, #1e88e5, #1976d2);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.perfact-plan-type {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0d47a1;
+  margin-bottom: 10px;
+  letter-spacing: 0.2px;
+}
+
+.perfact-plan-data {
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.perfact-plan-price {
+  color: black;
+  font-size: 25px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+}
+
+.perfact-plan-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #fff;
+  color: #003f8f;
+  font-weight: bolder;
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.perfact-plan-view-others:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .perfact-plan-container {
+    padding: 40px 70px;
+  }
+  .perfact-plan-main-heading {
+    font-size: 23px;
+  }
+  .questions-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 426px) {
+  .perfact-plan-container {
+    padding: 30px 40px;
+    text-align: center;
+  }
+}
