@@ -63,12 +63,11 @@ import JoinLyca from "./JoinLyca/JoinLyca";
 import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 
 
-
-
-
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
+
+import Navigation from "./SpaNavigation/Navigation";
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -77,6 +76,7 @@ const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
 
+MapTo("lyca-spa-react/components/content/navigation")(Navigation);
 MapTo('lyca-spa-react/components/lycafeaturecomponent')(LycaFeatureComponent);
 //custom component example by Bhaskar
 MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
