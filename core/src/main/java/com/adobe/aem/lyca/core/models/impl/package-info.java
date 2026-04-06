@@ -14,6 +14,6 @@
  *  limitations under the License.
  */
 @Version("1.0")
-package com.adobe.aem.lyca.core.models.Impl;
+package com.adobe.aem.lyca.core.models.impl;
 
 import org.osgi.annotation.versioning.Version;
