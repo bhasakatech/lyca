@@ -27,13 +27,13 @@
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldLabel="Helping Icon"
                                     name="./icon"
-                                    rootPath="/content/dam"/>
+                                    rootPath="content/dam/lyca-spa-react"/>
                                 <iconLink
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldLabel="Icon Link"
                                     name="./iconLink"
-                                    rootPath="/content"/>
+                                    rootPath="content/dam/lyca-spa-react"/>
                                 <iconHeading
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"

@@ -9,7 +9,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables= {Resource.class, SlingHttpServletRequest.class},
        defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ComponentsModel {
+public class HelperComponentsModel {
 
     @ValueMapValue
     private String icon;

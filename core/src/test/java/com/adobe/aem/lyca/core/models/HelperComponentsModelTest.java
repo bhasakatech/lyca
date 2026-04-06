@@ -1,0 +1,48 @@
+package com.adobe.aem.lyca.core.models;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.apache.sling.api.resource.Resource;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import io.wcm.testing.mock.aem.junit5.AemContext;
+import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+@ExtendWith({AemContextExtension.class, MockitoExtension.class})
+class HelperComponentsModelTest {
+    private final AemContext context = new AemContext();
+    private HelperComponentsModel model;
+    @BeforeEach
+    void setUp() {
+        // Load JSON into context
+        context.addModelsForClasses(HelperComponentsModel.class);
+        context.load().json("/helpercomponentsmodel.json", "/content/test");
+
+        Resource resource = context.resourceResolver().getResource("/content/test");
+        context.currentResource(resource);
+
+        model = resource.adaptTo(HelperComponentsModel.class);
+    }
+    @Test
+    void testModelValues() {
+        assertNotNull(model);
+
+        assertEquals("/content/dam/icon.png", model.getIcon());
+        assertEquals("https://www.lycamobile.com/help", model.getIconLink());
+        assertEquals("Help & Support", model.getIconHeading());
+    }
+    @Test
+    void testModelWithEmptyResource() {
+        context.create().resource("/content/empty");
+        Resource resource = context.resourceResolver().getResource("/content/empty");
+        HelperComponentsModel emptyModel = resource.adaptTo(HelperComponentsModel.class);
+        assertNotNull(emptyModel);
+        assertNull(emptyModel.getIcon());
+        assertNull(emptyModel.getIconLink());
+        assertNull(emptyModel.getIconHeading());
+    }
+}
