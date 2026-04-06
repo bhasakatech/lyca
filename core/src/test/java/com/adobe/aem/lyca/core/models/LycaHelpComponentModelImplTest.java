@@ -24,7 +24,7 @@ class LycaHelpComponentModelImplTest {
     void setUp() {
         context.addModelsForClasses(
                 LycaHelpComponentModelImpl.class,
-                ComponentsModel.class
+                LycaHelpComponentModel.class
         );
         context.load().json("/lycahelpcomponent.json", "/content/test");
         Resource resource = context.resourceResolver().getResource("/content/test");
@@ -38,14 +38,14 @@ class LycaHelpComponentModelImplTest {
         assertNotNull(model);
         assertEquals("We are here to help you", model.getHeading());
         assertEquals(LycaHelpComponentModelImpl.RESOURCE_TYPE, model.getExportedType());
-        List<ComponentsModel> icons = model.getHelpingIcons();
+        List<HelperComponentsModel> icons = model.getHelpingIcons();
         assertNotNull(icons);
         assertEquals(2, icons.size());
-        ComponentsModel item1 = icons.get(0);
+        HelperComponentsModel item1 = icons.get(0);
         assertEquals("/content/dam/icon1.png", item1.getIcon());
         assertEquals("https://example.com/1", item1.getIconLink());
         assertEquals("Prepaid plans FAQ", item1.getIconHeading());
-        ComponentsModel item2 = icons.get(1);
+        HelperComponentsModel item2 = icons.get(1);
         assertEquals("/content/dam/icon2.png", item2.getIcon());
         assertEquals("https://example.com/2", item2.getIconLink());
         assertEquals("Switch to Lyca", item2.getIconHeading());

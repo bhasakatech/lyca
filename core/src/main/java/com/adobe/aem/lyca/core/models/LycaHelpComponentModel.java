@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface LycaHelpComponentModel extends ComponentExporter {
     String getHeading();
-    List<ComponentsModel> getHelpingIcons();
+    List<HelperComponentsModel> getHelpingIcons();
 }
 
 
