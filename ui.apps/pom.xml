@@ -74,6 +74,13 @@
                 </configuration>
             </plugin>
 
+             <plugin>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>filevault-package-maven-plugin</artifactId>
+                <version>1.4.0</version> <!-- updated -->
+                <extensions>true</extensions>
+            </plugin>
+
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>htl-maven-plugin</artifactId>
