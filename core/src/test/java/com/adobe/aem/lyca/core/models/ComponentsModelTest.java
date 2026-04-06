@@ -19,6 +19,7 @@ class ComponentsModelTest {
     @BeforeEach
     void setUp() {
         // Load JSON into context
+        context.addModelsForClasses(ComponentsModel.class);
         context.load().json("/componentsmodel.json", "/content/test");
 
         Resource resource = context.resourceResolver().getResource("/content/test");
@@ -31,8 +32,8 @@ class ComponentsModelTest {
         assertNotNull(model);
 
         assertEquals("/content/dam/icon.png", model.getIcon());
-        assertEquals("https://example.com", model.getIconLink());
-        assertEquals("Test Heading", model.getIconHeading());
+        assertEquals("https://www.lycamobile.com/help", model.getIconLink());
+        assertEquals("Help & Support", model.getIconHeading());
     }
     @Test
     void testModelWithEmptyResource() {
