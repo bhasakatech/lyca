@@ -33,7 +33,7 @@
                                     sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                     fieldLabel="Icon Link"
                                     name="./iconLink"
-                                    rootPath="content/dam/lyca-spa-react"/>
+                                    rootPath="content/lyca-spa-react/"/>
                                 <iconHeading
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
