@@ -13,32 +13,33 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith({AemContextExtension.class, MockitoExtension.class})
-class ComponentsModelTest {
+class HelperComponentsModelTest {
     private final AemContext context = new AemContext();
-    private ComponentsModel model;
+    private HelperComponentsModel model;
     @BeforeEach
     void setUp() {
         // Load JSON into context
-        context.load().json("/componentsmodel.json", "/content/test");
+        context.addModelsForClasses(HelperComponentsModel.class);
+        context.load().json("/helpercomponentsmodel.json", "/content/test");
 
         Resource resource = context.resourceResolver().getResource("/content/test");
         context.currentResource(resource);
 
-        model = resource.adaptTo(ComponentsModel.class);
+        model = resource.adaptTo(HelperComponentsModel.class);
     }
     @Test
     void testModelValues() {
         assertNotNull(model);
 
         assertEquals("/content/dam/icon.png", model.getIcon());
-        assertEquals("https://example.com", model.getIconLink());
-        assertEquals("Test Heading", model.getIconHeading());
+        assertEquals("https://www.lycamobile.com/help", model.getIconLink());
+        assertEquals("Help & Support", model.getIconHeading());
     }
     @Test
     void testModelWithEmptyResource() {
         context.create().resource("/content/empty");
         Resource resource = context.resourceResolver().getResource("/content/empty");
-        ComponentsModel emptyModel = resource.adaptTo(ComponentsModel.class);
+        HelperComponentsModel emptyModel = resource.adaptTo(HelperComponentsModel.class);
         assertNotNull(emptyModel);
         assertNull(emptyModel.getIcon());
         assertNull(emptyModel.getIconLink());

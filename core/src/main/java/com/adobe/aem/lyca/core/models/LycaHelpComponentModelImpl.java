@@ -27,7 +27,7 @@ public class LycaHelpComponentModelImpl implements LycaHelpComponentModel {
     private String heading;
 
     @ChildResource
-    private List<ComponentsModel> helpingIcons;
+    private List<HelperComponentsModel> helpingIcons;
 
 
 
@@ -43,9 +43,8 @@ public class LycaHelpComponentModelImpl implements LycaHelpComponentModel {
     }
 
     @Override
-    public List<ComponentsModel> getHelpingIcons() {
-        return helpingIcons;
+    public List<HelperComponentsModel> getHelpingIcons() {
+        return List.of();
     }
-
 
 }
