@@ -55,6 +55,7 @@ import LycaFeatureComponent from "./LycaFeatureComponent/LycaFeatureComponent";
 import Footer from "./Footer/Footer";
 
 import JoinLyca from "./JoinLyca/JoinLyca";
+import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
@@ -78,6 +79,16 @@ MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 
 MapTo("lyca-spa-react/components/footer")(Footer);
 
+MapTo("lyca-spa-react/components/lycaexclusiveoffers")(LycaExclusiveOffers);
+
+MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
+MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
+MapTo('lyca-spa-react/components/separator')(SeparatorV1, {isEmpty: SeparatorV1IsEmptyFn});
+
+MapTo('lyca-spa-react/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn});
+MapTo('lyca-spa-react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
+MapTo('lyca-spa-react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
+MapTo('lyca-spa-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
  MapTo(
     "lyca-spa-react/components/content/hero-carousel"
 )(HeroCarousel);
