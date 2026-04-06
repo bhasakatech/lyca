@@ -60,7 +60,6 @@ import Footer from "./Footer/Footer";
 import JoinLyca from "./JoinLyca/JoinLyca";
 import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 
 
