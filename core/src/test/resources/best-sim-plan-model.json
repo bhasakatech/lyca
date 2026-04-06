@@ -1,0 +1,11 @@
+{
+  "best-sim-plans": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "lyca-spa-react/components/content/best-sim-plans",
+    "heading": "Best SIM Plans",
+    "fragmentParentPath": "/content/dam/lyca/sim-plans",
+    "hideText": true,
+    "ctaLabel": "View Plans",
+    "ctaLink": "/content/lyca/us/en/plans"
+  }
+}

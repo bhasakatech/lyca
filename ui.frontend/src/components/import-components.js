@@ -15,12 +15,17 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
 
+
+
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
 import './JoinLyca/JoinLyca';
 
-import {MapTo} from '@adobe/aem-react-editable-components';
+import RecentBlogs from "./RecentBlogs/RecentBlogs";
+
+
+import { MapTo } from '@adobe/aem-react-editable-components';
 
 import LycaHelpComponent  from "./LycaHelpComponent/LycaHelpComponent";
 
@@ -35,37 +40,50 @@ import {
 import {
     ContainerV1, ContainerV1IsEmptyFn,
     TabsV1, TabsV1IsEmptyFn,
-    AccordionV1,AccordionV1IsEmptyFn,
+    AccordionV1, AccordionV1IsEmptyFn,
 } from '@adobe/aem-core-components-react-spa';
 
 
 
 import {
-    BreadCrumbV2,BreadCrumbV2IsEmptyFn,
-    ButtonV1,ButtonV1IsEmptyFn,
-    ImageV2,ImageV2IsEmptyFn,
+    BreadCrumbV2, BreadCrumbV2IsEmptyFn,
+    ButtonV1, ButtonV1IsEmptyFn,
+    ImageV2, ImageV2IsEmptyFn,
     LanguageNavigationV1,
     NavigationV1,
-    TeaserV1,TeaserV1IsEmptyFn,
-    DownloadV1,DownloadV1IsEmptyFn,
-    SeparatorV1,SeparatorV1IsEmptyFn,
-    ListV2,ListV2IsEmptyFn
+    TeaserV1, TeaserV1IsEmptyFn,
+    DownloadV1, DownloadV1IsEmptyFn,
+    SeparatorV1, SeparatorV1IsEmptyFn,
+    ListV2, ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+import LycaFeatureComponent from "./LycaFeatureComponent/LycaFeatureComponent";
 import Footer from "./Footer/Footer";
 
 import JoinLyca from "./JoinLyca/JoinLyca";
+import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
+
+
+
+
+
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
+
+import BestSimPlans from "./BestSimPlans/BestSimPlans";
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
-
+ 
 //lazyload / code splitting examples of external components
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
 
+MapTo('lyca-spa-react/components/lycafeaturecomponent')(LycaFeatureComponent);
 //custom component example by Bhaskar
 MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 
 MapTo("lyca-spa-react/components/footer")(Footer);
+
+MapTo("lyca-spa-react/components/lycaexclusiveoffers")(LycaExclusiveOffers);
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
@@ -75,21 +93,53 @@ MapTo('lyca-spa-react/components/button')(ButtonV1, {isEmpty: ButtonV1IsEmptyFn}
 MapTo('lyca-spa-react/components/teaser')(TeaserV1, {isEmpty: TeaserV1IsEmptyFn});
 MapTo('lyca-spa-react/components/image')(ImageV2, {isEmpty: ImageV2IsEmptyFn});
 MapTo('lyca-spa-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
+ MapTo(
+    "lyca-spa-react/components/content/hero-carousel"
+)(HeroCarousel);
 
 
-MapTo('lyca-spa-react/components/breadcrumb')(BreadCrumbV2, {isEmpty: BreadCrumbV2IsEmptyFn});
+MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
+
+
+MapTo('lyca-spa-react/components/recentBlogs')(RecentBlogs);
+
+MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
+MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
+MapTo('lyca-spa-react/components/separator')(SeparatorV1, { isEmpty: SeparatorV1IsEmptyFn });
+
+
+MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
+MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
+MapTo('lyca-spa-react/components/separator')(SeparatorV1, { isEmpty: SeparatorV1IsEmptyFn });
+
+
+MapTo('lyca-spa-react/components/button')(ButtonV1, { isEmpty: ButtonV1IsEmptyFn });
+MapTo('lyca-spa-react/components/teaser')(TeaserV1, { isEmpty: TeaserV1IsEmptyFn });
+MapTo('lyca-spa-react/components/image')(ImageV2, { isEmpty: ImageV2IsEmptyFn });
+MapTo('lyca-spa-react/components/title')(TitleV2, { isEmpty: TitleV2IsEmptyFn });
+
+
+
+MapTo('lyca-spa-react/components/button')(ButtonV1, { isEmpty: ButtonV1IsEmptyFn });
+MapTo('lyca-spa-react/components/teaser')(TeaserV1, { isEmpty: TeaserV1IsEmptyFn });
+MapTo('lyca-spa-react/components/image')(ImageV2, { isEmpty: ImageV2IsEmptyFn });
+MapTo('lyca-spa-react/components/title')(TitleV2, { isEmpty: TitleV2IsEmptyFn });
+
+
+
+MapTo('lyca-spa-react/components/breadcrumb')(BreadCrumbV2, { isEmpty: BreadCrumbV2IsEmptyFn });
 MapTo('lyca-spa-react/components/navigation')(NavigationV1);
 MapTo('lyca-spa-react/components/languagenavigation')(LanguageNavigationV1);
 
 
-MapTo('lyca-spa-react/components/tabs')(TabsV1, {isEmpty: TabsV1IsEmptyFn});
-MapTo('lyca-spa-react/components/accordion')(AccordionV1, {isEmpty: AccordionV1IsEmptyFn});
-MapTo('lyca-spa-react/components/carousel')(CarouselV1, {isEmpty: CarouselV1IsEmptyFn});
-MapTo('lyca-spa-react/components/container')(ContainerV1, {isEmpty: ContainerV1IsEmptyFn});
+MapTo('lyca-spa-react/components/tabs')(TabsV1, { isEmpty: TabsV1IsEmptyFn });
+MapTo('lyca-spa-react/components/accordion')(AccordionV1, { isEmpty: AccordionV1IsEmptyFn });
+MapTo('lyca-spa-react/components/carousel')(CarouselV1, { isEmpty: CarouselV1IsEmptyFn });
+MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1IsEmptyFn });
 
 MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
 
-//lazy load of internal component (hello world)
+//lazy load of internal component (hello world).
 
 /**
  * Default Edit configuration for the Text component that interact with the Core Text component and sub-types
@@ -103,6 +153,5 @@ const TextEditConfig = {
         return !props || !props.text || props.text.trim().length < 1;
     }
 };
-
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
 
