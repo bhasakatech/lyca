@@ -1,9 +1,4 @@
-/* NAVBAR */
 .spa-nav {
-  position: sticky; /* can switch to fixed if needed */
-  top: 0;
-  z-index: 9999;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
