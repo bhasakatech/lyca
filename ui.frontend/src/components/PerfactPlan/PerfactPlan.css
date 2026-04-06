@@ -9,34 +9,36 @@
   font-weight: 700;
   color: #0a2540;
   margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgb(73, 70, 70);
 }
 
-.questions-wrapper {
+.perfact-plan-questions-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  justify-content: center;
 }
 
-.question-card {
+.perfact-plan-question-card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 24px 24px 38px 24px;
+  padding: 24px;
   text-align: left;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 3px 5px 6px #888888;
   transition: transform 0.2s ease;
 }
 
-.question-card:hover {
+.perfact-plan-question-card:hover {
   transform: translateY(-4px);
 }
 
-.question-count {
+.perfact-plan-question-count {
   font-size: 14px;
   color: #6b7280;
   margin-bottom: 10px;
 }
 
-.question-text {
+.perfact-plan-question-text {
   font-size: 15px;
   font-weight: 600;
   color: #0a2540;
@@ -44,13 +46,15 @@
   line-height: 1.4;
 }
 
-.options {
+.options,
+.perfact-plan-options {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.option {
+.option,
+.perfact-plan-option {
   padding: 12px 16px;
   border: 1px solid #d1d5db;
   border-radius: 10px;
@@ -63,17 +67,20 @@
   transition: all 0.2s ease;
 }
 
-.option:hover {
+.option:hover,
+.perfact-plan-option:hover {
   border-color: #2563eb;
   background-color: #f0f6ff;
 }
 
-.option.active {
+.option.active,
+.perfact-plan-option.perfact-plan-active {
   border: 2px solid #2563eb;
   background-color: #eef5ff;
 }
 
-.check {
+.check,
+.perfact-plan-check {
   color: #22c55e;
   font-weight: bold;
   font-size: 16px;
@@ -153,7 +160,7 @@
   margin-bottom: 15px;
 }
 
-.perfact-plan-view-others:hover{
+.perfact-plan-view-others:hover {
   cursor: pointer;
   text-decoration: underline;
 }
@@ -162,10 +169,12 @@
   .perfact-plan-container {
     padding: 40px 70px;
   }
+
   .perfact-plan-main-heading {
     font-size: 23px;
   }
-  .questions-wrapper {
+
+  .perfact-plan-questions-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -174,5 +183,18 @@
   .perfact-plan-container {
     padding: 30px 40px;
     text-align: center;
+  }
+
+  .perfact-plan-main-heading {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 376px){
+.perfact-plan-main-heading {
+    font-size: 17px;
+    margin-bottom: 20px;
   }
 }
