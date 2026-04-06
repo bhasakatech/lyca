@@ -1,0 +1,23 @@
+{
+  "perfactPlan": {
+    "sling:resourceType": "lyca-spa-react/components/content/perfact-plan",
+    "heading": "Find Your Perfect Plan",
+    "perfectPlanQuestions": {
+      "item0": {
+        "question": "How much data do you use?",
+        "options": ["Light", "Moderate", "Heavy", "Unlimited"]
+      },
+      "item1": {
+        "question": "How much data do you use?"
+      },
+      "item2": {
+        "question": "How much data do you use?",
+        "options": ["A", "B", "C", "D", "E", "F"]
+      }
+    }
+  },
+  "perfactPlanEmpty": {
+    "sling:resourceType": "lyca-spa-react/components/content/perfact-plan",
+    "heading": "Empty Plan"
+  }
+}
