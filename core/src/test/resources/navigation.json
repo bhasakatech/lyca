@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "lyca-spa-react/components/content/navigation",
+
+    "root": "/content/site",
+
+    "navLogo": "/content/dam/lyca-spa-react/logo.png",
+    "buttonLabel": "Login",
+    "buttonLink": "/content/lyca-spa-react/us/en/login"
+  },
+
+  "site": {
+    "jcr:primaryType": "cq:Page",
+    "jcr:content": {
+      "jcr:primaryType": "cq:PageContent",
+      "jcr:title": "Home"
+    },
+
+    "page1": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:title": "Page 1"
+      }
+    },
+
+    "page2": {
+      "jcr:primaryType": "cq:Page",
+      "jcr:content": {
+        "jcr:primaryType": "cq:PageContent",
+        "jcr:title": "Page 2"
+      }
+    }
+  }
+}
