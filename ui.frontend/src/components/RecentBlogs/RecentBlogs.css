@@ -1,0 +1,141 @@
+.recent-blogs {
+  padding: 60px 20px; 
+  background-color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+
+  max-width: 1200px;  
+  margin: 0 auto;      
+}
+.recent-blogs__title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #0b2545;
+  text-transform: none;
+}
+
+.recent-blogs__cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  width: 100%;
+  max-width: 380px;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.blog-card:hover {
+  transform: translateY(-6px);
+}
+
+.blog-card__image {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.blog-card__image img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.blog-card__date {
+  position: absolute;
+  bottom: 4px;
+  left: 12px;
+  background: #3aaed883;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px 6px 0 0;
+  font-size: 13px;
+}
+
+.blog-card__content {
+  padding: 20px;
+}
+
+.blog-card__heading {
+  margin-bottom: 10px;
+  text-transform: none;
+}
+
+.blog-card__desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.blog-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog-card__readmore {
+  color: hsl(256, 76%, 44%);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.blog-card__readmore:hover {
+  text-decoration: underline;
+}
+
+.blog-card__author {
+  font-size: 13px;
+  color: #444;
+}
+
+@media (min-width: 1024px) {
+
+  .blog-card {
+    flex: 0 0 calc((100% - 60px) / 3); /* 3 cards */
+    max-width: calc((100% - 60px) / 3);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .recent-blogs {
+    padding: 50px 20px;
+  }
+
+  .blog-card {
+    flex: 0 0 calc((100% - 30px) / 2); /* 2 cards */
+    max-width: calc((100% - 30px) / 2);
+  }
+}
+
+@media (max-width: 767px) {
+
+  .recent-blogs {
+    padding: 40px 15px;
+  }
+
+  .recent-blogs__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .blog-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+} 
