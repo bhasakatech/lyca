@@ -9,7 +9,7 @@ const Navigation = (props) => {
         <nav className="spa-nav">
             <div className="nav-left">
                 {props.navLogo && (
-                    <img className="logo" src={props.navLogo} alt="logo" />
+                    <img className="nav-logo" src={props.navLogo} alt="logo" />
                 )}
                 <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
                     ☰
@@ -17,7 +17,7 @@ const Navigation = (props) => {
                 <ul className={`nav-list ${menuOpen ? 'active' : ''}`}>
                     {navItems.map((item, index) => (
                         <li key={index}>
-                            <Link to={item.link.url}  className={item.active ? 'active-link' : ''}>
+                            <Link to={item.link.url}  className={item.active ? 'nav-active-link' : ''}>
                                 {item.title}
                             </Link>
                         </li>
