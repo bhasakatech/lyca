@@ -6,10 +6,9 @@
   background-color: #002970;
   padding: 12px 20px;
 
-  position: relative; /* 👈 important for dropdown */
+  position: relative; 
 }
 
-/* LEFT SECTION */
 .nav-left {
   display: flex;
   gap: 60px;
@@ -21,7 +20,6 @@
   object-fit: contain;
 }
 
-/* DESKTOP NAV */
 .nav-list {
   list-style: none;
   display: flex;
@@ -43,7 +41,6 @@
   text-decoration: underline;
 }
 
-/* BUTTON */
 .quick-btn {
   background: #3AD37A;
   padding: 8px 14px;
