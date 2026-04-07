@@ -3,8 +3,6 @@
     jcr:primaryType="cq:Page">
     <jcr:content/>
     <pricing-plan-content-fragment-model/>
-<<<<<<< HEAD
-=======
-    <best-sim-plan-model/>
->>>>>>> 25e7843f34f09b1a6c4d4f38d4254c93b0d9b76d
+
+    <best-sim-plan-model/> 
 </jcr:root>

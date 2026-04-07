@@ -68,6 +68,7 @@ import PerfactPlan from "./PerfactPlan/PerfactPlan";
 
 
 import Navigation from "./SpaNavigation/Navigation";
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
