@@ -9,7 +9,6 @@
   font-weight: 700;
   color: #0a2540;
   margin-bottom: 30px;
-  text-shadow: 1px 1px 3px rgb(73, 70, 70);
 }
 
 .perfact-plan-questions-wrapper {
@@ -46,14 +45,12 @@
   line-height: 1.4;
 }
 
-.options,
 .perfact-plan-options {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.option,
 .perfact-plan-option {
   padding: 12px 16px;
   border: 1px solid #d1d5db;
@@ -67,19 +64,16 @@
   transition: all 0.2s ease;
 }
 
-.option:hover,
 .perfact-plan-option:hover {
   border-color: #2563eb;
   background-color: #f0f6ff;
 }
 
-.option.active,
 .perfact-plan-option.perfact-plan-active {
   border: 2px solid #2563eb;
   background-color: #eef5ff;
 }
 
-.check,
 .perfact-plan-check {
   color: #22c55e;
   font-weight: bold;
