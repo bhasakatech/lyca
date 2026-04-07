@@ -1,117 +1,96 @@
 import React, { useState } from "react";
 import "./PricePlan.css";
 
-const plansData = [
-  {
-    title: "Starter",
-    price: 5,
-    data: "5GB Monthly Plan",
-    features: [
-      "1000 UK minutes & texts",
-      "100 international minutes",
-      "Unlimited streaming on Vodafone",
-      "EU roaming included",
-      "5G ready"
-    ],
-    highlight: false
-  },
-  {
-    title: "Essential",
-    price: 10,
-    data: "30GB Monthly Plan",
-    features: [
-      "1000 UK minutes & texts",
-      "100 international minutes",
-      "Unlimited streaming on Vodafone",
-      "EU roaming included",
-      "5G ready",
-      "Rollover data"
-    ],
-    highlight: true
-  },
-  {
-    title: "Exclusive",
-    price: 15,
-    data: "50GB Monthly Plan",
-    features: [
-      "1000 UK minutes & texts",
-      "100 international minutes",
-      "Unlimited streaming on Vodafone",
-      "EU roaming included",
-      "5G ready",
-      "Rollover",
-      "Priority support"
-    ]
-  },
-  {
-    title: "Exclusive",
-    price: 15,
-    data: "85GB Monthly Plan",
-    features: [
-      "1000 UK minutes & texts",
-      "100 international minutes",
-      "Unlimited streaming on Vodafone",
-      "EU roaming included",
-      "5G ready",
-      "Rollover",
-      "Priority support"
-    ]
-  }
-];
-
 const PricePlan = (props) => {
   const [isYearly, setIsYearly] = useState(false);
-  console.log("PROPS DATA:", props);
+  const [showAll, setShowAll] = useState(false);
+
+  const plans = props.plans || [];
+
+  // Show only 4 initially
+  const visiblePlans = showAll ? plans : plans.slice(0, 4);
+
   return (
     <div className="pricing-container">
-      <h2>{props.pricePlanHeading}</h2>
-      
+      <h2>{props.pricePlanHeading || "Plans"}</h2>
+
       {/* Toggle */}
       <div className="toggle">
-        <span>{props.pricePlanMonthlyText}</span>
+        <span>{props.pricePlanMonthlyText || "Monthly"}</span>
+
         <label className="switch">
           <input
             type="checkbox"
-            onChange={() => setIsYearly(!isYearly)}
+            checked={isYearly}
+            onChange={() => setIsYearly(prev => !prev)}
           />
           <span className="slider"></span>
         </label>
-        <span>{props.pricePlanYearlyText}</span>
+
+        <span>{props.pricePlanYearlyText || "Yearly"}</span>
       </div>
 
       {/* Cards */}
       <div className="plans">
-        {plansData.map((plan, index) => (
+        {visiblePlans.map((plan, index) => (
           <div
-            key={index}
-            className={`card ${plan.highlight ? "highlight" : ""}`}
+            key={plan.planTitle || index}
+            className={`card ${plan.popular ? "highlight" : ""}`}
           >
-            {plan.highlight && <div className="badge">Popular Plan</div>}
+            {plan.popular && (
+              <div className="badge">Popular Plan</div>
+            )}
 
-            <h4>{plan.title}</h4>
+            <h4>{plan.planTitle}</h4>
+
             <h2>
-              ${isYearly ? plan.price * 10 : plan.price}
-              <span>{isYearly? "/year":"/Month"}</span>
+              ₹{isYearly ? plan.priceYearly : plan.priceMonthly}
+              <span>{isYearly ? "/year" : "/month"}</span>
             </h2>
-            <p>{plan.data}</p>
+
+            <p>{plan.dataLimit}</p>
 
             <ul>
-              {plan.features.map((f, i) => (
+              {plan.features?.map((f, i) => (
                 <li key={i}>✔ {f}</li>
               ))}
             </ul>
 
-            <button className="btn">
-              Choose Plan
-            </button>
+            <a
+              href={plan.ctaLink}
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {plan.ctaLabel || "Select Plan"}
+            </a>
           </div>
         ))}
       </div>
 
       {/* Bottom Buttons */}
       <div className="bottom-actions">
-        <button className="outline-btn" >{props.findPlanLabel}</button>
-        <button className="primary-btn">{props.allPlanLabel}</button>
+        {props.findPlanLink && (
+          <a href={props.findPlanLink} className="outline-btn">
+            {props.findPlanLabel || "Find a Plan"}
+          </a>
+        )}
+
+        {plans.length > 4 && (
+          <button
+            className="primary-btn"
+            onClick={() => {
+              setShowAll(prev => !prev);
+
+              // scroll up when collapsing
+              if (showAll) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+          >
+            {showAll ? "Show Less" : props.allPlanLabel || "All Plans"}
+          </button>
+        )}
       </div>
     </div>
   );

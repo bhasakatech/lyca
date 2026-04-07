@@ -1,5 +1,7 @@
 package com.adobe.aem.lyca.core.models.impl;
+import com.adobe.aem.lyca.core.models.PricePlan;
 import com.adobe.aem.lyca.core.models.PricePlanModel;
+import com.adobe.aem.lyca.core.services.PricePlanService;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
@@ -7,7 +9,11 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Exporter;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+
+import javax.inject.Inject;
+import java.util.List;
 
 @Model(
         adaptables = {SlingHttpServletRequest.class, Resource.class},
@@ -35,8 +41,10 @@ public class PricePlanModelImpl implements PricePlanModel {
     private String findPlanLink;
     @ValueMapValue
     private String allPlanLabel;
-    @ValueMapValue
-    private String allPlanLink;
+
+    @OSGiService
+    private PricePlanService pricePlanService;
+
     @Override
     public String getPricePlanHeading() {
         return pricePlanHeading;
@@ -66,9 +74,10 @@ public class PricePlanModelImpl implements PricePlanModel {
         return allPlanLabel;
     }
     @Override
-    public String getAllPlanLink() {
-        return allPlanLink;
+    public List<PricePlan> getPlans() {
+        return pricePlanService.getPricePlans(planCardsPath);
     }
+
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;

@@ -1,0 +1,16 @@
+{
+  "priceplan-valid": {
+    "planTitle": "Starter",
+    "priceMonthly": 5.0,
+    "priceYearly": 50.0,
+    "dataLimit": "5GB Monthly Plan",
+    "features": [
+      "1000 UK minutes & texts",
+      "100 international minutes",
+      "5G ready"
+    ],
+    "isPopular": false,
+    "ctaLabel": "Choose Plan",
+    "ctaLink": "/plans/starter"
+  }
+}

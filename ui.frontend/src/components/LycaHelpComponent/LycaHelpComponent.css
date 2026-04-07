@@ -1,0 +1,109 @@
+.help-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: white;
+  margin:0 auto; 
+  max-width:1200px; 
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.help-container h1 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.help-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:30px;
+}
+.help-item {
+  transition: transform 0.3s ease;
+  display:flex;
+  flex-direction:column;
+}
+.help-item:hover {
+  transform: translateY(-5px);
+}
+.help-item img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 15px;
+  
+}
+.help-item a{
+  align-self:flex-start;
+}
+.help-item p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 110%;
+    color: #0F172A;
+    align-self:flex-start;
+    text-align:center;
+}
+@media (max-width: 426px){
+  .help-icons {
+    grid-template-columns: repeat(2, 1fr);
+    align-self:center;
+    gap:0px;  
+  }
+  .help-container h1 {
+  text-align:center;
+  padding:10px;
+  align-self:center;
+}
+  .help-item p {
+        margin: 0 auto;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight:bold;
+        font-size: 12.2px;
+        line-height: 110%;
+        align-self:flex-start;
+        font-family:"Georgia", serif;
+    } 
+  .help-container{
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    text-align:center; 
+  }
+  .help-item a{
+    align-self:center;
+  }
+}
+@media(max-width:1023px) and (min-width:427px){
+  .help-icons {
+    max-width:425px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .help-container{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  .help-item p{
+    margin: 0 auto;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight:bold;
+    font-size: 15px;
+    line-height: 110%;
+    width:100%;
+    text-align:center;
+    font-family:"Georgia", serif;
+  }
+  .help-item a{
+    align-self:center;
+  }
+  .help-item{
+    margin-right:50px;
+    min-width:200px;
+  }
+}

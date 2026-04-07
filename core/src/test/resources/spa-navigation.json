@@ -1,0 +1,6 @@
+{
+  "navLogo": "/content/dam/lyca-spa-react/logo.png",
+  "buttonLabel": "Login",
+  "buttonLink": "/content/lyca-spa-react/us/en/login",
+  "sling:resourceType": "lyca-spa-react/components/content/navigation"
+}

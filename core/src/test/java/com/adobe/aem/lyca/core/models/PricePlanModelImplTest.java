@@ -49,7 +49,7 @@ class PricePlanModelImplTest {
     @Test
     void testAllPlan() {
         assertEquals("View All Plans", pricePlanModel.getAllPlanLabel());
-        assertEquals("/content/lyca/all-plans", pricePlanModel.getAllPlanLink());
+
     }
     @Test
     void testExportedType() {
@@ -68,7 +68,6 @@ class PricePlanModelImplTest {
         assertEquals("", model.getFindPlanLabel());
         assertEquals("", model.getFindPlanLink());
         assertEquals("", model.getAllPlanLabel());
-        assertEquals("", model.getAllPlanLink());
         assertEquals("lyca-spa-react/components/priceplan", model.getExportedType());
     }
     @Test
@@ -84,7 +83,6 @@ class PricePlanModelImplTest {
         assertNull(model.getFindPlanLabel());
         assertNull(model.getFindPlanLink());
         assertNull(model.getAllPlanLabel());
-        assertNull(model.getAllPlanLink());
         assertEquals("lyca-spa-react/components/priceplan", model.getExportedType());
     }
     @Test
@@ -98,7 +96,6 @@ class PricePlanModelImplTest {
         assertEquals("456", model.getPlanCardsPath());
         assertEquals("false", model.getAllPlanLabel());
         assertNull(model.getPricePlanYearlyText());
-        assertNull(model.getAllPlanLink());
         assertNull(model.getFindPlanLabel());
         assertNull(model.getFindPlanLink());
         assertEquals("lyca-spa-react/components/priceplan", model.getExportedType());

@@ -3,14 +3,14 @@
 /* ========================= */
 .pricing-container {
   text-align: center;
-  padding: 60px 20px;
+  padding: 60px 60px;
   font-family: Arial, sans-serif;
   background: #f5f7fb;
 }
 
 .pricing-container h2 {
   font-size: 28px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #222;
 }
 
@@ -25,10 +25,7 @@
   margin-bottom: 50px;
   font-size: 14px;
   color: #555;
-}
-
-.toggle span:first-child {
-  margin-right: -30px;
+  flex-wrap: wrap;
 }
 
 .switch {
@@ -36,6 +33,7 @@
   width: 50px;
   height: 25px;
   margin-right: 20px;
+  margin-left: -30px;
 }
 
 .switch input {
@@ -78,31 +76,12 @@
 .plans {
   display: grid;
   gap: 25px;
-  max-width: 1200px;
-  margin: auto;
-
+  max-width: 1300px;
+  margin: 0 auto;
   align-items: stretch;
-}
 
-/* Mobile: 1 card */
-@media (max-width: 767px) {
-  .plans {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Tablet: 2 cards */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .plans {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Laptop/Desktop: 4 cards */
-@media (min-width: 1024px) {
-  .plans {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  /* Mobile first */
+  grid-template-columns: 1fr;
 }
 
 /* ========================= */
@@ -116,15 +95,22 @@
   position: relative;
   transition: 0.3s;
 
-  display: flex;              /* ADD THIS */
+  display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  width: 70%;
+  max-width: 280px;   /* 🔥 controls card size */
+  margin: 0 auto;     /* 🔥 center cards */
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .card:hover {
   transform: translateY(-5px);
 }
 
-/* Highlight Card */
+/* Highlight */
 .card.highlight {
   background: #dce8f7;
   border: 2px solid #1e5bb8;
@@ -138,7 +124,7 @@
   transform: translateX(-50%);
   background: #1bbf83;
   color: white;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 12px;
 }
@@ -188,14 +174,25 @@
 /* BUTTON */
 /* ========================= */
 .btn {
-  width: 100%;
-  padding: 10px;
-  border-radius: 25px;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+
+  text-align: center;
+  text-decoration: none;
+
+  padding: 8px 12px;
+  border-radius: 20px;
+
   border: 1px solid #1e5bb8;
   background: white;
   color: #1e5bb8;
+
+  font-size: 13px;
+  font-weight: 500;
+
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 
   margin-top: auto;
 }
@@ -207,6 +204,7 @@
 
 .btn:hover {
   opacity: 0.9;
+  transform: translateY(-2px);
 }
 
 /* ========================= */
@@ -220,20 +218,87 @@
   flex-wrap: wrap;
 }
 
-.outline-btn {
-  padding: 10px 20px;
+.outline-btn{
+  padding: 12px 25px;
   border-radius: 25px;
-  border: 1px solid #1e5bb8;
-  background: transparent;
-  color: #1e5bb8;
   cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  width: 150px;
+  margin-right: 10px;
+}
+.primary-btn {
+  padding: 12px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  width: 200px;
+  margin-left: -10px;
+}
+
+.outline-btn {
+  border: 1px solid #aaa;
+  background: white;
+  color: #333;
 }
 
 .primary-btn {
-  padding: 10px 20px;
-  border-radius: 25px;
-  border: none;
   background: #1e5bb8;
   color: white;
-  cursor: pointer;
+  border: none;
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================= */
+/* DESKTOP */
+/* ========================= */
+@media (min-width: 1024px) {
+  .plans {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card {
+    max-width: 400px; /* 🔥 perfect desktop size */
+  }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+@media (max-width: 767px) {
+  .plans {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .pricing-container {
+    padding: 40px 20px;
+  }
+
+  .btn {
+    width: 70%;
+  }
+
+  .bottom-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .outline-btn {
+    width: 55%;
+    max-width: 260px;
+  }
+  .primary-btn {
+    width: 70%;
+    max-width: 260px;
+  }
+  
 }

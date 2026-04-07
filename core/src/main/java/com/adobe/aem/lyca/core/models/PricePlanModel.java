@@ -2,6 +2,8 @@ package com.adobe.aem.lyca.core.models;
 
 import com.adobe.cq.export.json.ComponentExporter;
 
+import java.util.List;
+
 public interface PricePlanModel extends ComponentExporter {
     String getPricePlanHeading();
     String getPricePlanMonthlyText();
@@ -10,5 +12,6 @@ public interface PricePlanModel extends ComponentExporter {
     String getFindPlanLabel();
     String getFindPlanLink();
     String getAllPlanLabel();
-    String getAllPlanLink();
+
+    List<PricePlan> getPlans();
 }
