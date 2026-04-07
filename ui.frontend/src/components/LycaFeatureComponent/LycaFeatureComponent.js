@@ -1,32 +1,17 @@
 import React from 'react';
 import './LycaFeature.css';
 
-// export const CustomEditConfig = {
-//   emptyLabel: "Lyca Feature Component",
-//   isEmpty: function (props) {
-//     return !props || !props.heading;
-//   }
-// };
-
 const LycaFeatureComponent = (props) => {
-
-  // if (CustomEditConfig.isEmpty(props)) {
-  //   return null;
-  // }
 
   return (
     
 
      <div className="feature-wrapper">
-      
-      
       <h1 className="main-heading">{props.heading}</h1>
 
-     
       <div className="cards-container">
-        {props.items.map((item, index) => (
+        {(props.items || []).map((item, index) => (
           <div key={index} className="card">
-            
             
             {item.icon && (
               <div className="icon-wrapper">

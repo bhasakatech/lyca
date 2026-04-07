@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2026-04-07T12:58:15.702+05:30"
+        cq:lastModifiedBy="admin"
+        cq:template="/conf/lyca-spa-react/settings/wcm/templates/lyca-template"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="lyca-spa-react/components/page">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/responsivegrid">
+            <container
+                jcr:created="{Date}2026-04-06T16:15:15.607+05:30"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2026-04-06T16:15:15.607+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="lyca-spa-react/components/container">
+                <experiencefragment
+                    jcr:created="{Date}2026-04-06T16:15:32.940+05:30"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2026-04-07T12:58:15.694+05:30"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="lyca-spa-react/components/experiencefragment"
+                    fragmentVariationPath="/content/experience-fragments/lyca-spa-react/us/en/site/header/master"/>
+            </container>
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
+            <experiencefragment-footer
+                jcr:lastModified="{Date}2026-03-31T18:28:11.351+05:30"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="lyca-spa-react/components/experiencefragment"
+                fragmentVariationPath="/content/experience-fragments/lyca-spa-react/us/en/site/lyca-footer-experience-fragment/master"/>
+        </root>
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}650"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+    </jcr:content>
+</jcr:root>

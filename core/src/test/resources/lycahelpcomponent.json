@@ -1,0 +1,15 @@
+{
+  "heading": "We are here to help you",
+  "helpingIcons": {
+    "item0": {
+      "icon": "/content/dam/icon1.png",
+      "iconLink": "https://example.com/1",
+      "iconHeading": "Prepaid plans FAQ"
+    },
+    "item1": {
+      "icon": "/content/dam/icon2.png",
+      "iconLink": "https://example.com/2",
+      "iconHeading": "Switch to Lyca"
+    }
+  }
+}
