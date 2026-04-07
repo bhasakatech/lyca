@@ -15,8 +15,6 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
 
-
-
 import './Page/Page';
 import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
@@ -66,6 +64,7 @@ import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
+import TopInformationalBannerText from "./TopInformationalBannerText/TopInformationalBannerText";
 import PerfactPlan from "./PerfactPlan/PerfactPlan";
 
 
@@ -100,6 +99,8 @@ MapTo('lyca-spa-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
  MapTo(
     "lyca-spa-react/components/content/hero-carousel"
 )(HeroCarousel);
+
+MapTo("lyca-spa-react/components/topInformationalBannerTextComponent")(TopInformationalBannerText);
 
 
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)

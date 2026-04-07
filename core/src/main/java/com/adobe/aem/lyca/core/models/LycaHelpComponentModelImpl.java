@@ -29,8 +29,6 @@ public class LycaHelpComponentModelImpl implements LycaHelpComponentModel {
     @ChildResource
     private List<HelperComponentsModel> helpingIcons;
 
-
-
     @Override
     public String getExportedType() {
         return LycaHelpComponentModelImpl.RESOURCE_TYPE;
