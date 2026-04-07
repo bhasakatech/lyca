@@ -51,7 +51,8 @@
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             fieldLabel="Logo Link"
-                                            name="./logoLink"/>
+                                            name="./logoLink"
+                                            rootPath="/content/dam/lyca-spa-react"/>
                                         <countryName
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
