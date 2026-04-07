@@ -61,7 +61,6 @@ import JoinLyca from "./JoinLyca/JoinLyca";
 import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 
 
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
 import TopInformationalBannerText from "./TopInformationalBannerText/TopInformationalBannerText";
