@@ -50,7 +50,6 @@ import {
 
 
 
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
 
