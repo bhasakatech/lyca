@@ -1,0 +1,38 @@
+{
+  "joinLyca": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "lyca-spa-react/components/joinLyca",
+
+    "title": "Join Lyca",
+    "description": "Join description",
+    "heading": "Main Heading",
+    "placeholder": "Enter number",
+    "submitText": "Submit",
+    "submitLink": "/submit-link",
+    "promotionText": "Promo Text",
+
+    "ctaItems": {
+      "item1": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": "CTA Item 1"
+      },
+      "item2": {
+        "jcr:primaryType": "nt:unstructured",
+        "text": "CTA Item 2"
+      }
+    },
+
+    "ctas": {
+      "cta1": {
+        "jcr:primaryType": "nt:unstructured",
+        "label": "Button 1",
+        "link": "/link1"
+      },
+      "cta2": {
+        "jcr:primaryType": "nt:unstructured",
+        "label": "Button 2",
+        "link": "/link2"
+      }
+    }
+  }
+}
