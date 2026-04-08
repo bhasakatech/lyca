@@ -14,10 +14,20 @@ const HeroCarousel = ({ slides = [] }) => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  if (!slides.length) {
-    return <div>No Slides Available</div>;
-  }
-
+if (!slides.length) {
+  return (
+    <div
+      className="cq-placeholder hero-carousel hero-carousel__placeholder"
+      data-emptytext="Hero Carousel - Please add slides"
+    >
+      <div className="hero-carousel__placeholder-box">
+        <h3>Hero Carousel</h3>
+        <p>No slides added yet.</p>
+        <p>Please open the dialog and add slide details.</p>
+      </div>
+    </div>
+  );
+}
   const nextSlide = () => {
     setIndex((prev) => (prev + 1) % slides.length);
   };
