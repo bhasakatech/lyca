@@ -80,8 +80,9 @@
 
 .hero-banner_title {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 58px;
-  /* Reduced from 58px */
+  font-size: clamp(28px, calc(58px - (var(--title-len) - 15) * 1px), 58px);
+  word-wrap: break-word;
+  hyphens: auto;
   font-weight: 700;
   margin-bottom: 24px;
   line-height: 1.1;
@@ -99,7 +100,9 @@
   padding: 20px 68px;
   font-weight: 800;
   margin-bottom: 10px;
-  font-size: 20px;
+  font-size: clamp(14px, calc(20px - (var(--tagline-len) - 30) * 0.2px), 20px);
+  word-wrap: break-word;
+  white-space: normal;
   font-family: Arial, sans-serif;
   box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
   z-index: 2;
@@ -323,12 +326,16 @@
     height: 340px;
   }
 
-  .hero-banner_title {
-    font-size: 18px;
+  .hero-container {
+    gap: 30px;
+  }
+
+  .hero-image img {
+    max-width: 250px;
   }
 
   .hero-banner_title {
-    font-size: 38px;
+    font-size: clamp(20px, calc(38px - (var(--title-len) - 15) * 0.7px), 38px);
     margin-bottom: 20px;
   }
 
@@ -342,7 +349,7 @@
   }
 
   .hero-banner_tagline {
-    font-size: 16px;
+    font-size: clamp(12px, calc(16px - (var(--tagline-len) - 30) * 0.2px), 16px);
     padding: 14px 40px;
     margin-bottom: 20px;
   }
@@ -373,32 +380,37 @@
 
 @media (max-width: 600px) {
   .hero-carousel {
-    padding: 20px 20px;
-    height: 200px;
+    padding: 15px 15px;
+    height: 180px;
+  }
+
+  .hero-container {
+    gap: 8px;
   }
 
   .hero-content {
-    flex: 0 1 55%;
-    max-width: 55%;
+    flex: 1;
+    min-width: 0;
   }
 
   .hero-banner_pretitle {
-    font-size: 14px;
+    font-size: 11px;
     margin-bottom: 1px;
   }
 
   .hero-banner_title {
+    font-size: clamp(12px, calc(18px - (var(--title-len) - 15) * 0.4px), 18px);
+    margin-bottom: 6px;
+    line-height: 1.1;
+  }
+
+  .hero-banner_price {
     font-size: 24px;
     margin-bottom: 10px;
   }
 
-  .hero-banner_price {
-    font-size: 34px;
-    margin-bottom: 15px;
-  }
-
   .hero-banner_price span {
-    font-size: 14px;
+    font-size: 11px;
   }
 
 
@@ -407,21 +419,27 @@
   clip-path: ellipse(100% 70% at 110% 60%);
 }
 
-.hero-image img {
-  width: 100%;
-  max-width: 280px;
-  height: auto;
-  object-fit: contain;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-}
+  .hero-image {
+    flex: 0 0 110px;
+    max-width: 110px;
+    justify-content: flex-end;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
 
   .hero-banner_tagline {
-    font-size: 11px;
-    padding: 10px 24px;
+    font-size: clamp(8px, calc(10px - (var(--tagline-len) - 30) * 0.1px), 10px);
+    padding: 8px 18px;
     margin-bottom: 5px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .hero-banner_tagline::before,
@@ -443,23 +461,74 @@
   }
 
   .hero-banner_cta-btn {
-    padding: 12px 24px;
-    font-size: 12px;
+    padding: 8px 16px;
+    font-size: 10px;
   }
 
   .navigation-container {
-    bottom: 10px;
-    right: 20px;
-    padding: 4px 12px;
+    bottom: 8px;
+    right: 12px;
+    padding: 3px 10px;
   }
 
   .nav {
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
   }
 
   .pagination {
-    font-size: 12px;
+    font-size: 11px;
+  }
+}
+.hero-carousel__placeholder {
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6f8;
+  border: 2px dashed #b7c1cc;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.hero-carousel__placeholder-box {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.hero-carousel__placeholder-box h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.hero-carousel__placeholder-box p {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .hero-carousel__placeholder {
+    min-height: 180px;
+    padding: 12px;
+  }
+
+  .hero-carousel__placeholder-box {
+    padding: 12px;
+  }
+
+  .hero-carousel__placeholder-box h3 {
+    font-size: 18px;
+  }
+
+  .hero-carousel__placeholder-box p {
+    font-size: 13px;
   }
 }
