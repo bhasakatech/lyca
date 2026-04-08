@@ -7,69 +7,36 @@ const BestSimPlans = ({
   hideText,
   ctaLabel,
   ctaLink,
+  plans
 }) => {
   const [hideCommon, setHideCommon] = useState(false);
   const [viewMode, setViewMode] = useState("table");
-  const [activeProvider, setActiveProvider] = useState("LYCA");
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
   const tableWrapperRef = useRef(null);
 
-  // State for pixel-perfect sliding highlighter
-  const [sliderStyle, setSliderStyle] = useState({ left: 0, width: 0 });
-  const activeColRef = useRef(null);
-
   const displayHeading = heading || "SEARCHING FOR THE BEST SIM ONLY DEAL?";
   const displayCtaLabel = ctaLabel || "Add More SIM";
 
-  const providers = [
-    { id: 'LYCA', name: 'LYCA', price: '$5', data: '5GB', minutes: '1000', texts: '1000', contract: 'Not Contract', priceRise: 'NO', roaming: 'Yes' },
-    { id: 'EE', name: 'EE', price: '$27', data: '5GB', minutes: 'Unlimited', texts: 'Unlimited', contract: 'Not Contract', priceRise: 'NO', roaming: 'NO' },
-    { id: 'O2', name: 'O2', price: '$22', data: '3GB', minutes: 'Unlimited', texts: 'Unlimited', contract: '1 Month', priceRise: 'Yes', roaming: 'NO' },
-    { id: 'Three', name: 'Three', price: '$22', data: '12GB', minutes: 'Unlimited', texts: 'Unlimited', contract: '1 Month', priceRise: 'Yes', roaming: 'NO' },
-    { id: 'Giffgaff', name: 'Giffgaff', price: '$6', data: '2GB', minutes: 'Unlimited', texts: 'Unlimited', contract: 'No Contract', priceRise: 'Yes', roaming: 'Yes' },
-    { id: 'O3', name: 'O2', price: '$22', data: '3GB', minutes: 'Unlimited', texts: 'Unlimited', contract: '1 Month', priceRise: 'Yes', roaming: 'NO' },
-    { id: 'Threee', name: 'Three', price: '$22', data: '12GB', minutes: 'Unlimited', texts: 'Unlimited', contract: '1 Month', priceRise: 'Yes', roaming: 'NO' },
-    { id: 'Giffgafff', name: 'Giffgaff', price: '$6', data: '2GB', minutes: 'Unlimited', texts: 'Unlimited', contract: 'No Contract', priceRise: 'Yes', roaming: 'Yes' },
-    { id: 'O4', name: 'O2', price: '$22', data: '3GB', minutes: 'Unlimited', texts: 'Unlimited', contract: '1 Month', priceRise: 'Yes', roaming: 'NO' },
-    { id: 'Threeee', name: 'Three', price: '$22', data: '12GB', minutes: 'Unlimited', texts: 'Unlimited', contract: '1 Month', priceRise: 'Yes', roaming: 'NO' },
-    { id: 'Giffgaffff', name: 'Giffgaff', price: '$6', data: '2GB', minutes: 'Unlimited', texts: 'Unlimited', contract: 'No Contract', priceRise: 'Yes', roaming: 'Yes' }
-  ];
 
   const features = [
-    { key: 'price', label: '£ Monthly Cost' },
+    { key: 'monthlyCost', label: '£ Monthly Cost' },
     { key: 'data', label: 'Data', icon: '📊' },
     { key: 'minutes', label: 'Minutes', icon: '📞', isCommonCheck: 'Unlimited' },
     { key: 'texts', label: 'Texts', icon: '💬', isCommonCheck: 'Unlimited' },
     { key: 'contract', label: 'Contract', icon: '📄' },
-    { key: 'priceRise', label: 'Annual Price Rise', icon: '⬆' },
-    { key: 'roaming', label: 'Free EU Roaming', icon: '🌍' }
+    { key: 'annualPriceRise', label: 'Annual Price Rise', icon: '⬆' },
+    { key: 'freeEuRoaming', label: 'Free EU Roaming', icon: '🌍' }
   ];
 
   const visibleFeatures = features.filter(f => !(hideCommon && f.isCommonCheck));
 
   useEffect(() => {
-    const updateSlider = () => {
-      if (activeColRef.current && viewMode === "table") {
-        setSliderStyle({
-          left: activeColRef.current.offsetLeft,
-          width: activeColRef.current.offsetWidth
-        });
-      }
-    };
-
-    setTimeout(updateSlider, 10);
-    window.addEventListener("resize", updateSlider);
-
-    return () => window.removeEventListener("resize", updateSlider);
-  }, [activeProvider, viewMode, hideCommon]);
-
-  useEffect(() => {
     const checkScrollState = () => {
       if (tableWrapperRef.current && viewMode === "table") {
         const { scrollLeft, scrollWidth, clientWidth } = tableWrapperRef.current;
-        setCanScrollLeft(scrollLeft > 5);
-        setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 5);
+        setCanScrollLeft(Math.ceil(scrollLeft) > 5);
+        setCanScrollRight(Math.ceil(scrollLeft) + clientWidth < scrollWidth - 5);
       }
     };
     checkScrollState();
@@ -79,20 +46,21 @@ const BestSimPlans = ({
       clearTimeout(timer);
       window.removeEventListener("resize", checkScrollState);
     };
-  }, [viewMode, hideCommon, activeProvider]);
+  }, [viewMode, hideCommon]);
 
   const handleTableScroll = () => {
     if (tableWrapperRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = tableWrapperRef.current;
-      setCanScrollLeft(scrollLeft > 5);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 5);
+      setCanScrollLeft(Math.ceil(scrollLeft) > 5);
+      setCanScrollRight(Math.ceil(scrollLeft) + clientWidth < scrollWidth - 5);
     }
   };
 
   const scrollTable = (direction) => {
     if (tableWrapperRef.current) {
-      const scrollAmount = direction === "right" ? 160 : -160;
-      tableWrapperRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const providerCol = tableWrapperRef.current.querySelector('.provider-col');
+      const scrollAmount = providerCol ? providerCol.offsetWidth : 160;
+      tableWrapperRef.current.scrollBy({ left: direction === "right" ? scrollAmount : -scrollAmount, behavior: 'smooth' });
     }
   };
 
@@ -128,13 +96,7 @@ const BestSimPlans = ({
             <div className="best-sim-plans__table-wrapper" onScroll={handleTableScroll} ref={tableWrapperRef}>
               <div className="table-scroll-container">
 
-                <div
-                  className="column-highlighter"
-                  style={{
-                    left: `${sliderStyle.left}px`,
-                    width: `${sliderStyle.width}px`
-                  }}
-                />
+
 
                 <table className="best-sim-plans__table">
                   <thead>
@@ -156,19 +118,11 @@ const BestSimPlans = ({
                           </button>
                         </div>
                       </th>
-                      {providers.map(p => {
-                        const isActive = activeProvider === p.id;
-                        return (
-                          <th
-                            key={p.id}
-                            ref={isActive ? activeColRef : null}
-                            className={`provider-col ${isActive ? 'is-active' : ''}`}
-                            onClick={() => setActiveProvider(p.id)}
-                          >
-                            {p.name}
-                          </th>
-                        )
-                      })}
+                      {plans.map(p => (
+                        <th key={p.id} className="provider-col">
+                          {p.name}
+                        </th>
+                      ))}
                     </tr>
                   </thead>
                   <tbody>
@@ -178,27 +132,14 @@ const BestSimPlans = ({
                           {feat.icon && <span className="feature-col-icon" role="img" aria-hidden="true">{feat.icon}</span>}
                           {feat.label}
                         </td>
-                        {providers.map(p => {
-                          const isActive = activeProvider === p.id;
-                          let cellClass = `provider-col cell-interactive ${isActive ? 'is-active' : ''}`;
-
-                          if (feat.key === 'price') {
-                            cellClass += isActive ? ' val-highlight-blue' : ' val-bold-blue';
-                          }
-                          if (feat.key === 'data') {
-                            cellClass += isActive ? ' val-large-data' : '';
-                          }
-
-                          return (
-                            <td
-                              key={`${p.id}-${feat.key}`}
-                              className={cellClass}
-                              onClick={() => setActiveProvider(p.id)}
-                            >
-                              {p[feat.key]}
-                            </td>
-                          );
-                        })}
+                        {plans.map(p => (
+                          <td
+                            key={`${p.id}-${feat.key}`}
+                            className={`provider-col ${feat.key === 'monthlyCost' ? 'val-bold-blue' : ''}`}
+                          >
+                            {p[feat.key]}
+                          </td>
+                        ))}
                       </tr>
                     ))}
                   </tbody>
@@ -225,34 +166,26 @@ const BestSimPlans = ({
               </button>
             </div>
             <div className="best-sim-plans__cards-grid">
-              {providers.map(p => {
-                const isActive = activeProvider === p.id;
-                return (
-                  <div
-                    key={p.id}
-                    className={`provider-card ${isActive ? 'is-active' : ''}`}
-                    onClick={() => setActiveProvider(p.id)}
-                  >
-                    <div className="provider-card__header">
-                      <h3>{p.name}</h3>
-                    </div>
-                    <div className="provider-card__body">
-                      {visibleFeatures.map(feat => (
-                        <div className="provider-card__row" key={feat.key}>
-                          <span className="provider-card__row-label">
-                            {feat.icon && <span className="card-icon">{feat.icon}</span>}
-                            {feat.label}
-                          </span>
-                          <span className={`provider-card__row-value ${feat.key === 'price' ? 'large-price' : ''} ${feat.key === 'data' ? 'bold-data' : ''}`}>
-                            {p[feat.key]}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                    {isActive && <div className="provider-card__active-badge"><span role="img" aria-label="check">✅</span> Selected</div>}
+              {plans.map(p => (
+                <div key={p.id} className="provider-card">
+                  <div className="provider-card__header">
+                    <h3>{p.name}</h3>
                   </div>
-                );
-              })}
+                  <div className="provider-card__body">
+                    {visibleFeatures.map(feat => (
+                      <div className="provider-card__row" key={feat.key}>
+                        <span className="provider-card__row-label">
+                          {feat.icon && <span className="card-icon">{feat.icon}</span>}
+                          {feat.label}
+                        </span>
+                        <span className={`provider-card__row-value ${feat.key === 'monthlyCost' ? 'large-price' : ''} ${feat.key === 'data' ? 'bold-data' : ''}`}>
+                          {p[feat.key]}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
@@ -275,11 +208,11 @@ const BestSimPlans = ({
         </div>
       </div>
 
-      {fragmentParentPath && (
+      {/* {fragmentParentPath && (
         <div className="best-sim-plans__meta">
           <small>Fragment Path: {fragmentParentPath}</small>
         </div>
-      )}
+      )} */}
     </section>
   );
 };

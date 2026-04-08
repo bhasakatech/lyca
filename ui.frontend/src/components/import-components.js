@@ -14,7 +14,7 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
-
+import LycaMobileAppComponent from "./LycaMobileAppComponent/LycaMobileAppComponent";
 
 
 import './Page/Page';
@@ -56,6 +56,8 @@ import {
     SeparatorV1, SeparatorV1IsEmptyFn,
     ListV2, ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+import LycaWorldWide from "./LycaWorldWide/LycaWorldWide";
+
 import LycaFeatureComponent from "./LycaFeatureComponent/LycaFeatureComponent";
 import Footer from "./Footer/Footer";
 
@@ -64,12 +66,13 @@ import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 
 
 
-
-
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
-
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
+import TopInformationalBannerText from "./TopInformationalBannerText/TopInformationalBannerText";
+import PerfactPlan from "./PerfactPlan/PerfactPlan";
 
+
+import Navigation from "./SpaNavigation/Navigation";
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
@@ -77,6 +80,7 @@ const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
 
+MapTo("lyca-spa-react/components/content/navigation")(Navigation);
 MapTo('lyca-spa-react/components/lycafeaturecomponent')(LycaFeatureComponent);
 //custom component example by Bhaskar
 MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
@@ -84,6 +88,8 @@ MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 MapTo("lyca-spa-react/components/footer")(Footer);
 
 MapTo("lyca-spa-react/components/lycaexclusiveoffers")(LycaExclusiveOffers);
+
+MapTo("lyca-spa-react/components/content/perfact-plan")(PerfactPlan);
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, {isEmpty: DownloadV1IsEmptyFn});
 MapTo('lyca-spa-react/components/list')(ListV2, {isEmpty: ListV2IsEmptyFn});
@@ -96,6 +102,8 @@ MapTo('lyca-spa-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
  MapTo(
     "lyca-spa-react/components/content/hero-carousel"
 )(HeroCarousel);
+
+MapTo("lyca-spa-react/components/topInformationalBannerTextComponent")(TopInformationalBannerText);
 
 
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
@@ -139,6 +147,8 @@ MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1
 
 MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
 
+MapTo('lyca-spa-react/components/lycamobileappcomponent')(LycaMobileAppComponent);
+
 //lazy load of internal component (hello world).
 
 /**
@@ -154,4 +164,5 @@ const TextEditConfig = {
     }
 };
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
+MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
 
