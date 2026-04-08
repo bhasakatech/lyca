@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root 
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Pricing Plans"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- Heading -->
+            <pricePlanHeading
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Heading"
+                name="./pricePlanHeading"/>
+
+            <!-- Monthly Text -->
+            <pricePlanMonthlyText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Monthly Text"
+                name="./pricePlanMonthlyText"/>
+
+            <!-- Yearly Text -->
+            <pricePlanYearlyText
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Yearly Text"
+                name="./pricePlanYearlyText"/>
+
+            <!-- Plan Cards Path -->
+            <planCardsPath
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Plan Cards Content Fragment Folder Path"
+                name="./planCardsPath"
+                rootPath="/content/dam/lyca-spa-react"/>
+
+            <!-- Find Plan Label -->
+            <findPlanLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="Find Plan Label"
+                name="./findPlanLabel"/>
+
+            <!-- Find Plan Link -->
+            <findPlanLink
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                fieldLabel="Find Plan Link"
+                name="./findPlanLink"
+                rootPath="/content/dam/lyca-spa-react"/>
+
+            <!-- All Plan Label -->
+            <allPlanLabel
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                fieldLabel="All Plan Label"
+                name="./allPlanLabel"/>
+
+        </items>
+    </content>
+</jcr:root>
