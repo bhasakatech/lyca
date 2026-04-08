@@ -70,7 +70,8 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                 fieldLabel="CTA Link"
-                                name="./ctaLink"/>
+                                name="./ctaLink"
+                                rootPath="/content/dam/lyca-spa-react"/>
                         </items>
                     </general>
                 </items>
