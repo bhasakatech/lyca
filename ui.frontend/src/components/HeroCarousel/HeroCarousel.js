@@ -10,7 +10,7 @@ const HeroCarousel = ({ slides = [] }) => {
     if (slides.length <= 1) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 10000);
+    }, 100000);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -51,7 +51,10 @@ const HeroCarousel = ({ slides = [] }) => {
       <div className="hero-container">
 
       
-        <div className="hero-content">
+        <div className="hero-content" style={{ 
+          '--title-len': slide.title ? slide.title.length : 1,
+          '--tagline-len': slide.subtitle ? slide.subtitle.length : 1
+        }}>
           <p className="hero-banner_pretitle">{slide.preTitle}</p>
 
           <h1 className="hero-banner_title">{slide.title}</h1>
