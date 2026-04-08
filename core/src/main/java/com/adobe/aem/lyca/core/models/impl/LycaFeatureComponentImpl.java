@@ -1,4 +1,4 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
@@ -26,15 +26,15 @@ public class LycaFeatureComponentImpl implements LycaFeatureComponent {
     public static final String RESOURCE_TYPE="lyca-spa-react/components/lycafeaturecomponent";
 
     @ValueMapValue
-    private String heading;
+    private String mainHeadingOfLycaFeature;
 
-    @ChildResource(name = "features")
+    @ChildResource(name = "lycaFeatureCards")
     private List<FeatureItem> items;
 
 
     @Override
     public String getHeading() {
-        return heading;
+        return mainHeadingOfLycaFeature;
     }
 
     @Override

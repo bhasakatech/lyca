@@ -1,0 +1,219 @@
+.app-component{
+    padding: 60px ;
+    padding-bottom:35px;
+    background-color:blue;
+    display:flex;
+    justify-content:center;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif ! important;
+}
+.app-component > div:first-child {
+  width: 50%;
+}
+.left-section{
+    gap:20px;
+}
+.lyca-mobile-app-text{
+    color:white;
+    letter-spacing:normal;
+    font-weight:700;
+    font-size:37px;
+    text-transform:none;
+    text-align:left;
+    width:450px;
+    line-height: 150%;
+}
+.lyca-mobile-app-features {
+  list-style: none;
+  padding-left: 0;
+  margin-top:26px;
+  margin-bottom:26px;
+}
+
+.lyca-mobile-app-features li {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left:26px;
+  font-size:18px;
+}
+
+.lyca-mobile-app-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: rgb(71, 222, 71);
+}
+.lyca-mobile-app-appStore{
+    display:flex;
+}
+.lyca-mobile-app-store-icons{
+    height:45px;
+    margin-right:15px;
+}
+
+.right-section{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding-bottom:20px;
+}
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right:40px;
+}
+
+.qr-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.qr-box {
+  background-color:white;
+  padding-top: 15px;
+  padding-left:15px;
+  padding-right:15px;
+  border-radius: 12px;
+}
+
+.qr-box img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain; 
+}
+.lyca-mobile-Image{
+    max-height:420px;
+}
+
+@media(max-width:768px){
+    .app-component{
+    padding:40px;
+    padding-bottom:45px;
+    padding-top:60px;
+    background-color:blue;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:white;
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif ! important;
+}
+.app-component > div:first-child {
+  width: 100%;
+  text-align:center;
+  align-self:center;
+}
+.lyca-mobile-app-text{
+    color:white;
+    letter-spacing:normal;
+    font-weight:600;
+    font-size:26px;
+     width: 45%;
+    margin-bottom:20px;
+   text-align: center;
+   margin:auto;
+}
+.lyca-mobile-app-features {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top:26px;
+  margin-bottom:30px;
+  text-align:center;
+  width:100%;
+}
+
+.lyca-mobile-app-features li {
+  margin-bottom: 20px;
+  font-size:16px;
+}
+.lyca-mobile-app-features li::before {
+ content:none;
+}
+.lyca-mobile-app-store-icons{
+    margin-right:10px;
+    height:45px;
+}
+.lyca-mobile-app-appStore{
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
+    margin-left:30px;
+}
+.right-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  order:1;
+}
+ .lyca-mobile-Image{
+    max-height:420px;
+    margin-bottom:25px;
+    order:0;
+}
+
+}
+@media(max-width:426px){
+.app-component{
+    padding:26px;
+    padding-bottom:35px;
+    padding-top:55px;
+    background-color:blue;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    color:white;
+}
+.lyca-mobile-app-text{
+    color:white;
+    text-align:center;
+    width:80%;
+}
+ 
+.lyca-mobile-app-features li {
+  margin-bottom: 20px;
+  font-size:16px;
+  padding-left:0px;
+  width:100%;
+  line-height:130%;
+}
+}
+@media(max-width:376px){
+    .app-component{
+    padding:25px;
+    padding-bottom:35px;
+    padding-top:55px;
+}
+    .lyca-mobile-app-text{
+    color:white;
+    text-align:center;
+    width:90%;
+}
+.lyca-mobile-app-appStore{
+    margin:auto;
+}
+
+}
+@media(max-width:321px){
+    .app-component{
+    padding:6px;
+    padding-top:45px;
+    padding-bottom:35px;
+}
+.lyca-mobile-app-store-icons{
+    margin-right:10px;
+    height:45px;
+    margin-left:0px;
+    width:95%;
+}
+.lyca-mobile-app-appStore{
+    margin:auto;
+}
+}
