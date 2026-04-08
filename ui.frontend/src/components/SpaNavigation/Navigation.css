@@ -4,9 +4,24 @@
   align-items: center;
 
   background-color: #002970;
-  padding: 12px 20px;
+  padding: 15px 20px;
 
-  position: relative; 
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 9999;
+  transition: padding 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.spa-nav.scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 41, 112, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 12px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .nav-left {
@@ -23,32 +38,35 @@
 .nav-list {
   list-style: none;
   display: flex;
+  margin: 0;
   gap: 28px;
 }
 
 .nav-list li a {
-  position: relative;
   text-decoration: none;
   color: #ffffff;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-list li a::after {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
-  bottom: -2px;
   width: 0;
   height: 2px;
-  background-color: #ffffff;
-  transition: width 0.8s ease;
+  bottom: -4px;
+  left: 0;
+  background-color: #3AD37A;
+  transition: width 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #3AD37A;
+  cursor: pointer;
 }
 
 .nav-list li a:hover::after {
   width: 100%;
-}
-
-.nav-list li a:hover {
-  cursor: pointer;
 }
 
 .active-link {
@@ -58,11 +76,18 @@
 
 .quick-btn {
   background: #3AD37A;
-  padding: 8px 14px;
-  border-radius: 18px;
-  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
   font-weight: bold;
   border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quick-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(58, 211, 122, 0.4);
 }
 
 .nav-btn {
@@ -86,7 +111,6 @@
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
-
   .hamburger {
     display: block;
   }
@@ -95,24 +119,36 @@
     background-color: #0f3cc9;
   }
 
+  /* MOBILE MENU */
   .nav-list {
-    position: absolute;
-    top: 70%;
-    left: 0;
-    width: calc(100% - 40px);
-    flex-direction: column;
-    background-color: #0f3cc9;
-    padding: 0 20px;
-    max-height: 0;        
-    overflow: hidden;     
+    display: flex;
+    visibility: hidden;
     opacity: 0;
-    transition: max-height 1s ease, opacity 0.8s ease;
+    transform: perspective(600px) rotateX(-20deg) translateY(-10px);
+    transform-origin: top center;
+
+    position: absolute;   
+    top: 100%;          
+    left: 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    background-color: rgba(15, 60, 201, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
   }
 
   .nav-list.active {
-    max-height: 300px;     
+    visibility: visible;
     opacity: 1;
-    padding: 15px 20px;
+    transform: perspective(600px) rotateX(0deg) translateY(0);
+    gap: 15px;
   }
 
   .nav-list li a {
