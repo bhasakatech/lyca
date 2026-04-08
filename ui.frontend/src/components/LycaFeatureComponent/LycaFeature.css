@@ -1,6 +1,3 @@
-body {
-  overflow-x: hidden;
-}
 .feature-wrapper {
   padding:60px 40px;
   background-color: #f5f7fa;
@@ -13,7 +10,7 @@ body {
   position: relative;
   margin-left: calc(-50vw + 50%);
   width: 100vw;
-  
+  overflow-x: hidden;
 }
 .main-heading {
   font-size: 30px;
