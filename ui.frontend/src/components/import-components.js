@@ -54,6 +54,8 @@ import {
     SeparatorV1, SeparatorV1IsEmptyFn,
     ListV2, ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+import LycaWorldWide from "./LycaWorldWide/LycaWorldWide";
+
 import LycaFeatureComponent from "./LycaFeatureComponent/LycaFeatureComponent";
 import Footer from "./Footer/Footer";
 
@@ -158,4 +160,5 @@ const TextEditConfig = {
     }
 };
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
+MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
 
