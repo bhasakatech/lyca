@@ -20,7 +20,7 @@
   margin-bottom: 50px;
   font-family:'Poppins', sans-serif;
    letter-spacing: 0px;
-   text-transform: none;   
+   text-transform: none;  
 }
 .cards-container {
   
@@ -28,7 +28,7 @@
   gap: 15px;
   flex-wrap: wrap;
   justify-content: space-around;
-  
+  margin:auto;
   
 }
 .card {
@@ -87,6 +87,7 @@
     gap:20px;
     justify-content:space-around;
     padding:15px;
+    margin:auto;
   }
   .card{
     padding:20px;
