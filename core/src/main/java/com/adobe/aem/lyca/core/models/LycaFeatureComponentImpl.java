@@ -28,7 +28,7 @@ public class LycaFeatureComponentImpl implements LycaFeatureComponent {
     @ValueMapValue
     private String heading;
 
-    @ChildResource(name = "features")
+    @ChildResource(name = "lycaFeatureCards")
     private List<FeatureItem> items;
 
 

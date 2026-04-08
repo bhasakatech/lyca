@@ -14,7 +14,7 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
-
+import LycaMobileAppComponent from "./LycaMobileAppComponent/LycaMobileAppComponent";
 
 
 import './Page/Page';
@@ -142,6 +142,8 @@ MapTo('lyca-spa-react/components/carousel')(CarouselV1, { isEmpty: CarouselV1IsE
 MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1IsEmptyFn });
 
 MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
+
+MapTo('lyca-spa-react/components/lycamobileappcomponent')(LycaMobileAppComponent);
 
 //lazy load of internal component (hello world).
 

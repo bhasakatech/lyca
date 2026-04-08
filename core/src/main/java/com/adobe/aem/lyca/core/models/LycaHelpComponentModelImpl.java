@@ -44,7 +44,7 @@ public class LycaHelpComponentModelImpl implements LycaHelpComponentModel {
 
     @Override
     public List<HelperComponentsModel> getHelpingIcons() {
-        return List.of();
+        return helpingIcons;
     }
 
 }
