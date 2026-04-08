@@ -1,0 +1,24 @@
+{
+  "test": {
+    "mainHeading": "Test Heading",
+    "mobileAppFeatures": [
+      "Feature1",
+      "Feature2"
+    ],
+    "qrText": "Scan Me",
+    "qrImage": "/content/dam/qr.png",
+    "mobileImage": "/content/dam/mobile.png",
+    "appStore": {
+      "item0": {
+        "appStoreIcon": "/content/dam/icon1.png",
+        "appStoreLink": "/content/link1"
+      },
+      "item1": {
+        "appStoreIcon": "/content/dam/icon2.png",
+        "appStoreLink": "/content/link2"
+      }
+    }
+  },
+
+  "empty": {}
+}
