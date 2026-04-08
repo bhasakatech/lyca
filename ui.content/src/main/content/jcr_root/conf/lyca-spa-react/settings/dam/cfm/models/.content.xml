@@ -3,4 +3,5 @@
     jcr:primaryType="cq:Page">
     <jcr:content/>
     <pricing-plan-content-fragment-model/>
+    <best-sim-plan-model/>
 </jcr:root>

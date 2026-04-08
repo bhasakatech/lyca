@@ -1,0 +1,240 @@
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+.worldwide-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+/* ========================= */
+/* HEADING */
+/* ========================= */
+/* HEADING FIX */
+.worldwide-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #0b2545;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .worldwide-container h1 {
+    font-size: 22px;
+  }
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+  .worldwide-container h1 {
+    font-size: 26px;
+  }
+}
+
+/* LAPTOP */
+@media (min-width: 769px) {
+  .worldwide-container h1 {
+    font-size: 30px;
+  }
+}
+
+.worldwide-container p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+/* ========================= */
+/* SEARCH BOX */
+/* ========================= */
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 14px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+
+  width: 160px;
+  max-width: 520px; /* 🔥 increased width */
+  margin: 20px auto 50px auto;
+}
+
+/* ICON */
+.search-box .icon {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* INPUT */
+.search-box input {
+  border: none;
+  outline: none;
+  font-size: 12px;
+  width: 100%;
+}
+
+@media (min-width: 320px) and (max-width: 2560px) {
+  .search-box {
+    max-width: 160px;
+  }
+}
+
+/* ========================= */
+/* COUNTRIES GRID */
+/* ========================= */
+.countries {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* exactly 5 per row */
+  gap: 60px;
+  justify-items: center;
+  margin-bottom: 50px;
+}
+
+/* CARD */
+.country-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.country-card:hover {
+  transform: translateY(-5px);
+}
+
+/* FLAG */
+.country-card img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* NAME */
+.country-card p {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #0b2545;
+  font-size: 15px;
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+.view-more {
+  background: #1d4ed8;
+  color: #ffffff;
+  padding: 14px 45px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more:hover {
+  background: #163bb5;
+  transform: scale(1.05);
+}
+
+/* ========================= */
+/* 📱 MOBILE (0 - 480px) */
+/* ========================= */
+@media (max-width: 480px) {
+  .worldwide-container {
+    padding: 40px 15px;
+  }
+
+  .worldwide-container h1 {
+    font-size: 24px;
+  }
+
+  .worldwide-container p {
+    font-size: 14px;
+  }
+
+  .search-box {
+    width: 100%;
+    padding: 12px 15px;
+  }
+
+  .countries {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .country-card img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .country-card p {
+    font-size: 13px;
+  }
+
+  .view-more {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* ========================= */
+/* 📲 TABLET (481px - 768px) */
+/* ========================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  .worldwide-container h1 {
+    font-size: 30px;
+  }
+
+  .countries {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+
+  .country-card img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .search-box {
+    min-width: 320px;
+  }
+}
+
+/* ========================= */
+/* 💻 SMALL LAPTOP (769px - 1024px) */
+/* ========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .countries {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+
+  .country-card img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* ========================= */
+/* 🖥️ LARGE SCREENS (1025px+) */
+/* ========================= */
+@media (min-width: 1025px) {
+  .countries {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 70px;
+  }
+
+  .country-card img {
+    width: 90px;
+    height: 90px;
+  }
+}
+.country-link {
+  text-decoration: none;
+  color: inherit;
+}
