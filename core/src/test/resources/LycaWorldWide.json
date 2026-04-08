@@ -1,0 +1,79 @@
+{
+  "validScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide",
+    "worldwideHeading": "Stay Connected Worldwide",
+    "worldwideSubHeading": "Cheap international calls for everyone",
+    "searchPlaceholderText": "Search for a country...",
+    "ctaLabel": "View More",
+    "ctaLink": "/content/view-more",
+    "countries": {
+      "item0": {
+        "countryLogo": "/content/dam/flags/germany.png",
+        "logoLink": "/content/germany",
+        "countryName": "Germany"
+      },
+      "item1": {
+        "countryLogo": "/content/dam/flags/india.png",
+        "logoLink": "/content/india",
+        "countryName": "India"
+      }
+    }
+  },
+
+  "partialScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide",
+    "worldwideHeading": "Stay Connected Worldwide",
+    "countries": {
+      "item0": {
+        "countryName": "India"
+      }
+    }
+  },
+
+  "emptyMultifieldScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide",
+    "worldwideHeading": "Stay Connected Worldwide",
+    "worldwideSubHeading": "Cheap international calls",
+    "searchPlaceholderText": "Search...",
+    "ctaLabel": "View More",
+    "ctaLink": "/content/view-more",
+    "countries": {}
+  },
+
+  "emptyComponentScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide"
+  },
+
+  "invalidDataScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide",
+    "worldwideHeading": 123,
+    "searchPlaceholderText": true,
+    "ctaLabel": false,
+    "ctaLink": null,
+    "countries": {
+      "item0": {
+        "countryLogo": 456,
+        "logoLink": "",
+        "countryName": null
+      }
+    }
+  },
+
+  "wrongMultifieldStructureScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide"
+  },
+
+  "singleCountryScenario": {
+    ":type": "lyca-spa-react/components/lycaworldwide",
+    "worldwideHeading": "Stay Connected Worldwide",
+    "ctaLabel": "Explore",
+    "ctaLink": "/content/explore",
+    "countries": {
+      "item0": {
+        "countryLogo": "/content/dam/flags/india.png",
+        "logoLink": "/content/india",
+        "countryName": "India"
+      }
+    }
+  }
+}

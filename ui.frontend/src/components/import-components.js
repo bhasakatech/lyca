@@ -54,6 +54,8 @@ import {
     SeparatorV1, SeparatorV1IsEmptyFn,
     ListV2, ListV2IsEmptyFn
 } from '@adobe/aem-core-components-react-base';
+import LycaWorldWide from "./LycaWorldWide/LycaWorldWide";
+
 import LycaFeatureComponent from "./LycaFeatureComponent/LycaFeatureComponent";
 import Footer from "./Footer/Footer";
 
@@ -61,7 +63,6 @@ import JoinLyca from "./JoinLyca/JoinLyca";
 import LycaExclusiveOffers from "./LycaExclusiveOffers/LycaExclusiveOffers";
 
 
-import HeroCarousel from "./HeroCarousel/HeroCarousel";
 
 import BestSimPlans from "./BestSimPlans/BestSimPlans";
 import TopInformationalBannerText from "./TopInformationalBannerText/TopInformationalBannerText";
@@ -69,7 +70,7 @@ import PerfactPlan from "./PerfactPlan/PerfactPlan";
 
 
 import Navigation from "./SpaNavigation/Navigation";
-
+import HeroCarousel from "./HeroCarousel/HeroCarousel";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
@@ -159,4 +160,5 @@ const TextEditConfig = {
     }
 };
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
+MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
 

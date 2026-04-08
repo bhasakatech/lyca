@@ -7,5 +7,52 @@
     "hideText": true,
     "ctaLabel": "View Plans",
     "ctaLink": "/content/lyca/us/en/plans"
+  },
+  "dam": {
+    "lyca": {
+      "sim-plans": {
+        "jcr:primaryType": "sling:Folder",
+        "plan1": {
+          "jcr:primaryType": "dam:Asset",
+          "jcr:content": {
+            "jcr:primaryType": "dam:AssetContent",
+            "data": {
+              "jcr:primaryType": "nt:unstructured",
+              "master": {
+                "jcr:primaryType": "nt:unstructured",
+                "name": "LYCA",
+                "monthlyCost": "5",
+                "data": "5GB",
+                "minutes": "1000",
+                "texts": "1000",
+                "contract": "No Contract",
+                "annualPriceRise": "NO",
+                "freeEuRoaming": "YES"
+              }
+            }
+          }
+        },
+        "plan2": {
+          "jcr:primaryType": "dam:Asset",
+          "jcr:content": {
+            "jcr:primaryType": "dam:AssetContent",
+            "data": {
+              "jcr:primaryType": "nt:unstructured",
+              "master": {
+                "jcr:primaryType": "nt:unstructured",
+                "name": "EE",
+                "monthlyCost": "27",
+                "data": "5GB",
+                "minutes": "Unlimited",
+                "texts": "Unlimited",
+                "contract": "Not Contract",
+                "annualPriceRise": "NO",
+                "freeEuRoaming": "NO"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
