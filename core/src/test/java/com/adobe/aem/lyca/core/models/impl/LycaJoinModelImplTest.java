@@ -13,25 +13,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class LycaJoinModelImplTest {
 
     private final AemContext context = new AemContext();
-
     private LycaJoinModel model;
 
     @BeforeEach
     void setUp() {
 
-        // ✅ Register Sling Models (CRITICAL)
         context.addModelsForClasses(LycaJoinModelImpl.class);
-
-        // ✅ Load JSON
         context.load().json("/joinLyca.json", "/content");
-
-        // ✅ Set current resource
         context.currentResource("/content/joinLyca");
-
-        // ✅ Adapt from request (since model supports SlingHttpServletRequest)
         model = context.request().adaptTo(LycaJoinModel.class);
-
-        // ✅ Safety check
         assertNotNull(model, "Model should not be null");
     }
 

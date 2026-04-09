@@ -2,12 +2,14 @@ package com.adobe.aem.lyca.core.models.impl;
 
 import com.adobe.aem.lyca.core.models.LycaCtaButton;
 import lombok.Getter;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(
-        adaptables = org.apache.sling.api.resource.Resource.class,
+        adaptables = {Resource.class, SlingHttpServletRequest.class},
         adapters = LycaCtaButton.class,
         defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
