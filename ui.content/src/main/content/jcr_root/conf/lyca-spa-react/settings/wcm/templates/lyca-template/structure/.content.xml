@@ -38,7 +38,7 @@
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="lyca-spa-react/components/experiencefragment"
-                fragmentVariationPath="/content/experience-fragments/lyca-spa-react/us/en/site/lyca-footer-experience-fragment/master"/>
+                fragmentVariationPath="/content/experience-fragments/lyca-spa-react/us/en/site/footer/master"/>
         </root>
         <cq:responsive jcr:primaryType="nt:unstructured">
             <breakpoints jcr:primaryType="nt:unstructured">
