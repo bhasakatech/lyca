@@ -55,21 +55,21 @@ class LycaFeatureComponentImplTest {
     }
 
 
-//    @Test
-//    void testEmptyData() {
-//        context.load().json("/lyca-empty.json", "/content/empty");
-//
-//        Resource resource = context.resourceResolver().getResource("/content/empty");
-//        assertNotNull(resource);
-//
-//        LycaFeatureComponentImpl model = resource.adaptTo(LycaFeatureComponentImpl.class);
-//        assertNotNull(model);
-//
-//        assertNull(model.getHeading());
-//        assertNull(model.getItems());
-//
-//        assertEquals(LycaFeatureComponentImpl.RESOURCE_TYPE, model.getExportedType());
-//    }
+   @Test
+   void testEmptyData() {
+       context.load().json("/lyca-empty.json", "/content/empty");
+
+       Resource resource = context.resourceResolver().getResource("/content/empty");
+       assertNotNull(resource);
+
+       LycaFeatureComponentImpl model = resource.adaptTo(LycaFeatureComponentImpl.class);
+       assertNotNull(model);
+
+       assertNull(model.getHeading());
+       assertNull(model.getItems());
+
+       assertEquals(LycaFeatureComponentImpl.RESOURCE_TYPE, model.getExportedType());
+   }
 
 
 }
