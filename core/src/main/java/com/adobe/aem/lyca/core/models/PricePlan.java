@@ -10,7 +10,6 @@ public class PricePlan {
     private boolean isPopular;
     private String ctaLabel;
     private String ctaLink;
-
     public String getPlanTitle()
     {
         return planTitle;

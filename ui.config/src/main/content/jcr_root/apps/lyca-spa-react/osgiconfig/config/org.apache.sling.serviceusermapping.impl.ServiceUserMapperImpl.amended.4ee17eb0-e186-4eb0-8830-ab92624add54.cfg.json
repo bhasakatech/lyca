@@ -1,6 +1,0 @@
-// Configuration created by Apache Sling JCR Installer
-{
-  "user.mapping":[
-    "lyca-spa.react.core:lyca-cf-service=read-cf"
-  ]
-}

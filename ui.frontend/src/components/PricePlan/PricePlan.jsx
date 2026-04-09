@@ -7,13 +7,11 @@ const PricePlan = (props) => {
 
   const plans = props.plans || [];
 
-  // Show only 4 initially
   const visiblePlans = showAll ? plans : plans.slice(0, 4);
 
   return (
     <div className="pricing-container">
       <h2>{props.pricePlanHeading || "Plans"}</h2>
-
       {/* Toggle */}
       <div className="toggle">
         <span>{props.pricePlanMonthlyText || "Monthly"}</span>
@@ -29,7 +27,6 @@ const PricePlan = (props) => {
 
         <span>{props.pricePlanYearlyText || "Yearly"}</span>
       </div>
-
       {/* Cards */}
       <div className="plans">
         {visiblePlans.map((plan, index) => (
@@ -81,8 +78,6 @@ const PricePlan = (props) => {
             className="primary-btn"
             onClick={() => {
               setShowAll(prev => !prev);
-
-              // scroll up when collapsing
               if (showAll) {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }

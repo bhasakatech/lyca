@@ -5,6 +5,7 @@ import com.adobe.aem.lyca.core.services.PricePlanService;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.LoginException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
@@ -74,7 +75,7 @@ public class PricePlanModelImpl implements PricePlanModel {
         return allPlanLabel;
     }
     @Override
-    public List<PricePlan> getPlans() {
+    public List<PricePlan> getPlans() throws LoginException {
         return pricePlanService.getPricePlans(planCardsPath);
     }
 

@@ -3,16 +3,27 @@ package com.adobe.aem.lyca.core.services.impl;
 import com.adobe.aem.lyca.core.models.PricePlan;
 import com.adobe.aem.lyca.core.models.PricePlanCFModel;
 import com.adobe.aem.lyca.core.services.PricePlanService;
-
 import com.adobe.aem.lyca.core.utils.NPUtilService;
-import org.apache.sling.api.resource.*;
-import org.osgi.service.component.annotations.*;
 
+import org.apache.sling.api.resource.LoginException;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.jcr.RepositoryException;
 import javax.jcr.query.Query;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 @Component(service = PricePlanService.class, immediate = true)
 public class PricePlanServiceImpl implements PricePlanService {
+
+    private static final Logger LOG = LoggerFactory.getLogger(PricePlanServiceImpl.class);
 
     @Reference
     private NPUtilService npUtilService;
@@ -24,10 +35,12 @@ public class PricePlanServiceImpl implements PricePlanService {
 
         try (ResourceResolver resolver = npUtilService.getResourceResolver()) {
 
+            LOG.debug("Starting to fetch price plans from path: {}", damPath);
+
             String query = "SELECT * FROM [dam:Asset] AS s " +
                     "WHERE ISDESCENDANTNODE(s, '" + damPath + "')";
 
-            Iterator<Resource> results = resolver.findResources(query,Query.JCR_SQL2);
+            Iterator<Resource> results = resolver.findResources(query, Query.JCR_SQL2);
 
             while (results.hasNext()) {
 
@@ -36,6 +49,7 @@ public class PricePlanServiceImpl implements PricePlanService {
                 Resource dataResource = assetResource.getChild("jcr:content/data/master");
 
                 if (dataResource == null) {
+                    LOG.warn("data/master node missing for asset: {}", assetResource.getPath());
                     continue;
                 }
 
@@ -55,11 +69,19 @@ public class PricePlanServiceImpl implements PricePlanService {
                     plan.setCtaLink(cfModel.getCtaLink());
 
                     plans.add(plan);
+
+                } else {
+                    LOG.warn("Failed to adapt resource to PricePlanCFModel: {}", dataResource.getPath());
                 }
             }
 
+            LOG.info("Successfully fetched {} price plans from {}", plans.size(), damPath);
+
+        } catch (RepositoryException e) {
+            LOG.error("RepositoryException while querying DAM path: {}", damPath, e);
+
         } catch (Exception e) {
-            e.printStackTrace();
+            LOG.error("Unexpected error while fetching price plans for path: {}", damPath, e);
         }
 
         return plans;

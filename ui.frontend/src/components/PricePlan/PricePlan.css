@@ -1,6 +1,5 @@
-/* ========================= */
+
 /* CONTAINER */
-/* ========================= */
 .pricing-container {
   text-align: center;
   padding: 60px 60px;
@@ -14,9 +13,7 @@
   color: #222;
 }
 
-/* ========================= */
 /* TOGGLE */
-/* ========================= */
 .toggle {
   display: flex;
   justify-content: center;
@@ -70,9 +67,7 @@
   transform: translateX(24px);
 }
 
-/* ========================= */
 /* CARDS GRID */
-/* ========================= */
 .plans {
   display: grid;
   gap: 25px;
@@ -84,9 +79,7 @@
   grid-template-columns: 1fr;
 }
 
-/* ========================= */
 /* CARD */
-/* ========================= */
 .card {
   background: #eaf1f8;
   padding: 25px 20px;
@@ -100,9 +93,8 @@
   justify-content: space-between;
 
   width: 70%;
-  max-width: 280px;   /* 🔥 controls card size */
-  margin: 0 auto;     /* 🔥 center cards */
-
+  max-width: 280px;   
+  margin: 0 auto;     
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -128,10 +120,7 @@
   border-radius: 20px;
   font-size: 12px;
 }
-
-/* ========================= */
 /* TEXT */
-/* ========================= */
 .card h4 {
   font-size: 16px;
   margin-bottom: 10px;
@@ -155,9 +144,7 @@
   margin-bottom: 15px;
 }
 
-/* ========================= */
 /* FEATURES */
-/* ========================= */
 .card ul {
   list-style: none;
   padding: 0;
@@ -170,9 +157,7 @@
   color: #333;
 }
 
-/* ========================= */
 /* BUTTON */
-/* ========================= */
 .btn {
   display: block;
   width: 70%;
@@ -207,9 +192,7 @@
   transform: translateY(-2px);
 }
 
-/* ========================= */
 /* BOTTOM BUTTONS */
-/* ========================= */
 .bottom-actions {
   margin-top: 40px;
   display: flex;
@@ -249,18 +232,14 @@
   border: none;
 }
 
-/* ========================= */
 /* TABLET */
-/* ========================= */
 @media (min-width: 768px) and (max-width: 1023px) {
   .plans {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ========================= */
 /* DESKTOP */
-/* ========================= */
 @media (min-width: 1024px) {
   .plans {
     grid-template-columns: repeat(4, 1fr);
@@ -271,9 +250,7 @@
   }
 }
 
-/* ========================= */
 /* MOBILE */
-/* ========================= */
 @media (max-width: 767px) {
   .plans {
     grid-template-columns: repeat(1,1fr);
