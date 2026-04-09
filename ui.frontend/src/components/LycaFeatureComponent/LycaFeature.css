@@ -1,11 +1,11 @@
-.feature-wrapper {
+.lyca-feature-wrapper {
   padding:60px 40px;
   background-color: #f5f7fa;
   text-align: center;
   margin:0;
   margin-top:20px;
 }
-.main-heading {
+.lyca-feature-main-heading {
   font-size: 30px;
   font-weight: 700;
   color: #0b2c4d;
@@ -14,7 +14,7 @@
    letter-spacing: 0.2px;
    text-transform: none;   
 }
-.cards-container {
+.lyca-feature-cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -22,7 +22,7 @@
   gap:15px;
   
 }
-.card {
+.lyca-feature-card {
   background: #ffffff;
   border-radius: 20px;
   padding:20px 19px;
@@ -37,7 +37,7 @@
   justify-content: space-around;
  
 }
-.card:hover {
+.lyca-feature-card:hover {
   transform: translateY(-8px);
 }
 .icon-wrapper {
@@ -65,7 +65,7 @@
   line-height:120%;
   text-transform: none;
 }
-.desc p{
+.feature-desc p{
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: #4c4d4f;
@@ -75,14 +75,14 @@
 }
 
  @media (max-width: 768px){
-  .cards-container{
+  .lyca-feature-cards-container{
     display: flex;
     gap: 15px;
     justify-content: center;              
     align-items: center;
   }
 
-  .card{
+  .lyca-feature-card{
     padding: 12px;   
     max-width: 95%;           
     flex: 0 0 95%;            
@@ -93,7 +93,7 @@
     font-size: 16px;
   }
 
-  .desc p{
+  .feature-desc p{
     font-size: 13px;
     overflow-wrap: break-word;
   }
