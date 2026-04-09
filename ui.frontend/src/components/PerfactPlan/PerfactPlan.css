@@ -159,7 +159,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .perfact-plan-container {
     padding: 40px 70px;
   }
