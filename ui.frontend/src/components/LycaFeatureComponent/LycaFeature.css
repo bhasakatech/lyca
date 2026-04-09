@@ -1,41 +1,29 @@
-.feature-wrapper {
+.lyca-feature-wrapper {
   padding:60px 40px;
   background-color: #f5f7fa;
   text-align: center;
-  width:100%;
   margin:0;
   margin-top:20px;
-
-  box-sizing: border-box;
-  position: relative;
-  margin-left: calc(-50vw + 50%);
-  width: 100vw;
-  overflow-x: hidden;
-  
 }
-.main-heading {
+.lyca-feature-main-heading {
   font-size: 30px;
   font-weight: 700;
   color: #0b2c4d;
   margin-bottom: 50px;
   font-family:'Poppins', sans-serif;
-   letter-spacing: 0px;
-   text-transform: none;  
+   letter-spacing: 0.2px;
+   text-transform: none;   
 }
-.cards-container {
-  
+.lyca-feature-cards-container {
   display: flex;
-  gap: 15px;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin:auto;
-  
+
 }
-.card {
+.lyca-feature-card {
   background: #ffffff;
   border-radius: 20px;
-  padding: 19px;
-  padding-top:20px;
+  padding:20px 19px;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.10);
   transition: transform 0.3s ease;
   width:180px;
@@ -47,7 +35,7 @@
   justify-content: space-around;
  
 }
-.card:hover {
+.lyca-feature-card:hover {
   transform: translateY(-8px);
 }
 .icon-wrapper {
@@ -68,37 +56,46 @@
 }
 .feature-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   color: #0b2c4d;
   margin:16px;
-  
+  line-height:120%;
+  text-transform: none;
 }
-.desc p{
+.feature-desc p{
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   color: #4c4d4f;
   line-height: 1.6;
   font-weight:400;
+   overflow-wrap: break-word;
 }
-@media (max-width: 768px){
-  .cards-container{
-    display:flex;
-    gap:20px;
-    justify-content:space-around;
-    padding:15px;
+
+ @media (max-width: 768px){
+  .lyca-feature-cards-container{
+    display: flex;
+    gap: 15px;
+    justify-content: center;              
+    align-items: center;
     margin:auto;
   }
-  .card{
-    padding:20px;
-    flex: 0 0 100%;  
-    max-width: 100%;
+
+  .lyca-feature-card{
+    padding: 12px;   
+    max-width: 95%;           
+    flex: 0 0 95%;            
+    margin: 0 auto;
   }
+
   .feature-name{
-    font-size:16px;
+    font-size: 16px;
   }
-  .desc{
-    font-size:15px;
+
+  .feature-desc p{
+    font-size: 13px;
+    overflow-wrap: break-word;
   }
 }
+
 

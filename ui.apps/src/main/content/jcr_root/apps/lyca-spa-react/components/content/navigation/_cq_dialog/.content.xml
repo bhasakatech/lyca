@@ -99,14 +99,13 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                 fieldLabel="Button Label"
-                                name="./buttonLabel"
-                                rootPath="/content"/>
+                                name="./buttonLabel"/>
                             <buttonLink
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                 fieldLabel="Button Link"
                                 name="./buttonLink"
-                                rootPath="/content"/>
+                                rootPath="/content/lyca-spa-react"/>
                         </items>
                     </custom>
                 </items>

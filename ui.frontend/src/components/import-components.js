@@ -14,6 +14,8 @@
  ~ limitations under the License.
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
+import LycaMobileAppComponent from "./LycaMobileAppComponent/LycaMobileAppComponent";
+
 
 import './Page/Page';
 import './Container/Container';
@@ -71,6 +73,7 @@ import PerfactPlan from "./PerfactPlan/PerfactPlan";
 
 import Navigation from "./SpaNavigation/Navigation";
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
+import PricePlan from "./PricePlan/PricePlan";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
@@ -145,6 +148,8 @@ MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1
 
 MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
 
+MapTo('lyca-spa-react/components/lycamobileappcomponent')(LycaMobileAppComponent);
+
 //lazy load of internal component (hello world).
 
 /**
@@ -161,4 +166,4 @@ const TextEditConfig = {
 };
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
-
+MapTo('lyca-spa-react/components/priceplan')(PricePlan)

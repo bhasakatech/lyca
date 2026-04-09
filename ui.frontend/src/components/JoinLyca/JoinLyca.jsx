@@ -2,9 +2,15 @@ import React, { useState } from "react";
 import "./JoinLyca.css";
 
 const JoinLyca = (props) => {
-  const [mobile, setMobile] = useState("");
-  const [code, setCode] = useState("+91");
+const [mobile, setMobile] = useState("");
+const [code, setCode] = useState("+91");
+const { ctas: ctaButtons = [] } = props;
+const { ctas = [] } = props;
+const [activeIndex, setActiveIndex] = useState(0); 
 
+  if (!ctaButtons || ctaButtons.length === 0) {
+    return <div>No CTA Buttons configured</div>;
+  }
   return (
     <div className="cta-card">
 
@@ -22,24 +28,27 @@ const JoinLyca = (props) => {
           ))}
         </div>
       </div>
+<div className="right-lyca">
+  <h2>{props.heading}</h2>
 
-          {/* RIGHT */}
-<div className="right">
-  <h2>Already with Lyca?</h2>
-
-  {/* BUTTONS */}
-  <div className="btn-group">
-  <a href="/recharge" className="primary-btn">Recharge</a>
-  <a href="/renew" className="secondary-btn">Renew plan</a>
-</div>
-
-
-  {/* INPUT WITH +1 */}
-
-<div className="input-wrapper">
+<div className="btn-group">
+      {ctas.map((item, index) => (
+        <a
+          key={`${item.text}-${index}`}
+          href={item.link || "#"}
+          className={`primary-btn ${activeIndex === index ? "active" : ""}`}
+          onClick={(e) => {
+            e.preventDefault(); // prevent navigation (optional)
+            setActiveIndex(index);
+          }}
+        >
+          {item.text}
+        </a>
+      ))}
+    </div>
+  <div className="input-wrapper">
   <div className="input-group">
     
-    {/* Country Code Dropdown */}
     <select
       className="code-dropdown"
       value={code}
@@ -51,37 +60,35 @@ const JoinLyca = (props) => {
       <option value="+90">+90</option>
     </select>
 
-    {/* Divider */}
-    <div className="divider"></div>
+ <div className="divider"></div>
 
-    <input
+  <input
   className="mobile-input"
   value={mobile}
   onChange={(e) => setMobile(e.target.value)}
-  placeholder={
-    window.innerWidth <= 400
-      ? "Enter mobile number"
-      : "Enter lyca mobile number & get started"
-  }
-/>
+
+   placeholder={
+  window.innerWidth <= 400
+    ? props.placeholder
+    : `${props.placeholder} (e.g. 1234567890)`
+   }
+  />
   </div>
 </div>
-
-
-  {/* PROCEED */}
-  <a href="/proceed" className="proceed-btn">
-  Proceed
+  
+   <a href={props.submitLink} className="proceed-btn">
+    {props.submitText}
 </a>
-
-
-  {/* FOOTER */}
-  <p className="footer">
-    Track your usage on the go!
-    <a href="/download"> Download our app</a>
-  </p>
+  <p
+  className="join-Lyca-footer"
+  dangerouslySetInnerHTML={{
+    __html: props.promotionText
+      ? props.promotionText.replace(/href="(\/content[^".]*)"/g, 'href="$1.html"')
+      : ""
+  }}
+  />  
   </div>
-
-    </div>
+  </div>
   );
 };
 export default JoinLyca;

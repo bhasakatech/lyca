@@ -1,0 +1,7 @@
+{
+  "appstore": {
+    "appStoreIcon": "/content/dam/icon.png",
+    "appStoreLink": "/content/link"
+  },
+  "empty": {}
+}

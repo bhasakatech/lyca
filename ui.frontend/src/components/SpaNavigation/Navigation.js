@@ -1,12 +1,52 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect, useRef }  from 'react';
 import './Navigation.css';
 import { Link } from 'react-router-dom';
 
 const Navigation = (props) => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [navHeight, setNavHeight] = useState(0);
+    const navRef = useRef(null);
     const navItems = props.items || [];
+
+    const placeholderRef = useRef(null);
+
+    useEffect(() => {
+        if (navRef.current) {
+            setNavHeight(navRef.current.offsetHeight);
+        }
+        
+        const handleScroll = () => {
+            if (placeholderRef.current) {
+                const rect = placeholderRef.current.getBoundingClientRect();
+                if (rect.top <= 0) {
+                    setIsScrolled(true);
+                } else {
+                    setIsScrolled(false);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        const handleResize = () => {
+            if (navRef.current) setNavHeight(navRef.current.offsetHeight);
+        };
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
+        }
+    }, []);
+
+    // Placeholder dynamically takes up the space only when the nav becomes fixed
+    const placeholderActualHeight = isScrolled ? (navHeight || 76) : 0;
+
     return (
-        <nav className="spa-nav">
+        <>
+            <div ref={placeholderRef} style={{ height: `${placeholderActualHeight}px` }}></div>
+            <nav ref={navRef} className={`spa-nav ${isScrolled ? 'scrolled' : ''}`}>
             <div className="nav-left">
                 {props.navLogo && (
                     <img className="nav-logo" src={props.navLogo} alt="logo" />
@@ -32,6 +72,7 @@ const Navigation = (props) => {
                </button>
             )}
         </nav>
+        </>
     );
 }
 export default Navigation;

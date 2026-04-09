@@ -5,22 +5,21 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-  font-family: "Segoe UI", sans-serif;
+      font-family: Inter;
 }
 
-/* LEFT SIDE */
 .left {
   flex: 1;
   background: #1f4fa3;
   color: #ffffff;
   padding: 60px 50px;
 
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  /* FIX TEXT BREAKING */
   word-break: normal;
 }
 
@@ -30,12 +29,10 @@
   line-height: 1.2;
   margin-bottom: 12px;
 
-  /* FIX CAPITAL / SPACING ISSUE */
   text-transform: none;
   letter-spacing: normal;
   word-spacing: normal;
 
-  font-family: Georgia, "Times New Roman", serif;
 }
 
 .left p {
@@ -44,12 +41,11 @@
   margin-bottom: 35px;
 }
 
-/* ICONS */
 .icons {
   display: flex;
   gap: 35px;
-  justify-content: center;   /* ✅ center horizontally */
-  align-items: center;       /* ✅ align vertically */
+  justify-content: center;   
+  align-items: center;       
 }
 
 
@@ -75,80 +71,66 @@
   text-align: center;
 }
 
-/* RIGHT SIDE */
-.right {
+.right-lyca {
   flex: 1;
   background: #ffffff;
   padding: 60px 50px;
 }
 
-.right h2 {
+.right-lyca h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  font-family: Georgia, "Times New Roman", serif;
+      font-family: Inter;
 }
-
-/* BUTTON GROUP */
 .btn-group {
 
-  margin-bottom: 20px;
   display: flex;
   gap: 16px;
+  margin-bottom: 20px;
+  align-items: center; 
 }
 
 .btn-group a {
-  display: flex;              /* ✅ behave like button */
+  display: flex;              
   align-items: center;
   justify-content: center;
   text-decoration: none; 
-  padding: 14px 30px;         /* 🔥 increase size */
-  min-width: 120px;           /* 🔥 keeps width consistent */
-  height: 18px;               /* 🔥 uniform height */
-
+  padding: 14px 30px;         
+  min-width: 120px;           
+  height: 18px;   
   text-align: center;
 }
 
-/* BUTTONS */
 .primary-btn {
-  background: linear-gradient(135deg, #1f4fa3, #2d6cdf);
-  color: #fff;
-  border: none;
-  padding: 12px 26px;
   border-radius: 999px;
+  padding: 12px 26px;
+  background-color: #ffffff;  
+  color: #125297;              
+  border: 1px solid #063262;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
   font-size: 15px;
   font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
+  border-radius: 50px;
+
 }
 
-.secondary-btn {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 12px 26px;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  color: #1f4fa3;
-  transition: 0.3s;
-}
-
-/* HOVER */
 .primary-btn:hover {
-  transform: translateY(-1px);
+ background-color: #e6f0ff;
 }
-
-.secondary-btn:hover {
-  background: #eef3ff;
+.primary-btn.active{
+   background-color:#1f4fa3;  
+   color: #eef3ff;  
 }
-
 .proceed-btn {
-  display: flex;              /* ✅ behave like button */
+  display: flex;              
   align-items: center;
   justify-content: center;
 
   width: 100%;
-  height: 50px;               /* ✅ fixed height */
+  height: 50px;              
   background: #1f4fa3;
   color: #fff;
 
@@ -156,25 +138,24 @@
   font-size: 16px;
   font-weight: 600;
 
-  text-decoration: none;      /* ✅ remove underline */
-  font-family: 'Inter', sans-serif;
-
+  text-decoration: none;     
+  font-family: Inter;
   cursor: pointer;
 }
 
-/* FOOTER */
-.footer {
+.join-Lyca- {
   margin-top: 15px;
   font-size: 13px;
 }
 
-.footer a {
+.join-Lyca-footer a {
   color: #1f4fa3;
   text-decoration: underline;
   margin-left: 5px;
+  font-family: Inter;
+  font-weight: 500;
 }
 
-/* FORCE ALL LEFT TEXT TO WHITE */
 .left,
 .left h1,
 .left p,
@@ -182,48 +163,52 @@
 .left a {
   color: #ffffff;
 }
-.right h2 {
+.right-lyca h2 {
   text-align: center;
 }
-.right h2,
-.right p,
-.right a,
-.right button,
-.right input {
+.right-lyca h2,
+.right-lyca p,
+.right-lyca a,
+.right-lyca button,
+.right-lyca input {
+
   text-transform: none !important;
 }
-
-.footer {
-  font-size: 14px;
-  font-weight: 500;
-  color: #2c2c2c;
+.right-lyca  h2 {
+    margin-bottom: 18px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 41.4467px;
+    line-height: 85px;
+    text-align: center;
+    color: #222222;
 }
 
-.footer a {
-  font-weight: 600;
-  color: hsl(218, 74%, 60%);
-  text-decoration: none;
+.join-Lyca-footer a {
+
+    font-weight: 250;
+    color: hsl(218, 74%, 50%);
+    text-decoration: none;
+    text-align: center;
+    font-family: sans-serif;
 }
 
-.footer a:hover {
+.join-Lyca-footer a:hover {
   text-decoration: underline;
 }
-.footer {
+.join-Lyca-footer {
   margin-top: 18px;
   font-size: 14px;
-  font-weight: 750;   /* 🔥 makes it slightly bold */
+  font-weight: bold;   
   color: #333;
+  text-align: center;
 }
-
-
-/* Outer wrapper */
 .input-wrapper {
   width: 100%;
   max-width: 520px;
   margin: 20px 0;
 }
 
-/* Input container */
 .input-group {
   display: flex;
   align-items: center;
@@ -233,15 +218,12 @@
   padding: 10px 14px;
   transition: all 0.3s ease;
 }
-
-/* Focus effect (important for modern UI) */
 .input-group:focus-within {
   border-color: #1e4db7;
   box-shadow: 0 0 0 2px rgba(30, 77, 183, 0.1);
   background: #fff;
 }
 
-/* Dropdown style */
 .code-dropdown {
   border: none;
   background: transparent;
@@ -254,61 +236,50 @@
   padding-right: 8px;
 }
 
-/* Divider between code and input */
 .divider {
   width: 1px;
   height: 24px;
   background: #ccc;
   margin: 0 10px;
 }
-
-
-
-/* Optional: remove dropdown arrow for cleaner look */
 .code-dropdown::-ms-expand {
   display: none;
 }
-
 .title {
   font-size: 42px;
   font-weight: 600;
   color: white;
   display: inline-block;
-  position: relative; /* important */
+  position: relative; 
 }
 
-/* Arrow */
 .title::after {
-  content: " →";   /* space + arrow */
+  content: " →";  
   display: inline-block;
   margin-left: 8px;
 }
-
-
 .input-group {
   display: flex;
   align-items: center;
   width: 92%;
 
-  height: 50px;                  /* ✅ match Proceed button */
+  height: 50px;                 
   background: #f7f7f7;
   border: 1px solid #ddd;
-  border-radius: 999px;          /* pill style */
+  border-radius: 999px;         
 
-  padding: 0 14px;               /* horizontal only */
+  padding: 0 14px;           
   gap: 10px;
 
-  overflow: hidden;              /* 🔥 prevents breaking */
+  overflow: hidden;              
   transition: all 0.3s ease;
 }
 
-/* Focus effect */
 .input-group:focus-within {
   border-color: #1e4db7;
   box-shadow: 0 0 0 2px rgba(30, 77, 183, 0.1);
   background: #fff;
 }
-
 .code-dropdown {
   border: none;
   background: transparent;
@@ -318,7 +289,7 @@
   font-weight: 500;
   color: #333;
 
-  flex-shrink: 0;              /* ✅ don't shrink */
+  flex-shrink: 0;             
   cursor: pointer;
 }
 .divider {
@@ -329,9 +300,9 @@
   flex-shrink: 0;
 }
 .mobile-input {
-  flex: 1;                     /* ✅ take remaining space */
+  flex: 1;                     
   width: 100%;
-  min-width: 0;                /* 🔥 prevents overflow */
+  min-width: 0;             
 
   border: none;
   outline: none;
@@ -346,10 +317,9 @@
 .mobile-input::placeholder {
   font-size: 15px;
   color: #888;
-  white-space: nowrap;         /* keep in one line */
+  white-space: nowrap;         
 }
 
-/* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
   .cta-card {
@@ -359,7 +329,7 @@
   }
 
   .left,
-  .right {
+  .right-lyca {
     padding: 25px 20px;
   }
 
@@ -369,14 +339,14 @@
     text-align: center;
   }
 
-  .right h2 {
+  .right-lyca h2 {
     font-size: 22px;
     text-align: center;
   }
 
   /* TEXT */
   .left p,
-  .right p {
+  .right-lyca p {
     font-size: 14px;
     text-align: center;
   }
@@ -398,7 +368,7 @@
     font-size: 12px;
   }
 
-  /* BUTTON GROUP (MOBILE = STACKED ✅) */
+
   .btn-group {
     flex-direction: column;
     gap: 12px;
@@ -410,7 +380,6 @@
     padding: 0;
   }
 
-  /* 🔥 INPUT FIX (IMPORTANT) */
   .input-wrapper {
     width: 100%;
     max-width: 96%;
@@ -425,31 +394,26 @@
     font-size: 13px;
   }
 
-  /* PROCEED BUTTON */
   .proceed-btn {
     height: 48px;
     font-size: 15px;
   }
 
-  /* FOOTER */
-  .footer {
+  .join-Lyca-footer {
     text-align: center;
     font-size: 12px;
   }
 }
 
-
-/* ================= MOBILE ================= */
 @media (max-width: 600px) {
 
   .input-group {
     display: flex;
     width: 100%;
-    overflow: hidden;   /* 🔥 prevent overflow */
+    overflow: hidden;   
   }
-
   .code-dropdown {
-    flex-shrink: 0;     /* 🔥 don't shrink dropdown */
+    flex-shrink: 0;    
     font-size: 12px;
   }
 
@@ -458,15 +422,12 @@
   }
 }
 
-
 @media (max-width: 400px) {
   .mobile-input::placeholder {
     font-size: 11px;
   }
 }
-
 @media (max-width: 768px) {
-
   .input-group {
     height: 48px;
     padding: 0 10px;
@@ -477,7 +438,7 @@
   }
 
   .mobile-input::placeholder {
-    font-size: 13px;           /* 🔥 fits text */
+    font-size: 13px;           
   }
 
   .code-dropdown {
@@ -496,7 +457,7 @@
   }
 
   .mobile-input::placeholder {
-    font-size: 12px;           /* 🔥 ensures full text visible */
+    font-size: 12px;           
   }
 
   .code-dropdown {
@@ -507,21 +468,18 @@
 
 @media (min-width: 601px) and (max-width: 1024px) {
 
-  /* ✅ Keep layout side-by-side */
   .cta-card {
     flex-direction: row;
   }
 
-  /* ✅ BUTTONS SIDE BY SIDE */
   .btn-group {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;       /* 🔥 prevent going down */
+    flex-wrap: nowrap;       
     gap: 12px;
   }
-
   .btn-group a {
-    flex: 1;                 /* equal width */
+    flex: 1;                
     height: 48px;
     min-width: 0;
   }

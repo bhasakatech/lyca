@@ -1,4 +1,4 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
 
 import org.apache.sling.api.resource.Resource;
