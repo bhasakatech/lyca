@@ -92,7 +92,7 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                             fieldLabel="CTA Link"
                                             name="./link"
-                                            rootPath="/content/dam/lyca-spa-react"/>
+                                            rootPath="/content/lyca-spa-react"/>
                                     </items>
                                 </field>
                             </ctaMultifield>
@@ -111,7 +111,7 @@
                                 sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                                 fieldLabel="Submit Button Link"
                                 name="./submitLink"
-                                rootPath="/content/dam/lyca-spa-react"/>
+                                rootPath="/content/lyca-spa-react"/>
                             <promotionText
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="cq/gui/components/authoring/dialog/richtext"

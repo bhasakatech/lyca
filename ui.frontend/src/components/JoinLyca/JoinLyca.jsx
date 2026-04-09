@@ -8,9 +8,6 @@ const { ctas: ctaButtons = [] } = props;
 const { ctas = [] } = props;
 const [activeIndex, setActiveIndex] = useState(0); 
 
-  if (!ctaButtons || ctaButtons.length === 0) {
-    return <div>No CTA Buttons configured</div>;
-  }
   return (
     <div className="cta-card">
 
@@ -31,14 +28,14 @@ const [activeIndex, setActiveIndex] = useState(0);
 <div className="right-lyca">
   <h2>{props.heading}</h2>
 
-<div className="btn-group">
+<div className="btn-group1">
       {ctas.map((item, index) => (
         <a
           key={`${item.text}-${index}`}
           href={item.link || "#"}
-          className={`primary-btn ${activeIndex === index ? "active" : ""}`}
+          className={`primary-btn1 ${activeIndex === index ? "active" : ""}`}
           onClick={(e) => {
-            e.preventDefault(); // prevent navigation (optional)
+            e.preventDefault(); 
             setActiveIndex(index);
           }}
         >
@@ -70,7 +67,7 @@ const [activeIndex, setActiveIndex] = useState(0);
    placeholder={
   window.innerWidth <= 400
     ? props.placeholder
-    : `${props.placeholder} (e.g. 1234567890)`
+    : `${props.placeholder}`
    }
   />
   </div>
