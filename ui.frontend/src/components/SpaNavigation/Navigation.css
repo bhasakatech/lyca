@@ -35,6 +35,10 @@
   object-fit: contain;
 }
 
+.nav-logo:hover{
+  cursor: pointer;
+}
+
 .nav-list {
   list-style: none;
   display: flex;
