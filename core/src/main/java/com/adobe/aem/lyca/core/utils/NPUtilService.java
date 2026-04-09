@@ -12,7 +12,7 @@ import java.util.Map;
 @Component(service = NPUtilService.class)
 public class NPUtilService {
 
-    private static final String SERVICE = "lyca-cf-service";
+    private static final String SERVICE = "lyca-service";
 
     @Reference
     private ResourceResolverFactory resolverFactory;
