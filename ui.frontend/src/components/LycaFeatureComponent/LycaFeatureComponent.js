@@ -22,7 +22,7 @@ const LycaFeatureComponent = (props) => {
             )}
 
             
-            <h2 className="feature-name">{item.featureHeading || "Feature Name Missing"}</h2>
+            <h4 className="feature-name">{item.featureHeading || "Feature Name Missing"}</h4>
 
            
             <div className="desc"

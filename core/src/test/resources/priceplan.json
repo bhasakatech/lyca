@@ -1,0 +1,36 @@
+{
+  "priceplan-valid": {
+    "pricePlanHeading": "Choose Your Plan",
+    "pricePlanMonthlyText": "Monthly",
+    "pricePlanYearlyText": "Yearly",
+    "planCardsPath": "/content/lyca/plans",
+    "findPlanLabel": "Find a Plan",
+    "findPlanLink": "/content/lyca/find-plan",
+    "allPlanLabel": "View All Plans",
+    "allPlanLink": "/content/lyca/all-plans"
+  },
+  "priceplan-empty": {
+    "pricePlanHeading": "",
+    "pricePlanMonthlyText": "",
+    "pricePlanYearlyText": "",
+    "planCardsPath": "",
+    "findPlanLabel": "",
+    "findPlanLink": "",
+    "allPlanLabel": "",
+    "allPlanLink": ""
+  },
+  "priceplan-partial": {
+    "pricePlanHeading": "Plans",
+    "pricePlanMonthlyText": "Monthly"
+  },
+  "priceplan-invalid": {
+    "pricePlanHeading": 123,
+    "pricePlanMonthlyText": true,
+    "pricePlanYearlyText": null,
+    "planCardsPath": 456,
+    "findPlanLabel": [],
+    "findPlanLink": {},
+    "allPlanLabel": false,
+    "allPlanLink": null
+  }
+}

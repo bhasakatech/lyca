@@ -1,6 +1,7 @@
 package com.adobe.aem.lyca.core.models.impl;
 
-import com.adobe.aem.lyca.core.models.CtaItem;
+import com.adobe.aem.lyca.core.models.LycaCtaButton;
+import com.adobe.aem.lyca.core.models.LycaCtaItemModel;
 import com.adobe.aem.lyca.core.models.LycaJoinModel;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
@@ -10,7 +11,6 @@ import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -29,11 +29,30 @@ public class LycaJoinModelImpl implements LycaJoinModel {
 
     @ValueMapValue
     private String title;
+
     @ValueMapValue
     private String description;
 
     @ChildResource(name = "ctaItems")
-    private List<CtaItem> ctaItems;
+    private List<LycaCtaItemModel> ctaItems;
+
+    @ValueMapValue
+    private String heading;
+
+    @ChildResource(name = "ctas")
+    private List<LycaCtaButton> ctaButtons;
+
+    @ValueMapValue
+    private String placeholder;
+
+    @ValueMapValue
+    private String submitText;
+
+    @ValueMapValue
+    private String submitLink;
+
+    @ValueMapValue
+    private String promotionText;
 
     @Override
     public String getTitle() {
@@ -45,13 +64,44 @@ public class LycaJoinModelImpl implements LycaJoinModel {
         return description;
     }
 
-
     @Override
-    public List<CtaItem> getCtaItems() {
+    public List<LycaCtaItemModel> getCtaItems() {
         return ctaItems;
     }
+
+    @Override
+    public String getHeading() {
+        return heading;
+    }
+
+    @Override
+    public List<LycaCtaButton> getCtas() {
+        return ctaButtons;
+    }
+
+    @Override
+    public String getPlaceholder() {
+        return placeholder;
+    }
+
+    @Override
+    public String getSubmitText() {
+        return submitText;
+    }
+
+    @Override
+    public String getSubmitLink() {
+        return submitLink;
+    }
+
+    @Override
+    public String getPromotionText() {
+        return promotionText;
+    }
+
     @Override
     public String getExportedType() {
         return RESOURCE_TYPE;
     }
+
 }

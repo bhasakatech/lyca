@@ -5,10 +5,15 @@ import com.adobe.cq.export.json.ComponentExporter;
 import java.util.List;
 
 public interface LycaJoinModel extends ComponentExporter {
-
     String getTitle();
     String getDescription();
+    List<LycaCtaItemModel> getCtaItems();
 
-    List<CtaItem> getCtaItems();
+    String getHeading();
+    List<LycaCtaButton> getCtas();
+    String getPlaceholder();
+    String getSubmitText();
+    String getSubmitLink();
+    String getPromotionText();
 
 }

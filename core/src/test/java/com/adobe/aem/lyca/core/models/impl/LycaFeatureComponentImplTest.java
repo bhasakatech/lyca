@@ -1,9 +1,11 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
+import com.adobe.aem.lyca.core.models.impl.FeatureItem;
+import com.adobe.aem.lyca.core.models.impl.LycaFeatureComponentImpl;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.junit.jupiter.api.BeforeEach;
