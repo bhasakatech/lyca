@@ -1,5 +1,6 @@
 package com.adobe.aem.lyca.core.models;
 
+import com.adobe.aem.lyca.core.models.impl.FeatureItem;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.apache.sling.api.resource.Resource;
