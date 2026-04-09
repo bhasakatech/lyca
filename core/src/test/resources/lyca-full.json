@@ -1,6 +1,6 @@
 {
-  "heading": "Main Heading",
-  "features": {
+  "mainHeadingOfLycaFeature": "Main Heading",
+  "lycaFeatureCards": {
     "item0": {
       "icon": "icon1.png",
       "iconLink": "/link1",
