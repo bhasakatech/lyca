@@ -7,7 +7,7 @@ const LycaFeatureComponent = (props) => {
     
 
      <div className="lyca-feature-wrapper">
-      <h1 className="lyca-feature-main-heading">{props.heading}</h1>
+      <h1 className="lyca-feature-main-heading">{props.lycaFeatureComponentMainHeading}</h1>
 
       <div className="lyca-feature-cards-container">
         {(props.items || []).map((item, index) => (
