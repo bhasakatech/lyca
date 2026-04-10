@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./PricePlan.css";
 
 const PricePlan = (props) => {
   const [isYearly, setIsYearly] = useState(false);
   const [showAll, setShowAll] = useState(false);
 
+  const topRef = useRef(null);
+  useEffect(() => {
+    if (!showAll && topRef.current) {
+      topRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  }, [showAll]);
+
   const plans = props.plans || [];
-
   const visiblePlans = showAll ? plans : plans.slice(0, 4);
-
   return (
-    <div className="pricing-container">
+    <div className="pricing-container" ref={topRef}>
       <h2>{props.pricePlanHeading || "Plans"}</h2>
       {/* Toggle */}
       <div className="toggle">
         <span>{props.pricePlanMonthlyText || "Monthly"}</span>
-
         <label className="switch">
           <input
             type="checkbox"
@@ -24,7 +31,6 @@ const PricePlan = (props) => {
           />
           <span className="slider"></span>
         </label>
-
         <span>{props.pricePlanYearlyText || "Yearly"}</span>
       </div>
       {/* Cards */}
@@ -78,9 +84,6 @@ const PricePlan = (props) => {
             className="primary-btn"
             onClick={() => {
               setShowAll(prev => !prev);
-              if (showAll) {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
             }}
           >
             {showAll ? "Show Less" : props.allPlanLabel || "All Plans"}
@@ -90,5 +93,4 @@ const PricePlan = (props) => {
     </div>
   );
 };
-
 export default PricePlan;
