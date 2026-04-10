@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./PerfactPlan.css";
+import { Link } from 'react-router-dom';
 
 const PerfactPlan = (props) => {
 
     const heading = props.heading || (props.data && props.data.heading);
+
+    console.log("Perfect paln :: ",props);
 
     const questions =
         props.perfectPlanQuestions ||
@@ -126,10 +129,10 @@ const PerfactPlan = (props) => {
                 )}
 
                 <div className="perfact-plan-card">
-                    <div className="perfact-plan-icon">📊</div>
+                    <div className="perfact-plan-icon">{props.icon}</div>
 
-                    <h2 class="perfact-plan-heading">The best plan for you</h2>
-                    <p className="perfact-plan-subtitle">Based on your answers, we recommend:</p>
+                    <h2 class="perfact-plan-heading">{props.title}</h2>
+                    <p className="perfact-plan-subtitle">{props.description}</p>
 
                     <div className="perfact-plan-box">
                         <span className="perfact-plan-type">{plan.name}</span>
@@ -137,8 +140,14 @@ const PerfactPlan = (props) => {
                         <span className="perfact-plan-price">{plan.price}<small>/month</small></span>
                     </div>
 
-                    <button class="perfact-plan-button">Get Started</button>
-                    <a class="perfact-plan-view-others">View Others Plan</a>
+                    <button className="perfact-plan-button">
+                       <Link to={props.buttonLink} className="perfact-paln-button-label">
+                            {props.buttonText}
+                       </Link>
+                    </button>
+                    <Link to={props.othersPlanLink} className="perfact-plan-view-others">
+                        {props.othersPlanText}
+                    </Link>
                 </div>
             </div>
         </div>

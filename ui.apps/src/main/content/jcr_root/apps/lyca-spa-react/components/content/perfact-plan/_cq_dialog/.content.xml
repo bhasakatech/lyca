@@ -1,52 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="nt:unstructured"
+    jcr:title="Perfect Plan Details"
     sling:resourceType="cq/gui/components/authoring/dialog"
     extraClientlibs="perfect-plan">
     <content
         jcr:primaryType="nt:unstructured"
         sling:resourceType="granite/ui/components/coral/foundation/container">
         <items jcr:primaryType="nt:unstructured">
-            <heading
+            <tabs
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                fieldLabel="Plan Heading"
-                name="./heading"/>
-            <perfectPlanQuestions
-                granite:class="limit-questions"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                composite="{Boolean}true"
-                fieldLabel="Perfect Plan Questions">
-                <granite:data
-                    jcr:primaryType="nt:unstructured"
-                    max-items="3"/>
-                <field
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="granite/ui/components/coral/foundation/container"
-                    name="./perfectPlanQuestions">
-                    <items jcr:primaryType="nt:unstructured">
-                        <questionText
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                            fieldLabel="Question"
-                            name="./question"/>
-                        <options
-                            granite:class="limit-options"
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                            fieldLabel="Options">
-                            <granite:data
-                                jcr:primaryType="nt:unstructured"
-                                max-items="4"/>
-                            <field
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Questions Cards Information"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <heading
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                name="./options"/>
-                        </options>
-                    </items>
-                </field>
-            </perfectPlanQuestions>
+                                fieldLabel="Plan Heading"
+                                name="./heading"/>
+                            <perfectPlanQuestions
+                                granite:class="limit-questions"
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Perfect Plan Questions">
+                                <granite:data
+                                    jcr:primaryType="nt:unstructured"
+                                    max-items="3"/>
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./perfectPlanQuestions">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <questionText
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Question"
+                                            name="./question"/>
+                                        <options
+                                            granite:class="limit-options"
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                            fieldLabel="Options">
+                                            <granite:data
+                                                jcr:primaryType="nt:unstructured"
+                                                max-items="4"/>
+                                            <field
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                name="./options"/>
+                                        </options>
+                                    </items>
+                                </field>
+                            </perfectPlanQuestions>
+                        </items>
+                    </properties>
+                    <Plan_x0020_Information
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plan Information"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <Icon
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Icon"
+                                name="./icon"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Title"
+                                name="./title"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Description"
+                                name="./description"/>
+                            <buttonLabel
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Button Label"
+                                name="./buttonLabel"/>
+                            <buttonLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Button Link"
+                                name="./buttonLink"
+                                rootPath="/content/lyca-spa-react"/>
+                            <othersPlan
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Text other plans"
+                                name="./otherPlansLabel"/>
+                            <othersPlanLink
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Others plan link"
+                                name="./othersPlanLink"
+                                rootPath="/content/lyca-spa-react"/>
+                        </items>
+                    </Plan_x0020_Information>
+                </items>
+            </tabs>
         </items>
     </content>
 </jcr:root>

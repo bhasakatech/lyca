@@ -14,7 +14,14 @@
         "question": "How much data do you use?",
         "options": ["A", "B", "C", "D", "E", "F"]
       }
-    }
+    },
+    "icon": "/content/dam/icons/sample-icon.png",
+    "title": "The best plan for you is",
+    "description": "Based on your answers, we recommend:",
+    "buttonLabel": "Get Started",
+    "buttonLink": "/content/test/button-link",
+    "otherPlansLabel": "View Other Plans",
+    "othersPlanLink": "/content/test/other-plans"
   },
   "perfactPlanEmpty": {
     "sling:resourceType": "lyca-spa-react/components/content/perfact-plan",

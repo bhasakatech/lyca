@@ -25,6 +25,13 @@ class PerfactPlanModelImplTest {
         model = context.request().adaptTo(PerfactPlanModel.class);
         assertNotNull(model);
         assertEquals("Find Your Perfect Plan", model.getHeading());
+        assertEquals("/content/dam/icons/sample-icon.png", model.getIcon());
+        assertEquals("The best plan for you is", model.getTitle());
+        assertEquals("Based on your answers, we recommend:", model.getDescription());
+        assertEquals("Get Started", model.getButtonText());
+        assertEquals("/content/test/button-link", model.getButtonLink());
+        assertEquals("View Other Plans", model.getOthersPlanText());
+        assertEquals("/content/test/other-plans", model.getOthersPlanLink());
     }
 
     @Test

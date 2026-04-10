@@ -17,7 +17,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 41, 112, 0.92);
+  background-color: #002970;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   padding: 12px 24px;
@@ -67,6 +67,10 @@
 .nav-list li a:hover {
   color: #3AD37A;
   cursor: pointer;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
 }
 
 .nav-list li a:hover::after {
@@ -158,6 +162,10 @@
   .nav-list li a {
     color: white;
     font-size: 16px;
+  }
+
+  .spa-nav.scrolled{
+    background-color: rgba(15, 60, 201, 0.95);
   }
 }
 

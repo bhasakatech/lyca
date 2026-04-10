@@ -151,7 +151,17 @@
   color: #003f8f;
   font-weight: bolder;
   font-size: 17px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.perfact-paln-button-label{
+  text-decoration: none;
+  color: #003f8f;
+}
+
+.perfact-plan-view-others{
+  color: white;
+  text-decoration: none;
 }
 
 .perfact-plan-view-others:hover {
@@ -159,7 +169,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 768px) {
   .perfact-plan-container {
     padding: 40px 70px;
   }
