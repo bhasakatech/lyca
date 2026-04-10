@@ -9,11 +9,16 @@ import com.adobe.cq.dam.cfm.ContentFragment;
 
 import org.apache.sling.api.resource.*;
 import org.osgi.service.component.annotations.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import javax.jcr.LoginException;
 
 import java.util.*;
 
 @Component(service = BlogService.class)
 public class BlogServiceImpl implements BlogService {
+
+    static final Logger LOG = LoggerFactory.getLogger(BlogServiceImpl.class);
 
     @Reference
     NPUtilService npUtilService;
@@ -36,7 +41,6 @@ public class BlogServiceImpl implements BlogService {
             Iterator<Resource> resources = resolver.findResources(queryStr, "JCR-SQL2");
 
             while (resources.hasNext()) {
-
                 Resource resource = resources.next();
 
                 ContentFragment fragment = resource.adaptTo(ContentFragment.class);
@@ -52,14 +56,10 @@ public class BlogServiceImpl implements BlogService {
                 blog.setCtaLabel(getElement(fragment, "ctaLabel"));
                 blog.setCtaLink(getElement(fragment, "ctaLink"));
                 blog.setFragmentPath(resource.getPath());
-
                 blogList.add(blog);
             }
-
         } catch (LoginException e) {
-            e.printStackTrace();
-        } catch (javax.jcr.LoginException e) {
-            throw new RuntimeException(e);
+          LOG.error("Service User Not Created || Resource Not Found", e);
         }
         return blogList;
     }

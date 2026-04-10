@@ -4,7 +4,6 @@ import "./JoinLyca.css";
 const JoinLyca = (props) => {
 const [mobile, setMobile] = useState("");
 const [code, setCode] = useState("+91");
-const { ctas: ctaButtons = [] } = props;
 const { ctas = [] } = props;
 const [activeIndex, setActiveIndex] = useState(0); 
 
@@ -15,7 +14,6 @@ const [activeIndex, setActiveIndex] = useState(0);
       <div className="left">
         <h1 className="title">{props.title}</h1>
          <div dangerouslySetInnerHTML={{ __html: props.description }}></div>
-
         <div className="icons">
           {props.ctaItems?.map((item, i) => (
             <a key={i} href={item.link}>
