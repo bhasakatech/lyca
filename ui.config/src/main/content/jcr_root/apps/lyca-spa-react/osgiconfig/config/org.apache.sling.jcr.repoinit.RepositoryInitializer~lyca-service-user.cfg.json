@@ -1,0 +1,5 @@
+{
+  "scripts":[
+    "create service user lyca-service-user with path /home/users/system/lyca-spa-react\r\n\r\nset ACL for lyca-service-user\r\nallow jcr:read on /content/dam\r\nallow jcr:modifyProperties on /content/dam\r\nend"
+  ]
+}

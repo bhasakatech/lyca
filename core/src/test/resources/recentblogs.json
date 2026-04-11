@@ -1,8 +1,0 @@
-{
-  "recentBlogs": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "lyca-spa-react/components/recentBlogs",
-    "headingTitle": "Test Heading from JSON",
-    "cfPath": "/content/dam/test-json"
-  }
-}

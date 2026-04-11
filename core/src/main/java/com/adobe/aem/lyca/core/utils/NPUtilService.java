@@ -12,12 +12,12 @@ import java.util.Map;
 @Component(service = NPUtilService.class)
 public class NPUtilService {
 
-    private static final String SERVICE = "lyca-cf-service";
+    private static final String SERVICE = "lyca-service";
 
     @Reference
     private ResourceResolverFactory resolverFactory;
 
-    public ResourceResolver getResourceResolver() throws LoginException, org.apache.sling.api.resource.LoginException {
+    public ResourceResolver getResourceResolver() throws LoginException {
 
         Map<String, Object> map = new HashMap<>();
         map.put(ResourceResolverFactory.SUBSERVICE, SERVICE);

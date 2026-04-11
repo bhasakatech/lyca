@@ -44,7 +44,7 @@ class NPUtilServiceTest {
         assertEquals(resourceResolver, result);
         verify(resolverFactory).getServiceResourceResolver(argThat(map ->
                 map.containsKey(ResourceResolverFactory.SUBSERVICE) &&
-                        "lyca-cf-service".equals(map.get(ResourceResolverFactory.SUBSERVICE))
+                        "lyca-service".equals(map.get(ResourceResolverFactory.SUBSERVICE))
         ));
     }
     @Test
