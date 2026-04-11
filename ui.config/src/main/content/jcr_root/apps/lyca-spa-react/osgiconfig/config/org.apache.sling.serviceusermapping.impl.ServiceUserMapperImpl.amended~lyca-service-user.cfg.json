@@ -1,0 +1,5 @@
+{
+  "user.mapping":[
+    "lyca-spa.react.core:lyca-service=lyca-service-user"
+  ]
+}

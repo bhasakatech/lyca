@@ -40,7 +40,7 @@ class LycaFeatureComponentImplTest {
         assertNotNull(model);
 
         // Heading
-        assertEquals("Main Heading", model.getHeading());
+        assertEquals("Main Heading", model.getLycaFeatureComponentMainHeading());
 
         // Items
         List<FeatureItem> items = model.getItems();
@@ -65,7 +65,7 @@ class LycaFeatureComponentImplTest {
         LycaFeatureComponentImpl model = resource.adaptTo(LycaFeatureComponentImpl.class);
         assertNotNull(model);
 
-        assertNull(model.getHeading());
+        assertNull(model.getLycaFeatureComponentMainHeading());
         assertNull(model.getItems());
 
         assertEquals(LycaFeatureComponentImpl.RESOURCE_TYPE, model.getExportedType());

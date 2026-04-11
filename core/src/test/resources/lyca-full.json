@@ -1,5 +1,6 @@
 {
-  "mainHeadingOfLycaFeature": "Main Heading",
+  "sling:resourceType": "lyca-spa-react/components/lycafeaturecomponent",
+  "lycaFeatureComponentMainHeading": "Main Heading",
   "lycaFeatureCards": {
     "item0": {
       "icon": "icon1.png",
