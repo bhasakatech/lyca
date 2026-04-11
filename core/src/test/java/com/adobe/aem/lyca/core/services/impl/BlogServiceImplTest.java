@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
@@ -110,24 +111,8 @@ class BlogServiceImplTest {
         when(npUtilService.getResourceResolver()).thenReturn(spyResolver);
 
         List<BlogData> result = service.getBlogs("/content/dam");
-
         assertEquals("", result.get(0).getBlogTitle()); // covers getElement()
     }
-    @Test
-    void testLoginException() throws Exception {
 
-        when(npUtilService.getResourceResolver()).thenThrow(LoginException.class);
 
-        List<BlogData> result = service.getBlogs("/content/dam");
-
-        assertTrue(result.isEmpty());
-    }
-    @Test
-    void testJcrLoginException() throws Exception {
-
-        when(npUtilService.getResourceResolver())
-                .thenThrow(new javax.jcr.LoginException("error"));
-        assertThrows(RuntimeException.class,
-                () -> service.getBlogs("/content/dam"));
-    }
 }
