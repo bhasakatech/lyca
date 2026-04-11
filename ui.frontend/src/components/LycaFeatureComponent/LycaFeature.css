@@ -18,9 +18,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin:auto;
   gap:15px;
-  
 }
 .lyca-feature-card {
   background: #ffffff;
@@ -80,6 +78,7 @@
     gap: 15px;
     justify-content: center;              
     align-items: center;
+    margin:auto;
   }
 
   .lyca-feature-card{
