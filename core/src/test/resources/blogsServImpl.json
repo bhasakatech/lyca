@@ -1,0 +1,14 @@
+{
+  "dam": {
+    "blog1": {
+      "jcr:primaryType": "dam:Asset",
+      "jcr:content": {
+        "jcr:primaryType": "dam:AssetContent",
+        "contentFragment": true,
+        "metadata": {
+          "jcr:primaryType": "nt:unstructured"
+        }
+      }
+    }
+  }
+}
