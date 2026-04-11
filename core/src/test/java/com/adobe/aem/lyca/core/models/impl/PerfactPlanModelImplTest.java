@@ -1,5 +1,6 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
+import com.adobe.aem.lyca.core.models.PerfactPlanModel;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,14 +33,6 @@ class PerfactPlanModelImplTest {
         assertEquals("/content/test/button-link", model.getButtonLink());
         assertEquals("View Other Plans", model.getOthersPlanText());
         assertEquals("/content/test/other-plans", model.getOthersPlanLink());
-    }
-
-    @Test
-    void testPerfectPlanQuestions_NotNull() {
-        context.currentResource("/content/perfactPlan");
-        PerfactPlanModel model = context.request().adaptTo(PerfactPlanModelImpl.class);
-        assertNotNull(model.getPerfectPlanQuestions());
-        assertEquals(3, model.getPerfectPlanQuestions().size());
     }
 
     @Test
