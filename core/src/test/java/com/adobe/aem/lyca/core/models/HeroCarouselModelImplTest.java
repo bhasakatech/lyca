@@ -12,12 +12,46 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit test class for {@link HeroCarouselModelImpl}.
+ *
+ * <p>This test class verifies the behavior of the Hero Carousel Sling Model,
+ * including successful model adaptation, slide list initialization,
+ * slide property mapping, and exported resource type validation.</p>
+ *
+ * <p>The test cases cover:</p>
+ * <ul>
+ *   <li>Successful adaptation of the resource to {@link HeroCarouselModel}</li>
+ *   <li>Validation that the slides list is not null</li>
+ *   <li>Verification of the total number of configured slides</li>
+ *   <li>Validation of individual slide properties such as pre-title, title,
+ *       subtitle, price, duration, CTA text, CTA link, and background image</li>
+ *   <li>Verification of the exported resource type</li>
+ *   <li>Validation of all slide data together for completeness</li>
+ * </ul>
+ *
+ * <p>This class uses AEM Mocks to simulate repository content and Sling Model adaptation.</p>
+ */
 @ExtendWith(AemContextExtension.class)
 class HeroCarouselModelImplTest {
 
+    /**
+     * AEM mock context used to simulate repository resources and Sling Model behavior.
+     */
     private final AemContext context = new AemContext();
+
+    /**
+     * Model instance under test.
+     */
     private HeroCarouselModel model;
 
+    /**
+     * Sets up the mock AEM context before each test.
+     *
+     * <p>This method registers the Sling Model classes, loads test content
+     * from the mock JSON file, resolves the test resource, and adapts it
+     * to the {@link HeroCarouselModel}.</p>
+     */
     @BeforeEach
     public void init() {
         context.addModelsForClasses(HeroCarouselModelImpl.class, HeroSlide.class);
@@ -30,22 +64,34 @@ class HeroCarouselModelImplTest {
         assertNotNull(model);
     }
 
+    /**
+     * Verifies that the resource is successfully adapted to the model.
+     */
     @Test
     void testModelAdaptation() {
         assertNotNull(model);
     }
 
+    /**
+     * Verifies that the slides list is initialized and not null.
+     */
     @Test
     void testGetSlidesNotNull() {
         assertNotNull(model.getSlides());
     }
 
+    /**
+     * Verifies that the expected number of slides is loaded from the mock content.
+     */
     @Test
     void testSlidesSize() {
         List<HeroSlide> slides = model.getSlides();
         assertEquals(2, slides.size());
     }
 
+    /**
+     * Verifies that the first slide properties are correctly mapped from the mock content.
+     */
     @Test
     void testFirstSlideProperties() {
         List<HeroSlide> slides = model.getSlides();
@@ -63,6 +109,9 @@ class HeroCarouselModelImplTest {
         );
     }
 
+    /**
+     * Verifies that the second slide properties are correctly mapped from the mock content.
+     */
     @Test
     void testSecondSlideProperties() {
         List<HeroSlide> slides = model.getSlides();
@@ -80,6 +129,9 @@ class HeroCarouselModelImplTest {
         );
     }
 
+    /**
+     * Verifies that the exported resource type matches the expected component resource type.
+     */
     @Test
     void testGetExportedType() {
         assertEquals(
@@ -88,6 +140,12 @@ class HeroCarouselModelImplTest {
         );
     }
 
+    /**
+     * Verifies that all slide data is loaded and mapped correctly.
+     *
+     * <p>This test validates the slide count and all configured properties
+     * of both slide entries to ensure completeness of the model data.</p>
+     */
     @Test
     void testAllSlidesData() {
         List<HeroSlide> slides = model.getSlides();
