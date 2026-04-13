@@ -21,7 +21,7 @@
 .footer-column {
   display: flex;
   flex-direction: column;
-  color: #ffffff; /* force text color */
+  color: #ffffff; 
 }
 
 .footer-column * {
@@ -72,7 +72,6 @@
 }
 
 /* BOTTOM */
-
 .footer-bottom * {
     margin-top: 30px;
   padding-top: 15px;
@@ -82,9 +81,7 @@
   color: #dae0f7 !important;
 }
 
-/* ========================= */
 /* TABLET */
-/* ========================= */
 @media (max-width: 1023px) {
   .footer-container {
     grid-template-columns: repeat(2, 1fr);
@@ -95,9 +92,7 @@
   }
 }
 
-/* ========================= */
 /* MOBILE */
-/* ========================= */
 @media (max-width: 767px) {
   .footer-container {
     grid-template-columns: 1fr;
