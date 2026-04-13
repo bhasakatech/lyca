@@ -1,5 +1,6 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
+import com.adobe.aem.lyca.core.models.PerfactPlanModel;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,14 +26,13 @@ class PerfactPlanModelImplTest {
         model = context.request().adaptTo(PerfactPlanModel.class);
         assertNotNull(model);
         assertEquals("Find Your Perfect Plan", model.getHeading());
-    }
-
-    @Test
-    void testPerfectPlanQuestions_NotNull() {
-        context.currentResource("/content/perfactPlan");
-        PerfactPlanModel model = context.request().adaptTo(PerfactPlanModelImpl.class);
-        assertNotNull(model.getPerfectPlanQuestions());
-        assertEquals(3, model.getPerfectPlanQuestions().size());
+        assertEquals("/content/dam/icons/sample-icon.png", model.getIcon());
+        assertEquals("The best plan for you is", model.getTitle());
+        assertEquals("Based on your answers, we recommend:", model.getDescription());
+        assertEquals("Get Started", model.getButtonText());
+        assertEquals("/content/test/button-link", model.getButtonLink());
+        assertEquals("View Other Plans", model.getOthersPlanText());
+        assertEquals("/content/test/other-plans", model.getOthersPlanLink());
     }
 
     @Test

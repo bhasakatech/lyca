@@ -6,4 +6,11 @@ import java.util.List;
 public interface PerfactPlanModel extends ComponentExporter{
     String getHeading();
     List<PerfectPlanQuestion> getPerfectPlanQuestions();
+    String getIcon();
+    String getTitle();
+    String getDescription();
+    String getButtonText();
+    String getButtonLink();
+    String getOthersPlanText();
+    String getOthersPlanLink();
 }

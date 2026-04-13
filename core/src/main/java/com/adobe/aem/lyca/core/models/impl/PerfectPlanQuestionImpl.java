@@ -1,5 +1,6 @@
-package com.adobe.aem.lyca.core.models;
+package com.adobe.aem.lyca.core.models.impl;
 
+import com.adobe.aem.lyca.core.models.PerfectPlanQuestion;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
