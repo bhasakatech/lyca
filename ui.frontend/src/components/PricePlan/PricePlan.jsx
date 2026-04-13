@@ -4,9 +4,14 @@ import "./PricePlan.css";
 const PricePlan = (props) => {
   const [isYearly, setIsYearly] = useState(false);
   const [showAll, setShowAll] = useState(false);
-
+  const isFirstRender = useRef(true);
   const topRef = useRef(null);
   useEffect(() => {
+     if (isFirstRender.current) {
+      // skip first render
+      isFirstRender.current = false; 
+      return;
+    }
     if (!showAll && topRef.current) {
       topRef.current.scrollIntoView({
         behavior: "smooth",
