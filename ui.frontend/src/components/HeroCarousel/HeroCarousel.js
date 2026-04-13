@@ -1,28 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { MapTo } from "@adobe/aem-react-editable-components";
 import "./HeroCarousel.css";
 
 const HeroCarousel = ({ slides = [], slideTime = 5000 }) => {
   const [index, setIndex] = useState(0);
-
-
   useEffect(() => {
     if (slides.length <= 1) return;
-
-    let delay = parseInt(slideTime, 10);
-    if (isNaN(delay) || delay <= 0) {
-      delay = 5000; // default 5 seconds
-    } else if (delay < 100) {
-      delay = delay * 1000; // convert seconds to milliseconds if authored as seconds
-    }
-
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, delay);
-    
+    }, slideTime);
     return () => clearInterval(interval);
   }, [slides.length, slideTime]);
-  console.log("HeroCarousel received slides:", slides);
+
 
 if (!slides.length) {
   return (
@@ -47,7 +35,7 @@ if (!slides.length) {
   };
 
   const slide = slides[index];
-  console.log("Rendering slide:", slide);
+
 
   return (
     <div
