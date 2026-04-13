@@ -26,15 +26,15 @@ public class LycaFeatureComponentImpl implements LycaFeatureComponent {
     public static final String RESOURCE_TYPE="lyca-spa-react/components/lycafeaturecomponent";
 
     @ValueMapValue
-    private String mainHeadingOfLycaFeature;
+    private String lycaFeatureComponentMainHeading;
 
     @ChildResource(name = "lycaFeatureCards")
     private List<FeatureItem> items;
 
 
     @Override
-    public String getHeading() {
-        return mainHeadingOfLycaFeature;
+    public String getLycaFeatureComponentMainHeading() {
+        return lycaFeatureComponentMainHeading;
     }
 
     @Override

@@ -5,6 +5,6 @@ import com.adobe.cq.export.json.ComponentExporter;
 import java.util.List;
 
 public interface LycaFeatureComponent extends ComponentExporter {
-    String getHeading();
+    String getLycaFeatureComponentMainHeading();
     List<FeatureItem> getItems();
 }

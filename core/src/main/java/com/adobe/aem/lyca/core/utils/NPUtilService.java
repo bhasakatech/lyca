@@ -17,7 +17,7 @@ public class NPUtilService {
     @Reference
     private ResourceResolverFactory resolverFactory;
 
-    public ResourceResolver getResourceResolver() throws LoginException, org.apache.sling.api.resource.LoginException {
+    public ResourceResolver getResourceResolver() throws LoginException {
 
         Map<String, Object> map = new HashMap<>();
         map.put(ResourceResolverFactory.SUBSERVICE, SERVICE);
