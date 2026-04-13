@@ -8,15 +8,41 @@ import org.osgi.service.component.annotations.Reference;
 import javax.jcr.LoginException;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Utility service for obtaining a service {@link ResourceResolver}.
+ *
+ * <p>
+ * This class provides a method to get a service resource resolver
+ * using a configured system user (subservice). It is commonly used
+ * to access repository resources securely without relying on
+ * request-based authentication.
+ * </p>
+ * @author Galla Bhanu Prakash
+ */
 @Component(service = NPUtilService.class)
 public class NPUtilService {
-
+    /**
+     * Subservice name configured for service user mapping.
+     */
     private static final String SERVICE = "lyca-service";
 
+    /**
+     * Factory to create {@link ResourceResolver} instances.
+     */
     @Reference
     private ResourceResolverFactory resolverFactory;
 
+    /**
+     * Returns a service resource resolver using the configured subservice.
+     *
+     * <p>
+     * This method uses {@link ResourceResolverFactory#SUBSERVICE} to
+     * authenticate as a system user and obtain access to repository resources.
+     * </p>
+     *
+     * @return a service {@link ResourceResolver}
+     * @throws LoginException if unable to login with the service user
+     */
     public ResourceResolver getResourceResolver() throws LoginException {
 
         Map<String, Object> map = new HashMap<>();

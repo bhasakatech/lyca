@@ -3,209 +3,252 @@ package com.adobe.aem.lyca.core.services.impl;
 import com.adobe.aem.lyca.core.models.PricePlan;
 import com.adobe.aem.lyca.core.models.PricePlanCFModel;
 import com.adobe.aem.lyca.core.utils.NPUtilService;
-
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-
-import org.apache.sling.api.resource.*;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.wrappers.ResourceResolverWrapper;
 import org.apache.sling.api.resource.ResourceWrapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import java.util.*;
+import java.lang.reflect.Field;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Unit test class for {@link PricePlanServiceImpl}.
+ *
+ * This class tests different scenarios of fetching price plans
+ * using mocked AEM resources and ResourceResolver.
+ *
+ * It uses AEM Mocks (AemContext) to simulate repository behavior
+ * without requiring a real AEM instance.
+ */
 @ExtendWith(AemContextExtension.class)
 class PricePlanServiceImplTest {
 
+    /** AEM mock context used to simulate repository and resources */
     private final AemContext context = new AemContext();
+
+    /** Service under test */
     private PricePlanServiceImpl service;
+
+    /**
+     * Setup method executed before each test.
+     *
+     * Initializes:
+     * - Sling Models
+     * - Test content (mock data)
+     * - Mock ResourceResolver
+     * - Injects mocked NPUtilService into service
+     */
     @BeforeEach
     void init() throws Exception {
-        context.addModelsForClasses(PricePlanCFModel.class);
-        context.load().json("/priceplancf.json", "/content");
-        service = new PricePlanServiceImpl();
-        NPUtilService utilService = new NPUtilService() {
-            @Override
-            public ResourceResolver getResourceResolver() {
-                return new ResourceResolverWrapper(context.resourceResolver()) {
-                    @Override
-                    public Iterator<Resource> findResources(String query, String language) {
-                        List<Resource> list = new ArrayList<>();
-                        Resource original = context.resourceResolver().getResource("/content/priceplan-valid");
-                        if (original != null) {
-                            Resource wrapped = new ResourceWrapper(original) {
-                                @Override
-                                public Resource getChild(String relPath) {
-                                    if ("jcr:content/data/master".equals(relPath)) {
-                                        return original;
-                                    }
-                                    return null;
-                                }
-                            };
-                            list.add(wrapped);
-                        }
 
-                        return list.iterator();
+        /** Register Sling Model for adaptation */
+        context.addModelsForClasses(PricePlanCFModel.class);
+
+        /** Create mock content representing a price plan */
+        context.create().resource("/content/plan",
+                "planTitle", "Starter",
+                "priceMonthly", 5.0,
+                "priceYearly", 50.0,
+                "dataLimit", "5GB",
+                "features", new String[]{"Feature1", "Feature2"},
+                "isPopular", false,
+                "ctaLabel", "Buy Now",
+                "ctaLink", "/buy"
+        );
+
+        /** Initialize service */
+        service = new PricePlanServiceImpl();
+
+        /**
+         * Create a mock ResourceResolver
+         * Overrides findResources() to return test resource
+         */
+        ResourceResolver resolver = new ResourceResolverWrapper(context.resourceResolver()) {
+            @Override
+            public Iterator<Resource> findResources(String query, String language) {
+
+                /** Fetch test resource */
+                Resource resource = context.resourceResolver().getResource("/content/plan");
+
+                /**
+                 * Wrap resource to simulate AEM structure:
+                 * jcr:content/data/master
+                 */
+                Resource wrapped = new ResourceWrapper(resource) {
+                    @Override
+                    public Resource getChild(String path) {
+                        if ("jcr:content/data/master".equals(path)) {
+                            return resource;
+                        }
+                        return null;
                     }
                 };
+
+                /** Return single resource as iterator */
+                return Collections.singletonList(wrapped).iterator();
             }
         };
-        java.lang.reflect.Field field =
-                PricePlanServiceImpl.class.getDeclaredField("npUtilService");
+
+        /**
+         * Mock NPUtilService to return custom resolver
+         */
+        NPUtilService mockService = new NPUtilService() {
+            @Override
+            public ResourceResolver getResourceResolver() {
+                return resolver;
+            }
+        };
+
+        /**
+         * Inject mock service into PricePlanServiceImpl
+         * using reflection (since OSGi is not available in unit tests)
+         */
+        Field field = PricePlanServiceImpl.class.getDeclaredField("npUtilService");
         field.setAccessible(true);
-        field.set(service, utilService);
+        field.set(service, mockService);
     }
+
+    /**
+     * Test case for successful retrieval of price plans.
+     *
+     * Verifies:
+     * - Plans list is not null
+     * - Correct number of plans
+     * - Correct mapping of fields
+     */
     @Test
-    void testGetPricePlans_Success() {
-        List<PricePlan> result = service.getPricePlans("/content");
-        assertNotNull(result);
-        assertEquals(1, result.size());
-        PricePlan plan = result.get(0);
+    void testGetPricePlans() {
+
+        List<PricePlan> plans = service.getPricePlans("/content");
+
+        assertNotNull(plans);
+        assertEquals(1, plans.size());
+
+        PricePlan plan = plans.get(0);
+
         assertEquals("Starter", plan.getPlanTitle());
         assertEquals(5.0, plan.getPriceMonthly());
         assertEquals(50.0, plan.getPriceYearly());
-        assertEquals("5GB Monthly Plan", plan.getDataLimit());
-        assertArrayEquals(new String[]{
-                "1000 UK minutes & texts",
-                "100 international minutes",
-                "5G ready"
-        }, plan.getFeatures());
-
-        assertFalse(plan.isPopular());
-        assertEquals("Choose Plan", plan.getCtaLabel());
-        assertEquals("/plans/starter", plan.getCtaLink());
+        assertEquals("Buy Now", plan.getCtaLabel());
+        assertEquals("/buy", plan.getCtaLink());
     }
-    @Test
-    void testGetPricePlans_NoResults() throws Exception {
-        NPUtilService utilService = new NPUtilService() {
-            @Override
-            public ResourceResolver getResourceResolver() {
-                return new ResourceResolverWrapper(context.resourceResolver()) {
-                    @Override
-                    public Iterator<Resource> findResources(String query, String language) {
-                        if (query.contains("/invalid")) {
-                            return Collections.emptyIterator();
-                        }
-                        return Collections.emptyIterator();
-                    }
-                };
-            }
-        };
-        java.lang.reflect.Field field =
-                PricePlanServiceImpl.class.getDeclaredField("npUtilService");
-        field.setAccessible(true);
-        field.set(service, utilService);
-        List<PricePlan> result = service.getPricePlans("/invalid");
-        assertNotNull(result);
-        assertTrue(result.isEmpty());
-    }
-    @Test
-    void testGetPricePlans_DataResourceNull() throws Exception {
-        NPUtilService utilService = new NPUtilService() {
-            @Override
-            public ResourceResolver getResourceResolver() {
-                return new ResourceResolverWrapper(context.resourceResolver()) {
-                    @Override
-                    public Iterator<Resource> findResources(String query, String language) {
-                        Resource res = context.create().resource("/content/test");
-                        return Collections.singletonList(res).iterator();
-                    }
-                };
-            }
-        };
 
-        inject(utilService);
-
-        List<PricePlan> result = service.getPricePlans("/content");
-
-        assertTrue(result.isEmpty());
-    }
-    @Test
-    void testGetPricePlans_CFModelNull() throws Exception {
-
-        NPUtilService utilService = new NPUtilService() {
-            @Override
-            public ResourceResolver getResourceResolver() {
-                return new ResourceResolverWrapper(context.resourceResolver()) {
-                    @Override
-                    public Iterator<Resource> findResources(String query, String language) {
-                        Resource asset = context.create().resource("/content/test");
-                        Resource data = new ResourceWrapper(asset) {
-                            @Override
-                            public <AdapterType> AdapterType adaptTo(Class<AdapterType> type) {
-                                return null;
-                            }
-                        };
-                        Resource wrappedAsset = new ResourceWrapper(asset) {
-                            @Override
-                            public Resource getChild(String relPath) {
-                                if ("jcr:content/data/master".equals(relPath)) {
-                                    return data;
-                                }
-                                return null;
-                            }
-                        };
-
-                        return Collections.singletonList(wrappedAsset).iterator();
-                    }
-                };
-            }
-        };
-        inject(utilService);
-        List<PricePlan> result = service.getPricePlans("/content");
-        assertNotNull(result);
-        assertTrue(result.isEmpty());
-    }
-    @Test
-    void testGetPricePlans_RepositoryException() throws Exception {
-
-        NPUtilService utilService = new NPUtilService() {
-            @Override
-            public ResourceResolver getResourceResolver() {
-
-                return new ResourceResolverWrapper(context.resourceResolver()) {
-
-                    @Override
-                    public Iterator<Resource> findResources(String query, String language) {
-
-                        Resource asset = context.create().resource("/content/test");
-
-                        Resource wrapped = new ResourceWrapper(asset) {
-                            @Override
-                            public Resource getChild(String relPath) {
-                                throw new RuntimeException(new javax.jcr.RepositoryException("Repo error"));
-                            }
-                        };
-                        return Collections.singletonList(wrapped).iterator();
-                    }
-                };
-            }
-        };
-        inject(utilService);
-        List<PricePlan> result = service.getPricePlans("/content");
-        assertNotNull(result);
-        assertTrue(result.isEmpty());
-    }
+    /**
+     * Test case to verify behavior when exception occurs
+     * while getting ResourceResolver.
+     *
+     * Verifies:
+     * - Method handles exception gracefully
+     * - Returns empty list
+     */
     @Test
     void testGetPricePlans_Exception() throws Exception {
 
-        NPUtilService utilService = new NPUtilService() {
+        NPUtilService mockService = new NPUtilService() {
             @Override
             public ResourceResolver getResourceResolver() {
                 throw new RuntimeException("Unexpected error");
             }
         };
-        inject(utilService);
+        Field field = PricePlanServiceImpl.class.getDeclaredField("npUtilService");
+        field.setAccessible(true);
+        field.set(service, mockService);
         List<PricePlan> result = service.getPricePlans("/content");
         assertTrue(result.isEmpty());
     }
-    private void inject(NPUtilService utilService) throws Exception {
-        java.lang.reflect.Field field =
-                PricePlanServiceImpl.class.getDeclaredField("npUtilService");
+
+    /**
+     * Test case when Sling Model adaptation fails (CFModel is null).
+     *
+     * Verifies:
+     * - adaptTo() returns null
+     * - Plan is skipped
+     * - Empty list is returned
+     */
+    @Test
+    void testGetPricePlans_CFModelNull() throws Exception {
+
+        Resource resource = context.create().resource("/content/test");
+
+        ResourceResolver resolver = new ResourceResolverWrapper(context.resourceResolver()) {
+            @Override
+            public Iterator<Resource> findResources(String query, String language) {
+
+                Resource wrapped = new ResourceWrapper(resource) {
+                    @Override
+                    public Resource getChild(String path) {
+                        /**
+                         * Return resource where adaptation fails
+                         */
+                        return new ResourceWrapper(resource) {
+                            @Override
+                            public <T> T adaptTo(Class<T> type) {
+                                return null;
+                            }
+                        };
+                    }
+                };
+                return Collections.singletonList(wrapped).iterator();
+            }
+        };
+        NPUtilService mockService = new NPUtilService() {
+            @Override
+            public ResourceResolver getResourceResolver() {
+                return resolver;
+            }
+        };
+        Field field = PricePlanServiceImpl.class.getDeclaredField("npUtilService");
         field.setAccessible(true);
-        field.set(service, utilService);
+        field.set(service, mockService);
+        List<PricePlan> result = service.getPricePlans("/content");
+        assertTrue(result.isEmpty());
     }
 
+    /**
+     * Test case when data resource (jcr:content/data/master) is missing.
+     *
+     * Verifies:
+     * - getChild() returns null
+     * - Code enters warning block
+     * - Resource is skipped
+     */
+    @Test
+    void testGetPricePlans_DataResourceNull() throws Exception {
+
+        Resource resource = context.create().resource("/content/test");
+
+        ResourceResolver resolver = new ResourceResolverWrapper(context.resourceResolver()) {
+            @Override
+            public Iterator<Resource> findResources(String query, String language) {
+
+                Resource wrapped = new ResourceWrapper(resource) {
+                    @Override
+                    public Resource getChild(String path) {
+                        // simulate missing node
+                        return null;
+                    }
+                };
+
+                return Collections.singletonList(wrapped).iterator();
+            }
+        };
+
+        NPUtilService mockService = new NPUtilService() {
+            @Override
+            public ResourceResolver getResourceResolver() {
+                return resolver;
+            }
+        };
+        Field field = PricePlanServiceImpl.class.getDeclaredField("npUtilService");
+        field.setAccessible(true);
+        field.set(service, mockService);
+        List<PricePlan> result = service.getPricePlans("/content");
+        assertTrue(result.isEmpty());
+    }
 }

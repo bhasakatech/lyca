@@ -4,8 +4,24 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Unit test class for {@link PricePlan}.
+ *
+ * This class verifies the correctness of:
+ * - Getter and Setter methods
+ * - Default values of fields
+ * - Handling of null values
+ * - Array behavior
+ * - Boolean field behavior
+ */
 class PricePlanTest {
 
+    /**
+     * Test to verify all setter and getter methods.
+     *
+     * This ensures that values set using setters
+     * are correctly returned using getters.
+     */
     @Test
     void testSettersAndGetters() {
         PricePlan plan = new PricePlan();
@@ -31,6 +47,13 @@ class PricePlanTest {
         assertEquals("/plans/starter", plan.getCtaLink());
     }
 
+    /**
+     * Test to verify default values of a newly created object.
+     *
+     * Ensures that:
+     * - Object fields are null or default initialized
+     * - Primitive types have default values (0, false)
+     */
     @Test
     void testDefaultValues() {
         PricePlan plan = new PricePlan();
@@ -45,6 +68,12 @@ class PricePlanTest {
         assertNull(plan.getCtaLink());
     }
 
+    /**
+     * Test to verify handling of null values.
+     *
+     * Ensures that fields accept null values
+     * and getters return null accordingly.
+     */
     @Test
     void testNullValues() {
         PricePlan plan = new PricePlan();
@@ -62,6 +91,13 @@ class PricePlanTest {
         assertNull(plan.getCtaLink());
     }
 
+    /**
+     * Test to verify behavior when features array is empty.
+     *
+     * Ensures that:
+     * - Array is not null
+     * - Length is zero
+     */
     @Test
     void testEmptyFeaturesArray() {
         PricePlan plan = new PricePlan();
@@ -72,6 +108,12 @@ class PricePlanTest {
         assertEquals(0, plan.getFeatures().length);
     }
 
+    /**
+     * Test to verify boolean field behavior.
+     *
+     * Ensures that:
+     * - True and false values are correctly set and returned
+     */
     @Test
     void testBooleanField() {
         PricePlan plan = new PricePlan();
