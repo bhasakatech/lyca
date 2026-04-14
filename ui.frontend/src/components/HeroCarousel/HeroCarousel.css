@@ -14,8 +14,8 @@
   bottom: 0;
   right: 0;
   width: 42%;
-  background-size: cover;
-  background-position: center left;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
   clip-path: ellipse(100% 90% at 100% 70%);
   z-index: 0;
@@ -129,8 +129,7 @@
       30px calc(100% - 10px),
       40px 100%,
       0 100%,
-      20px 50%
-    );
+      20px 50%);
 }
 
 .hero-banner_tagline::after {
@@ -141,8 +140,7 @@
       20px 50%,
       40px 100%,
       0 100%,
-      10px calc(100% - 10px)
-    );
+      10px calc(100% - 10px));
 }
 
 /* hero-banner_price */
@@ -271,7 +269,8 @@
 }
 
 .hero-slide {
-  animation: slideTransition 1s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, richer fade */
+  animation: slideTransition 1s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Slower, richer fade */
 }
 
 @keyframes slideTransition {
@@ -285,13 +284,15 @@
 }
 
 .hero-slide .hero-content {
-  animation: contentSlideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both; /* Apple-style luxurious glide */
+  animation: contentSlideIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* Apple-style luxurious glide */
 }
 
 @keyframes contentSlideIn {
   from {
     opacity: 0;
-    transform: translateX(60px); /* Tighter, more elegant sweep distance */
+    transform: translateX(60px);
+    /* Tighter, more elegant sweep distance */
   }
 
   to {
@@ -325,6 +326,14 @@
     padding: 25px 40px;
     height: 340px;
   }
+
+
+  .hero-bg-image-vovel {
+    width: 50%;
+    clip-path: ellipse(100% 80% at 100% 70%);
+    z-index: 0;
+  }
+
 
   .hero-container {
     gap: 30px;
@@ -414,10 +423,10 @@
   }
 
 
-.hero-bg-image-vovel{
-  width: 50%;
-  clip-path: ellipse(100% 70% at 110% 60%);
-}
+  .hero-bg-image-vovel {
+    width: 50%;
+    clip-path: ellipse(100% 70% at 110% 60%);
+  }
 
   .hero-image {
     flex: 0 0 110px;
@@ -481,6 +490,7 @@
     font-size: 11px;
   }
 }
+
 .hero-carousel__placeholder {
   min-height: 220px;
   display: flex;
@@ -531,4 +541,11 @@
   .hero-carousel__placeholder-box p {
     font-size: 13px;
   }
+
+  .hero-bg-image-vovel {
+    clip-path: ellipse(100% 80% at 100% 70%);
+    z-index: 0;
+  }
+
+
 }

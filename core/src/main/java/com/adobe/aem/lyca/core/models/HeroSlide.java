@@ -78,6 +78,14 @@ public class HeroSlide {
     @ValueMapValue
     private String bgImage;
 
+
+    /**
+     * Background image color for the slide.
+     */
+    @ValueMapValue
+    private String bgImageColor;
+
+
     /**
      * Background color for the slide (used as fallback or styling option).
      */
@@ -146,4 +154,12 @@ public class HeroSlide {
     public String getBgColor() {
         return bgColor;
     }
+
+    /**
+     * @return background image color value
+     */
+    public String getBgImageColor() {
+        return bgImageColor;
+    }
+
 }

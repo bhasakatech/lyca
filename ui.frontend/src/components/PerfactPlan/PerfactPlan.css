@@ -1,6 +1,6 @@
 .perfact-plan-container {
   background: #f5f7fa;
-  padding: 40px 80px;
+  padding: 60px 100px;
   text-align: center;
 }
 
@@ -81,9 +81,9 @@
 }
 
 .perfact-plan-card {
-  background: #0d47a1;
-  border-radius: 20px;
-  padding: 20px 30px;
+  background: #003f8f;
+  border-radius: 25px;
+  padding: 30px;
   text-align: center;
   color: white;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
@@ -111,17 +111,24 @@
 .perfact-plan-box {
   background: linear-gradient(135deg, #1e88e5, #1976d2);
   border-radius: 16px;
-  padding: 20px;
+  padding: 25px;
   margin-bottom: 20px;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.perfact-plan-main{
+  display: flex;
+  gap: 5px;
+  align-items: flex-end; 
+}
+
 .perfact-plan-type {
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: bolder;
   color: #0d47a1;
   margin-bottom: 10px;
   letter-spacing: 0.2px;
@@ -129,17 +136,16 @@
 
 .perfact-plan-data {
   color: white;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: bolder;
-  margin-bottom: 10px;
 }
 
 .perfact-plan-price {
-  color: black;
-  font-size: 25px;
-  font-weight: bolder;
   display: flex;
-  flex-direction: column;
+  align-items: flex-end; 
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
 }
 
 .perfact-plan-button {
@@ -169,6 +175,14 @@
   text-decoration: underline;
 }
 
+@media(max-width: 1024px) {
+ 
+  .perfact-plan-main{
+   flex-direction: column;
+   align-items: center;
+}
+}
+
 @media (max-width: 768px) {
   .perfact-plan-container {
     padding: 40px 70px;
@@ -181,6 +195,11 @@
   .perfact-plan-questions-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
+
+  
+.perfact-plan-main{
+   flex-direction: column;
+}
 }
 
 @media (max-width: 426px) {

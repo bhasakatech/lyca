@@ -8,6 +8,9 @@
   font-family: Inter;
 }
 
+.left-lycaDesc {
+  padding: 1rem;
+}
 .left {
   flex: 1;
   background: #1f4fa3;
@@ -83,13 +86,14 @@
   font-family: Inter;
   padding-left: 50px;
   padding-bottom: 25px;
+  text-align: center;
 }
 
 .btn-group1 {
   display: flex;
   gap: 16px;
-  margin-bottom: 20px;
-  align-items: center;
+  margin-bottom: 24px;
+  text-align: center;
 }
 .btn-group1 a {
   display: flex;
@@ -98,7 +102,7 @@
   text-decoration: none;
   padding: 14px 30px;
   min-width: 120px;
-  height: 18px;
+  height: 10px;
 }
 
 .primary-btn1 {
@@ -192,6 +196,9 @@
     border-radius: 16px;
   }
 
+  .right-lyca h2 {
+    padding: 0rem;
+  }
 
   .left,
   .right-lyca {
@@ -217,13 +224,13 @@
   }
 
   .btn-group1 {
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
   }
 
   .btn-group1 a {
     width: auto;
-    height: 48px;
+    height: 10px;
   }
 
   .input-group {
@@ -244,15 +251,31 @@
   }
 }
 
-
 @media (max-width: 400px) {
 
   .left h1 {
     font-size: 22px;
   }
 
+  .btn-group1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap; 
+  }
+
+  .primary-btn1 {
+    flex: 1 1 48%;  
+    max-width: 48%; 
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+
   .right-lyca h2 {
     font-size: 20px;
+    padding: 0rem;
   }
 
   .input-group {
@@ -267,7 +290,6 @@
     font-size: 12px;
   }
 }
-
 
 @media (min-width: 601px) and (max-width: 1025px) {
 
@@ -288,8 +310,12 @@
 
   .btn-group1 a {
     flex: 1;
-    height: 48px;
+    height: 10px;
     min-width: 0;
+  }
+
+    .right-lyca h2 {
+    padding: 0rem;
   }
   
 }

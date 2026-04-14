@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { MapTo } from "@adobe/aem-react-editable-components";
 import "./HeroCarousel.css";
 
-const HeroCarousel = ({ slides = [] }) => {
+const HeroCarousel = ({ slides = [], slideTime = 5000 }) => {
   const [index, setIndex] = useState(0);
-
-
   useEffect(() => {
     if (slides.length <= 1) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % slides.length);
-    }, 100000);
+    }, slideTime);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides.length, slideTime]);
+
 
 if (!slides.length) {
   return (
@@ -37,7 +35,7 @@ if (!slides.length) {
   };
 
   const slide = slides[index];
-  console.log("Rendering slide:", slide);
+
 
   return (
     <div
@@ -55,7 +53,10 @@ if (!slides.length) {
         {slide.bgImage && (
         <div 
           className="hero-bg-image-vovel" 
-          style={{ backgroundImage: `url(${slide.bgImage})` }} 
+          style={{ 
+            backgroundImage: `url(${slide.bgImage})`,
+            backgroundColor: slide.bgImageColor || 'transparent'
+          }} 
         />
       )}
       <div className="hero-container">
