@@ -6,7 +6,12 @@ const PricePlan = (props) => {
   const [showAll, setShowAll] = useState(false);
 
   const topRef = useRef(null);
+  const firstRender=useRef(true);
   useEffect(() => {
+    if(firstRender.current){
+      firstRender.current=false;
+      return;
+    }
     if (!showAll && topRef.current) {
       topRef.current.scrollIntoView({
         behavior: "smooth",
