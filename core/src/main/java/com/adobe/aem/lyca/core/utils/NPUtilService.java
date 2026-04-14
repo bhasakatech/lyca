@@ -17,7 +17,6 @@ import java.util.Map;
  * to access repository resources securely without relying on
  * request-based authentication.
  * </p>
- * @author Galla Bhanu Prakash
  */
 @Component(service = NPUtilService.class)
 public class NPUtilService {

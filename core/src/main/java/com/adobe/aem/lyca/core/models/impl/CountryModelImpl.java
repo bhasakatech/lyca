@@ -16,7 +16,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
  * It is typically used as a child model within the
  * Lyca Worldwide component.
  * </p>
- * @author Galla Bhanu Prakash
  */
 @Model(
         /**

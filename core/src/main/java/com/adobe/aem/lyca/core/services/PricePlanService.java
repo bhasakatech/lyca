@@ -12,7 +12,6 @@ import java.util.List;
  * from the repository (e.g., Content Fragments in DAM) and
  * converting them into {@link PricePlan} objects.
  * </p>
- * @author Galla Bhanu Prakash
  */
 public interface PricePlanService {
     /**

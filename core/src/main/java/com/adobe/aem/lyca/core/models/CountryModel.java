@@ -7,7 +7,6 @@ package com.adobe.aem.lyca.core.models;
  * logo, link, and name. This model is typically used within
  * the Worldwide component to display a list of countries.
  * </p>
- * @author Galla Bhanu Prakash
  */
 public interface CountryModel {
     /**

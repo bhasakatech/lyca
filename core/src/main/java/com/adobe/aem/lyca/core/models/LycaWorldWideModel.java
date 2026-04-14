@@ -12,7 +12,6 @@ import java.util.List;
  * This model is also exposed as JSON via the Sling Model Exporter
  * for frontend applications such as React SPA.
  * </p>
- * @author Galla Bhanu Prakash
  */
 public interface LycaWorldWideModel extends ComponentExporter {
     /**

@@ -9,7 +9,6 @@ package com.adobe.aem.lyca.core.models;
  * It follows standard Java Bean conventions with private fields
  * and public getter/setter methods.
  * </p>
- * @author Galla Bhanu Prakash
  */
 public class PricePlan {
     /** Title of the plan */
