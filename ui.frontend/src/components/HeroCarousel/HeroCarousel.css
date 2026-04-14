@@ -327,6 +327,14 @@
     height: 340px;
   }
 
+
+  .hero-bg-image-vovel {
+    width: 50%;
+    clip-path: ellipse(100% 80% at 100% 70%);
+    z-index: 0;
+  }
+
+
   .hero-container {
     gap: 30px;
   }
@@ -533,4 +541,11 @@
   .hero-carousel__placeholder-box p {
     font-size: 13px;
   }
+
+  .hero-bg-image-vovel {
+    clip-path: ellipse(100% 80% at 100% 70%);
+    z-index: 0;
+  }
+
+
 }
