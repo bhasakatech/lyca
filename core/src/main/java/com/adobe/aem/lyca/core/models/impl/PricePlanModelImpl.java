@@ -74,6 +74,7 @@ public class PricePlanModelImpl implements PricePlanModel {
     public String getAllPlanLabel() {
         return allPlanLabel;
     }
+
     @Override
     public List<PricePlan> getPlans() throws LoginException {
         return pricePlanService.getPricePlans(planCardsPath);

@@ -13,13 +13,60 @@ import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 
 import org.junit.jupiter.api.extension.ExtendWith;
 
+/**
+ * Unit test class for {@link LycaHelpComponentModelImpl}.
+ *
+ * <p>
+ * This test class validates the functionality of the
+ * {@link LycaHelpComponentModelImpl} Sling Model using AEM Mock Context.
+ * It verifies that the model correctly adapts resource data and returns
+ * expected values for both populated and empty resource scenarios.
+ * </p>
+ *
+ * <p>
+ * Test coverage includes:
+ * </p>
+ * <ul>
+ *     <li>Validation of heading field mapping</li>
+ *     <li>Validation of helping icon child resource list</li>
+ *     <li>Verification of exported resource type</li>
+ *     <li>Handling empty resource data safely</li>
+ * </ul>
+ *
+ * <p>
+ * Uses:
+ * </p>
+ * <ul>
+ *     <li>{@link AemContext} for mock AEM resource setup</li>
+ *     <li>{@link AemContextExtension} for JUnit 5 AEM integration</li>
+ * </ul>
+ *
+ * @author
+ * Adobe
+ */
+
 @ExtendWith(AemContextExtension.class)
 class LycaHelpComponentModelImplTest {
 
+    /**
+     * Mock AEM context used for Sling Model testing.
+     */
     private final AemContext context = new AemContext();
 
+    /**
+     * Model instance under test.
+     */
     private LycaHelpComponentModelImpl model;
 
+
+    /**
+     * Sets up test environment before each test execution.
+     *
+     * <p>
+     * Registers Sling Models, loads mock JSON content,
+     * sets current resource, and adapts it into the model.
+     * </p>
+     */
     @BeforeEach
     void setUp() {
         context.addModelsForClasses(
@@ -32,6 +79,20 @@ class LycaHelpComponentModelImplTest {
         model = resource.adaptTo(LycaHelpComponentModelImpl.class);
     }
 
+
+    /**
+     * Tests the model when valid data is available.
+     *
+     * <p>
+     * Verifies:
+     * </p>
+     * <ul>
+     *     <li>Model adapts successfully</li>
+     *     <li>Heading is correctly mapped</li>
+     *     <li>Exported type is correct</li>
+     *     <li>Helping icons list contains expected values</li>
+     * </ul>
+     */
     @Test
     void testModelWithData() {
 
@@ -50,6 +111,21 @@ class LycaHelpComponentModelImplTest {
         assertEquals("https://example.com/2", item2.getIconLink());
         assertEquals("Switch to Lyca", item2.getIconHeading());
     }
+
+
+    /**
+     * Tests the model when resource contains no authored data.
+     *
+     * <p>
+     * Verifies:
+     * </p>
+     * <ul>
+     *     <li>Model adapts successfully from empty resource</li>
+     *     <li>Heading returns null</li>
+     *     <li>Helping icons return null</li>
+     *     <li>Exported type remains valid</li>
+     * </ul>
+     */
     @Test
     void testModelWithEmptyResource() {
         context.create().resource("/content/empty",
