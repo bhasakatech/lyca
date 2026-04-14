@@ -103,6 +103,12 @@
                                 fieldLabel="Others plan link"
                                 name="./othersPlanLink"
                                 rootPath="/content/lyca-spa-react"/>
+                            <cfPath
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Content Fragment FolderPath"
+                                name="./cfPath"
+                                rootPath="/content/dam"/>
                         </items>
                     </Plan_x0020_Information>
                 </items>
