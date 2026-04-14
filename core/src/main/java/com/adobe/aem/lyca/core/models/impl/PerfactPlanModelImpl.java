@@ -5,6 +5,7 @@ import com.adobe.aem.lyca.core.models.PerfectPlanQuestion;
 import com.adobe.aem.lyca.core.services.PerfactPlanService;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -14,13 +15,13 @@ import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.day.cq.wcm.foundation.TemplatedContainer.log;
 
 /**
  * Implementation of {@link PerfactPlanModel} for the Perfect Plan component.
@@ -51,17 +52,13 @@ import java.util.List;
 @Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME,
           extensions = ExporterConstants.SLING_MODEL_EXTENSION
 )
+@Slf4j
 public class PerfactPlanModelImpl implements PerfactPlanModel {
 
     /**
      * Resource type of the component.
      */
     public static final String RESOURCE_TYPE = "lyca-spa-react/components/content/perfact-plan";
-
-    /**
-     * Logger instance for debugging.
-     */
-    private static final Logger log = LoggerFactory.getLogger(PerfactPlanModelImpl.class);
 
     /**
      * Heading text displayed in the component.
@@ -151,7 +148,9 @@ public class PerfactPlanModelImpl implements PerfactPlanModel {
     @PostConstruct
     public void init(){
         if (perfactPlanService == null || resolver == null || cfPath == null || cfPath.isEmpty()) {
+
             log.warn("Unable to fetch plans. Invalid configuration. cfPath: {}", cfPath);
+
             return;
         }
 

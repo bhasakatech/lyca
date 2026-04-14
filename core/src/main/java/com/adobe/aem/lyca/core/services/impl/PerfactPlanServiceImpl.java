@@ -2,6 +2,7 @@ package com.adobe.aem.lyca.core.services.impl;
 
 import com.adobe.aem.lyca.core.models.impl.PerfactPlanItem;
 import com.adobe.aem.lyca.core.services.PerfactPlanService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
@@ -12,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import static com.day.cq.wcm.foundation.TemplatedContainer.log;
 
 /**
  * Implementation of {@link PerfactPlanService}.
@@ -41,17 +44,13 @@ import java.util.List;
  * </p>
  */
 @Component(service = PerfactPlanService.class)
+@Slf4j
 public class PerfactPlanServiceImpl implements PerfactPlanService {
 
     /**
      * Path to the master data node inside a Content Fragment.
      */
     private static final String DATA_NODE_PATH = "jcr:content/data/master";
-
-    /**
-     * Logger instance for debugging and tracing execution.
-     */
-    private static final Logger log = LoggerFactory.getLogger(PerfactPlanServiceImpl.class);
 
     /**
      * Fetches plan data from Content Fragments located under the given parent path.
