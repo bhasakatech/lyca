@@ -13,7 +13,7 @@ const [activeIndex, setActiveIndex] = useState(0);
       {/* LEFT */}
       <div className="left">
         <h1 className="title">{props.title}</h1>
-         <div dangerouslySetInnerHTML={{ __html: props.description }}></div>
+         <div className="left-lycaDesc" dangerouslySetInnerHTML={{ __html: props.description }}></div>
         <div className="icons">
           {props.ctaItems?.map((item, i) => (
             <a key={i} href={item.link}>
