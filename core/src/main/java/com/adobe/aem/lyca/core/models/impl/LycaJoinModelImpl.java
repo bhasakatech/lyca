@@ -36,7 +36,6 @@ import java.util.List;
  * such as titles, descriptions, CTA items, buttons, and form-related fields.
  * </p>
  *
- * @author Bhaskar
  * @since 1.0
  */
 @Model(

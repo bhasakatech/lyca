@@ -17,7 +17,6 @@ import java.util.List;
  * or Content Fragment fields.
  * </p>
  *
- * @author Bhaskar
  * @since 1.0
  */
 public interface LycaJoinModel extends ComponentExporter {

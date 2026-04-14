@@ -14,7 +14,6 @@ package com.adobe.aem.lyca.core.models;
  * for rendering in the frontend.
  * </p>
  *
- * @author Bhaskar
  * @since 1.0
  */
 public interface LycaCtaButton {

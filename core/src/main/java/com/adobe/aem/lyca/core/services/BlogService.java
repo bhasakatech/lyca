@@ -17,7 +17,6 @@ import java.util.List;
  * extracts required fields, and maps them into a structured list of BlogData.
  * </p>
  *
- * @author Bhaskar
  * @since 1.0
  */
 public interface BlogService {

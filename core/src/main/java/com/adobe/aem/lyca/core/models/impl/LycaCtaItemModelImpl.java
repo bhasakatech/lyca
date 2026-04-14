@@ -22,8 +22,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
  * icon, label, and navigation link, which are used to render
  * dynamic CTA sections in the frontend (SPA/React).
  * </p>
- *
- * @author Bhaskar
  * @since 1.0
  */
 @Model(

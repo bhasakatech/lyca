@@ -20,7 +20,6 @@ import lombok.Getter;
  * blogTitle, blogDescription, authorName, etc.
  * </p>
  *
- * @author Bhaskar
  * @since 1.0
  */
 @Getter

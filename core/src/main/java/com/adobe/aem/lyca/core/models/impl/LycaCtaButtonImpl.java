@@ -20,8 +20,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
  * It is used as part of multifield configurations inside AEM components,
  * where each CTA button contains display text and a navigation link.
  * </p>
- *
- * @author Bhaskar
  * @since 1.0
  */
 @Model(

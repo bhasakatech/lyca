@@ -37,7 +37,6 @@ import java.util.List;
  *     <li>List of blog data (title, description, author, image, etc.)</li>
  * </ul>
  *
- * @author Bhaskar
  * @since 1.0
  */
 @Model(
