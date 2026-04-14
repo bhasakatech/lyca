@@ -40,4 +40,10 @@ public interface HeroCarouselModel extends ComponentExporter {
      * @return list of {@link HeroSlide} objects
      */
     List<HeroSlide> getSlides();
+
+    /**
+     *
+     * @return slide time in milliseconds
+     */
+    int getSlideTime();
 }

@@ -12,6 +12,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 import java.util.List;
 
@@ -57,12 +58,20 @@ public class HeroCarouselModelImpl implements HeroCarouselModel {
      */
     public static final String RESOURCE_TYPE = "lyca-spa-react/components/content/hero-carousel";
 
+
+    /**
+     * Slide time in milliseconds
+     */
+    @ValueMapValue
+    private int slideTime;
+
     /**
      * List of slides authored under the "slides" child resource.
      *
      * <p>
      * Each child resource is adapted into a {@link HeroSlide} object.
-     * This is typically populated via a multifield dialog in AEM.
+     * This
+     * is typically populated via a multifield dialog in AEM.
      * </p>
      */
     @ChildResource(name = "slides")
@@ -77,6 +86,17 @@ public class HeroCarouselModelImpl implements HeroCarouselModel {
     public List<HeroSlide> getSlides() {
         return this.slides;
     }
+
+
+    /**
+     *
+     * @return carousel slide time in milliseconds
+     */
+    @Override
+    public int getSlideTime() {
+        return slideTime;
+    }
+
 
     /**
      * Returns the exported resource type of this component.
