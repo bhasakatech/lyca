@@ -27,7 +27,6 @@ import java.util.List;
  * adapts them into {@link PricePlanCFModel}, and maps them to
  * {@link PricePlan} POJO objects for further use in Sling Models or UI.
  * </p>
- * @author Galla Bhanu Prakash
  */
 @Component(service = PricePlanService.class, immediate = true)
 public class PricePlanServiceImpl implements PricePlanService {
@@ -114,9 +113,6 @@ public class PricePlanServiceImpl implements PricePlanService {
         catch (RepositoryException e) {
             LOG.error("RepositoryException while querying DAM path: {}", damPath, e);
 
-        }
-        catch (Exception e) {
-            LOG.error("Unexpected error while fetching price plans for path: {}", damPath, e);
         }
 
         return plans;

@@ -23,7 +23,6 @@ import java.util.List;
  * and exposes it as JSON using Sling Model Exporter for frontend applications
  * such as React SPA.
  * </p>
- * @author Galla Bhanu Prakash
  */
 @Model(
         /**

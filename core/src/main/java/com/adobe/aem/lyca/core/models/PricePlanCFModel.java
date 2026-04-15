@@ -13,7 +13,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
  * It is used to read authored data and expose it to backend services
  * or other models.
  * </p>
- * @author Galla Bhanu Prakash
  */
 @Model(adaptables = Resource.class,
             defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)

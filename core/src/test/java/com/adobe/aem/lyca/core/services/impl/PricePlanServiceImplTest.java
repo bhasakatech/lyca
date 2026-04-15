@@ -140,30 +140,6 @@ class PricePlanServiceImplTest {
     }
 
     /**
-     * Test case to verify behavior when exception occurs
-     * while getting ResourceResolver.
-     *
-     * Verifies:
-     * - Method handles exception gracefully
-     * - Returns empty list
-     */
-    @Test
-    void testGetPricePlans_Exception() throws Exception {
-
-        NPUtilService mockService = new NPUtilService() {
-            @Override
-            public ResourceResolver getResourceResolver() {
-                throw new RuntimeException("Unexpected error");
-            }
-        };
-        Field field = PricePlanServiceImpl.class.getDeclaredField("npUtilService");
-        field.setAccessible(true);
-        field.set(service, mockService);
-        List<PricePlan> result = service.getPricePlans("/content");
-        assertTrue(result.isEmpty());
-    }
-
-    /**
      * Test case when Sling Model adaptation fails (CFModel is null).
      *
      * Verifies:
