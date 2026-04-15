@@ -6,6 +6,7 @@ const PricePlan = (props) => {
   const [showAll, setShowAll] = useState(false);
   const isFirstRender = useRef(true);
   const topRef = useRef(null);
+  const firstRender=useRef(true);
   useEffect(() => {
      if (isFirstRender.current) {
       // skip first render
