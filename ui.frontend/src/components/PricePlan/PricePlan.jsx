@@ -4,12 +4,13 @@ import "./PricePlan.css";
 const PricePlan = (props) => {
   const [isYearly, setIsYearly] = useState(false);
   const [showAll, setShowAll] = useState(false);
-
+  const isFirstRender = useRef(true);
   const topRef = useRef(null);
   const firstRender=useRef(true);
   useEffect(() => {
-    if(firstRender.current){
-      firstRender.current=false;
+     if (isFirstRender.current) {
+      // skip first render
+      isFirstRender.current = false; 
       return;
     }
     if (!showAll && topRef.current) {
