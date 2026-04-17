@@ -1,5 +1,6 @@
 package com.adobe.aem.lyca.core.models.impl;
 
+import com.adobe.aem.lyca.core.models.SpaNavigationLocale;
 import com.adobe.cq.wcm.core.components.models.Navigation;
 import com.adobe.cq.wcm.core.components.models.NavigationItem;
 import io.wcm.testing.mock.aem.junit5.AemContext;
@@ -65,7 +66,7 @@ class SpaNavigationModelImplTest {
      */
     @BeforeEach
     void setUp() throws Exception {
-        context.addModelsForClasses(SpaNavigationModelImpl.class);
+        context.addModelsForClasses(SpaNavigationModelImpl.class, SpaNavigationLocaleImpl.class);
         context.load().json("/spa-navigation.json", "/content");
         context.currentResource("/content");
         model = context.request().adaptTo(SpaNavigationModelImpl.class);
@@ -81,7 +82,23 @@ class SpaNavigationModelImplTest {
         assertEquals("/content/dam/lyca-spa-react/logo.png", model.getNavLogo());
         assertEquals("Login", model.getButtonLabel());
         assertEquals("/content/lyca-spa-react/us/en/login", model.getButtonLink());
+        assertEquals("/content/dam/lyca-spa-react/cart bg transparent.png", model.getCart());
+        assertEquals("/content/lyca-spa-react/us/en/cart", model.getCartPageLocation());
         assertEquals(SpaNavigationModelImpl.RESOURCE_TYPE, model.getExportedType());
+    }
+
+    @Test
+    void testGetLocale() {
+        List<SpaNavigationLocale> locales = model.getLocale();
+
+        assertNotNull(locales);
+        assertEquals(2, locales.size());
+
+        assertEquals("EN", locales.get(0).getLanguage());
+        assertEquals("US", locales.get(0).getRegion());
+
+        assertEquals("HI", locales.get(1).getLanguage());
+        assertEquals("IN", locales.get(1).getRegion());
     }
 
     /**
