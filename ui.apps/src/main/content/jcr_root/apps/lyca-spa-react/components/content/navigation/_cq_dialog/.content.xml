@@ -106,6 +106,41 @@
                                 fieldLabel="Button Link"
                                 name="./buttonLink"
                                 rootPath="/content/lyca-spa-react"/>
+                            <cart
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Cart"
+                                name="./cart"
+                                rootPath="/content/dam/lyca-spa-react"/>
+                            <cartPageLocation
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                fieldLabel="Cart Page Location"
+                                name="./cartPageLocation"
+                                rootPath="/content/lyca-spa-react"/>
+                            <locale
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                composite="{Boolean}true"
+                                fieldLabel="Language &amp; Region">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./locale">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <language
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Language"
+                                            name="./language"/>
+                                        <region
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Region"
+                                            name="./region"/>
+                                    </items>
+                                </field>
+                            </locale>
                         </items>
                     </custom>
                 </items>

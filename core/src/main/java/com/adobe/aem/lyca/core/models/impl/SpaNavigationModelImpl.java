@@ -1,5 +1,6 @@
 package com.adobe.aem.lyca.core.models.impl;
 
+import com.adobe.aem.lyca.core.models.SpaNavigationLocale;
 import com.adobe.aem.lyca.core.models.SpaNavigationModel;
 import com.adobe.cq.export.json.ComponentExporter;
 import com.adobe.cq.export.json.ExporterConstants;
@@ -9,6 +10,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
@@ -79,6 +81,24 @@ public class SpaNavigationModelImpl implements SpaNavigationModel{
     private String buttonLink;
 
     /**
+     * Cart image displayed in navigation.
+     */
+    @ValueMapValue
+    private String cart;
+
+    /**
+     * Cart page path or URL.
+     */
+    @ValueMapValue
+    private String cartPageLocation;
+
+    /**
+     * List of locale configurations (language + region).
+     */
+    @ChildResource(name = "locale")
+    private List<SpaNavigationLocale> locale;
+
+    /**
      * Returns the navigation logo path.
      */
     @Override
@@ -120,6 +140,30 @@ public class SpaNavigationModelImpl implements SpaNavigationModel{
     @Override
     public String getButtonLink() {
         return buttonLink;
+    }
+
+    /**
+     * @return cart label
+     */
+    @Override
+    public String getCart() {
+        return cart;
+    }
+
+    /**
+     * @return cart page path or URL
+     */
+    @Override
+    public String getCartPageLocation() {
+        return cartPageLocation;
+    }
+
+    /**
+     * @return list of locales
+     */
+    @Override
+    public List<SpaNavigationLocale> getLocale() {
+        return locale;
     }
 
     /**
