@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root 
+    xmlns:sling="http://sling.apache.org/jcr/sling/1.0" 
+    xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+    xmlns:jcr="http://www.jcp.org/jcr/1.0" 
+    xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Help and Support"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/tabs">
+
+        <items jcr:primaryType="nt:unstructured">
+
+            <!-- ===================== -->
+            <!-- 1. HEADING TAB -->
+            <!-- ===================== -->
+            <headingTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Heading"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <heading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Main Heading"
+                        name="./heading"/>
+
+                    <subHeading
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Sub Heading"
+                        name="./subHeading"/>
+
+                </items>
+            </headingTab>
+
+
+            <!-- ===================== -->
+            <!-- 2. EMAIL SUPPORT TAB -->
+            <!-- ===================== -->
+            <emailSupport
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Email Support"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+
+                    <emailSupportLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Email Support Label"
+                        name="./emailSupportLabel"/>
+
+                    <responseTime
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Response Time"
+                        name="./responseTime"/>
+
+                    <supportSuggestionText
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Support Suggestion Text"
+                        name="./supportSuggestionText"/>
+
+                    <supportHoursLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Support Hours Label"
+                        name="./supportHoursLabel"/>
+
+                    <supportHours
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldDescription="Support hours for each day of the week"
+                        fieldLabel="Support Hours">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            emptyText="e.g. Monday: 9am - 5pm"
+                            name="./supportHours"/>
+                    </supportHours>
+
+                    <emailLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Email Label"
+                        name="./emailLabel"/>
+
+                    <email
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Email"
+                        name="./email"/>
+
+                    <requiredInfoLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Required Information Label"
+                        name="./requiredInfoLabel"/>
+
+                    <requiredInfo
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldDescription="Information that users need to provide when they email support"
+                        fieldLabel="Required Information">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            emptyText="enter required information"
+                            name="./requiredInfo"/>
+                    </requiredInfo>
+
+                    <mentionNoAccountInfoLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Mention No Account Information Label"
+                        name="./mentionNoAccountInfoLabel"/>
+                    <mentionNoAccountInfo
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                        fieldDescription="Information to mention in the email if the user doesn't have an account"
+                        useFixedInlineToolbar="{Boolean}true"
+                        fieldLabel="Mention No Account Information"
+                        name="./mentionNoAccountInfo"/>
+
+                    <note
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                        fieldLabel="Note"
+                        name="./note"/>
+
+                </items>
+            </emailSupport>
+
+
+            <!-- ===================== -->
+            <!-- 3. CALL SUPPORT TAB -->
+            <!-- ===================== -->
+            <callSupport
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Call Support"
+                sling:resourceType="granite/ui/components/coral/foundation/container">
+
+                <items jcr:primaryType="nt:unstructured">
+                    <callSupportLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Call Support Label"
+                        name="./callSupportLabel"/>
+                    <customerCareHoursLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Customer Care Hours Label"
+                        name="./customerCareHoursLabel"/>
+                    <customerCareHours
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldDescription="Customer care hours for phone support"
+                        fieldLabel="Customer Care Hours">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            emptyText="e.g. Monday: 9am - 5pm"
+                            name="./customerCareHours"/>
+                    </customerCareHours>
+                    <callOptionsLabel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Call Options Label"
+                        name="./callOptionsLabel"/>
+
+                    <callOptions
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        fieldLabel="Call Options"
+                        fieldDescription="Phone numbers and labels for different call options, e.g. Sales, Support, etc."
+                        composite="{Boolean}true">
+
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./callOptions">
+
+                            <items jcr:primaryType="nt:unstructured">
+
+                                <label
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Label"
+                                    emptyText="e.g. Lyca Number"
+                                    name="./label"/>
+
+                                <number
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Phone Number"
+                                    emptyText="e.g. 1-800-555-1234"
+                                    name="./number"/>
+
+                            </items>
+
+                        </field>
+
+                    </callOptions>
+
+                    </items>
+                </callSupport>
+
+        </items>
+    </content>
+
+</jcr:root>

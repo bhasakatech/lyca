@@ -1,0 +1,212 @@
+.help-support {
+  padding: 10px 5px;
+  background-color: #f5f6f8;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.header p {
+  color: #6b7280;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* CARDS LAYOUT */
+.cards {
+  display: flex;
+  gap: 0px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 0 auto;
+}
+
+.call-support{
+    margin: 10px 0px;
+}
+.email-support{
+    margin: 10px 0px;
+}
+/* CARD */
+.card {
+  background: #ffffff;
+  padding: 50px;
+  width: 40%;
+  max-width: 520px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.card h3,
+.card h4,
+.card p {
+  margin-top: 5px;
+}
+
+/* TITLE */
+.card h3 {
+  font-size: 25px;
+  font-weight: 700;
+  font-family: "GTEestiLCDisplayBold";
+}
+
+/* SUB HEADINGS */
+.card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  font-family: "GTEestiLCDisplayBold";
+}
+
+/* TEXT */
+.card p {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.3;
+  font-family: "GTEestiLCDisplayBold";
+}
+
+/* EMAIL */
+.email-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+
+/* NO ACCOUNT BOX */
+.no-account {
+  margin-top: 8px; /* reduced */
+  padding: 12px;
+  background: #eef1f4;
+  border-radius: 10px;
+}
+
+.no-account h4 {
+  margin-bottom: 4px;
+}
+
+/* NOTE */
+.card .note {
+  color: #dc2626;
+  font-size: 12px;
+  margin-top: 25px;
+}
+
+/* CALL SUPPORT (TIGHT) */
+
+.call-support {
+  display: flex;
+  flex-direction: column;
+  gap: 2px; 
+}
+
+.call-support__title,
+.call-support__heading,
+.call-support__text {
+  margin: 0;
+}
+
+/* Title */
+.call-support__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Section */
+div .call-support__section {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-top: 10px; 
+}
+
+/* Headings */
+.call-support__heading {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Text */
+.call-support__text {
+  font-size: 13px;
+  line-height: 1.2; /* tighter lines */
+}
+
+/* Labels */
+.call-support__label {
+  font-weight: 600;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cards {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 426px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .header p {
+    font-size: 13px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .help-support {
+    padding: 30px 15px;
+  }
+
+  .card {
+    padding: 12px;
+    width: 80%;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  .card h4 {
+    font-size: 12px;
+  }
+
+  .card p {
+    font-size: 12px;
+  }
+}
