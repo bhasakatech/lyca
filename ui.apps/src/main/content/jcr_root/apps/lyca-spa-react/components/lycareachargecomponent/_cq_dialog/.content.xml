@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs">
+                <items jcr:primaryType="nt:unstructured">
+                    <header
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Header"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recharge Title"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./title"/>
+                            <description
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Recharge Description"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                useFixedInlineToolbar="{Boolean}true"
+                                name="./description"/>
+                        </items>
+                    </header>
+                    <phonenumbersection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Phone Number Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <operatortitle
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Operator Title(e.g. LycaMobile)"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./operatorTitle"/>
+                            <countrycode
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Country Code"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./countryCode"/>
+                            <phoneinputplaceholder
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Phone Input Placeholder"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./phoneInputPlaceholder"/>
+                        </items>
+                    </phonenumbersection>
+                    <planssection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Plans Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <planssectiontitle
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Plans Section Title"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./plansSectionTitle"/>
+                            <plantabs
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldLabel="plan Tabs"
+                                composite="{Boolean}true">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./planTabs">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <tablabel
+                                            jcr:primaryType="nt:unstructured"
+                                            fieldLabel="Plans Tab Label"
+                                            fieldDescription="Display name of the tab shown to users. Example: 30 days plans, Long term plans, Data plans."
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            name="./tabLabel"
+                                            required="{Boolean}true"/>
+                                        <tabkey
+                                            jcr:primaryType="nt:unstructured"
+                                            fieldLabel="Plans Tab Key(30days, long, data)"
+                                            fieldDescription="Unique identifier for the tab. This key is used to map plans to this tab. Example values: 30days, long, data."
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            name="./tabKey"
+                                            required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                            </plantabs>
+                            <plans
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldLabel="Plans"
+                                composite="{Boolean}true">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./plans">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <tabKey
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Plans Tab Key"
+                                            fieldDescription="Enter the tab key this plan belongs to. Must match one of the Plan Tab keys (e.g., 30days, long, data)."
+                                            name="./tabKey"/>
+                                        <data
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Data"
+                                            name="./data"/>
+                                        <price
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Price"
+                                            name="./price"/>
+                                        <validity
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Validity"
+                                            name="./validity"/>
+
+                                    </items>
+                                </field>
+                            </plans>
+
+
+                        </items>
+                    </planssection>
+
+                    <topupsection
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Top Up Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <topuptitle
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Top Up Title"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./topUpTitle"/>
+                            <topupamounts
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                                fieldLabel="Top Up Amounts"
+                                composite="{Boolean}true">
+                                <field
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/container"
+                                    name="./topUpAmounts">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <amount
+                                            jcr:primaryType="nt:unstructured"
+                                            fieldLabel="Amount"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            name="./amount"
+                                            required="{Boolean}true"/>
+                                        <label
+                                            jcr:primaryType="nt:unstructured"
+                                            fieldLabel="Label"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            name="./label"
+                                            required="{Boolean}true"/>
+                                    </items>
+                                </field>
+                            </topupamounts>
+                            
+                        </items>
+                    </topupsection>
+
+                    <paymentandsummary
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Payment and Summary Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <paymentsectiontitle
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Payment Section Title"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./paymentSectionTitle"/>
+                            <paymentdescription
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Payment Description"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                useFixedInlineToolbar="{Boolean}true"
+                                name="./paymentDescription"/>
+                            <ordersummarytitle
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Order Summary Title"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./orderSummaryTitle"/>
+                            <regulatoryfeelabel
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Regulatory Fee Label"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./regulatoryFeeLabel"/>
+                            <regulatoryfeepercentage
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Regulatory Fee Percentage"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
+                                name="./regulatoryFeePercentage"/>
+                            <totalamountlabel
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Total Amount Label(e.g. Total)"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./totalAmountLabel"/>
+                        </items>
+                    </paymentandsummary>
+                    <ctaandterms
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="CTA and Terms Section"
+                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <termstext
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="Terms and Conditions Text"
+                                sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                useFixedInlineToolbar="{Boolean}true"
+                                name="./termsText"/>
+                            <ctabuttontext
+                                jcr:primaryType="nt:unstructured"
+                                fieldLabel="CTA Button Text"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                name="./ctaButtonText"/>
+                        </items>
+                    </ctaandterms>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

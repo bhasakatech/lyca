@@ -1,0 +1,285 @@
+/* ===== WRAPPER ===== */
+.lyca-recharge-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+.lyca-recharge-container {
+  width: 100%;
+  max-width: 55%;
+  margin: 0 auto;
+}
+
+/* ===== TITLE ===== */
+.lyca-recharge-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.lyca-recharge-description {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* ===== recharge-card ===== */
+.recharge-card {
+  max-width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* ===== PHONE INPUT ===== */
+.phone-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.phone-input span {
+  background: #f0f0f0;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.phone-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.section-header h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.section-header span {
+  font-weight: 600;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.tabs button {
+  padding: 6px 12px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tabs button.active {
+  background: #007bff;
+  color: white;
+}
+
+/* ===== PLANS GRID ===== */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* ===== PLAN CARD ===== */
+.plan-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  background: #fafafa;
+}
+.plan-card.selected {
+  border: 2px solid #007bff;
+  background: #eef5ff;
+}
+
+.plan-card h4 {
+  margin: 5px 0;
+  font-size: 25px;
+}
+
+.plan-card p {
+  margin: 5px 0;
+  font-weight: 600;
+}
+
+.plan-card span {
+  font-size: 12px;
+  color: #777;
+}
+
+/* ===== SUMMARY ===== */
+.summary {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.summary.total {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* ===== TERMS ===== */
+.terms-text {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* ===== BUTTON ===== */
+.cta-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #007bff;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .lyca-recharge-wrapper {
+    padding: 15px;
+  }
+
+  .lyca-recharge-container {
+    max-width: 100%;
+  }
+
+  .recharge-card {
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .lyca-recharge-title {
+    font-size: 20px;
+  }
+
+  .lyca-recharge-description {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .tabs {
+    gap: 8px;
+  }
+
+  .tabs button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-card {
+    padding: 10px;
+  }
+
+  .summary {
+    font-size: 13px;
+  }
+
+  .summary.total {
+    font-size: 15px;
+  }
+
+  .cta-btn {
+    font-size: 14px;
+    padding: 11px;
+  }
+}
+
+/* Small Mobile Devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .lyca-recharge-title {
+    font-size: 18px;
+  }
+
+  .lyca-recharge-description {
+    font-size: 12px;
+  }
+
+  .phone-input span {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .phone-input input {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .plan-card h4 {
+    font-size: 14px;
+  }
+
+  .plan-card p {
+    font-size: 13px;
+  }
+
+  .plan-card span {
+    font-size: 11px;
+  }
+
+  .cta-btn {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1023px) {
+  .lyca-recharge-container {
+    width: 80%;
+    max-width: 800px;
+  }
+
+  .plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

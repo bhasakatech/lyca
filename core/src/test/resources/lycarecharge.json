@@ -1,0 +1,83 @@
+{
+  "title": "Recharge",
+  "description": "<p>Get the best of top-up & plan in one go</p>",
+  "operatorTitle": "LycaMobile",
+  "countryCode": "+91",
+  "phoneInputPlaceholder": "Enter a LycaMobile Number",
+  "plansSectionTitle": "Save more with SIM only plan",
+
+  "planTabs": {
+    "item0": {
+      "tabLabel": "30 days plans",
+      "tabKey": "30days"
+    },
+    "item1": {
+      "tabLabel": "Long - term-plans",
+      "tabKey": "long"
+    },
+    "item2": {
+      "tabLabel": "Data plans",
+      "tabKey": "data"
+    }
+  },
+
+  "plans": {
+    "item0": {
+      "tabKey": "30days",
+      "data": "500MB",
+      "price": "$15.00",
+      "validity": "30 days"
+    },
+    "item1": {
+      "tabKey": "30days",
+      "data": "12 GB",
+      "price": "$20.00",
+      "validity": "30 days"
+    },
+    "item2": {
+      "tabKey": "30days",
+      "data": "5 GB",
+      "price": "$20.00",
+      "validity": "30 days"
+    },
+    "item3": {
+      "tabKey": "long",
+      "data": "5 GB",
+      "price": "$20.00",
+      "validity": "3 months"
+    },
+    "item4": {
+      "tabKey": "data",
+      "data": "12GB",
+      "price": "$20.00"
+    }
+  },
+
+  "topUpTitle": "Top up your credit now",
+
+  "topUpAmounts": {
+    "item0": {
+      "amount": "$10.00",
+      "label": "Min Save"
+    },
+    "item1": {
+      "amount": "$20.00",
+      "label": "Credit Only"
+    },
+    "item2": {
+      "amount": "$50.00",
+      "label": "Credit Only"
+    }
+  },
+
+  "paymentSectionTitle": "Payment details",
+  "paymentDescription": "<p>Choose from debit card, credit card or alternate payment methods</p>",
+  "orderSummaryTitle": "Order summary",
+  "regulatoryFeeLabel": "Regulatory recovery fees",
+  "regulatoryFeePercentage": 6,
+  "totalAmountLabel": "Total",
+  "termsText": "<p>By continuing, I agree to the LycaMobile Terms & Conditions, Privacy Policy & Payment Terms</p>",
+  "ctaButtonText": "Confirm & Pay",
+
+  "sling:resourceType": "lyca-spa-react/components/lycareachargecomponent"
+}
