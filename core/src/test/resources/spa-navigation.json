@@ -2,5 +2,17 @@
   "navLogo": "/content/dam/lyca-spa-react/logo.png",
   "buttonLabel": "Login",
   "buttonLink": "/content/lyca-spa-react/us/en/login",
-  "sling:resourceType": "lyca-spa-react/components/content/navigation"
+  "sling:resourceType": "lyca-spa-react/components/content/navigation",
+  "cart": "/content/dam/lyca-spa-react/cart bg transparent.png",
+  "cartPageLocation": "/content/lyca-spa-react/us/en/cart",
+  "locale": {
+    "item0":{
+      "language": "EN",
+      "region": "US"
+    },
+    "item1":{
+      "language": "HI",
+      "region": "IN"
+    }
+  }
 }

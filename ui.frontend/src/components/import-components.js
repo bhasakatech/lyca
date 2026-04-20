@@ -15,7 +15,7 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
 import LycaMobileAppComponent from "./LycaMobileAppComponent/LycaMobileAppComponent";
-
+import LycaFAQComponent from "./LycaFAQComponent/LycaFAQComponent";
 
 import './Page/Page';
 import './Container/Container';
@@ -77,6 +77,7 @@ import PricePlan from "./PricePlan/PricePlan";
 import PrepaidSimPlans from "./PrepaidSimPlans/PrepaidSimPlans";
 import PrepaidSimPlanDetails from "./PrepaidSimPlanDetails/PrepaidSimPlanDetails";
 import InfoSection from "./InfoSection/InfoSection";
+import LycaReachargeComponent from "./LycaReacargeComponent/LycaReacargeComponent";
 import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -84,7 +85,6 @@ const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
 //lazyload / code splitting examples of external components
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
-
 MapTo("lyca-spa-react/components/content/navigation")(Navigation);
 MapTo('lyca-spa-react/components/lycafeaturecomponent')(LycaFeatureComponent);
 //custom component example by Bhaskar
@@ -93,6 +93,8 @@ MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 MapTo("lyca-spa-react/components/footer")(Footer);
 
 MapTo("lyca-spa-react/components/lycaexclusiveoffers")(LycaExclusiveOffers);
+
+MapTo("lyca-spa-react/components/lycareachargecomponent")(LycaReachargeComponent);
 
 MapTo("lyca-spa-react/components/content/perfact-plan")(PerfactPlan);
 
@@ -154,6 +156,7 @@ MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1
 MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
 
 MapTo('lyca-spa-react/components/lycamobileappcomponent')(LycaMobileAppComponent);
+MapTo('lyca-spa-react/components/lycaFAQComponent')(LycaFAQComponent);
 
 //lazy load of internal component (hello world).
 
