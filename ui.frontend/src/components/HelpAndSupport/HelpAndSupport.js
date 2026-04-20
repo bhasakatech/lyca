@@ -32,9 +32,9 @@ const HelpAndSupport = (props) => {
         <p>{subHeading}</p>
       </div>
 
-      <div className="cards">
+      <div className="helpandsupport_cards">
         {/* Email Support */}
-        <div className="card">
+        <div className="helpandsupport_card">
           <div className="email-support">
 
             <h3>{emailSupportLabel}</h3>
@@ -68,7 +68,7 @@ const HelpAndSupport = (props) => {
           </div>
         </div>
         {/* Call Support */}
-        <div className="card">
+        <div className="helpandsupport_card">
           <div className="call-support">
 
             <h3 className="call-support__title">
