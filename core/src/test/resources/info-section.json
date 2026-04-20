@@ -1,0 +1,5 @@
+{
+  "heading": "Hello AEM I Am Heading",
+  "description": "Hello AEM I Am Description",
+  "sling:resourceType": "lyca-spa-react/components/content/info-section"
+}

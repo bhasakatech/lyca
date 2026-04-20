@@ -1,0 +1,380 @@
+.prepaid-plans-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  /* assuming modern font */
+}
+
+.prepaid-plans-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.prepaid-plans-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.prepaid-plans-header p {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+}
+
+.prepaid-plans-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.prepaid-plans-toggle {
+  display: flex;
+  background: #f4f6f8;
+  border-radius: 30px;
+  padding: 4px;
+  border: 1px solid #2d3142;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.prepaid-plans-toggle::-webkit-scrollbar {
+  display: none;
+}
+
+.prepaid_toggle-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3142;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.prepaid_toggle-btn:hover {
+  background: rgba(45, 49, 66, 0.08);
+  transform: translateY(-1px);
+}
+
+.prepaid_toggle-btn:active {
+  transform: scale(0.96) translateY(1px);
+}
+
+.prepaid_toggle-btn.active {
+  background: #2d3142;
+  color: white;
+  box-shadow: 0 4px 12px rgba(45, 49, 66, 0.25);
+  transform: translateY(0);
+}
+
+.prepaid_toggle-btn.active:hover {
+  background: #1b2032;
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+.prepaid-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.prepaid_sim-card {
+  background: white;
+  border: 1px solid #eaedf3;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.prepaid_sim-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.prepaid_card-top-section {
+  background: #f4f8fe;
+  padding: 30px 24px 10px;
+  position: relative;
+  border-bottom: 1px solid #eaedf3;
+}
+
+.prepaid_card-label {
+  font-family: "GTEestiLCDisplayBold";
+  font-size: 20px;
+  font-weight: bolder;
+  color: #64748b;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.prepaid_title-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.prepaid_title-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.prepaid_big-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #2e4058;
+  line-height: 1;
+}
+
+.prepaid_small-text {
+  font-size: 12px;
+  color: #060607;
+  font-weight: 600;
+  margin-top: 4px;
+  margin-left: 5px;
+}
+
+.prepaid_price-info  {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.prepaid_current-price {
+  display: flex;
+  align-items: baseline;
+  color: #2e4058;
+}
+
+.prepaid_amount {
+  font-size: 32px;
+  font-weight: 700;
+    line-height: 1;
+    
+}
+
+.prepaid_validity {
+  font-size: 12px;
+  font-weight: 500;
+  color: #1b2032;
+  margin-top: 2px;
+}
+
+.prepaid_card-bottom-section {
+  background: white;
+  padding: 24px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.prepaid_features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.prepaid_features-list li {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.prepaid_check-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.prepaid_card-actions {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  margin-top: 24px;
+}
+
+.prepaid_view-more {
+  font-size: 14px;
+  color: #0062cc;
+  /* typical link blue */
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: right;
+  align-self: stretch;
+  background: none;
+  border: none;
+  padding: 0;
+  display: block;
+  cursor: pointer;
+}
+
+.prepaid_view-more:hover {
+  text-decoration: underline;
+  background: none;
+}
+
+.prepaid_btn-buy {
+  width: 100%;
+  background: #08DC7D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: background 0.3s ease;
+}
+
+.prepaid_btn-buy:hover {
+  background: #00c853;
+}
+
+.prepaid_btn-basket {
+  width: 100%;
+  background: white;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.prepaid_btn-basket:hover {
+  background: #f0f7ff;
+}
+
+.prepaid_card-footer-band {
+  background: #f4f8fe;
+  text-align: center;
+  font-size: 12px;
+  color: #1b2032;
+  font-weight: 500;
+  padding: 12px 8px;
+  border-top: 1px solid #eaedf3;
+}
+
+/* Existing Customer Card Styles */
+.existing-customer-card {
+  background: #f8fafc;
+  /* subtle light background */
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.existing-customer-card h3 {
+  font-size: 24px;
+  color: #1b2032;
+  margin-bottom: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.existing-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.existing-options li {
+  font-size: 14px;
+  color: #1b2032;
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.existing-options .prepaid_check-icon {
+  color: #007bff;
+}
+
+.existing-customer-action {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.prepaid_arrow-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #1b2032;
+  color: #1b2032;
+  text-decoration: none;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+
+.prepaid_arrow-link:hover {
+  background: #1b2032;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .prepaid-plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .prepaid-plans-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prepaid-plans-actions {
+    position: static;
+    margin-top: 16px;
+  }
+
+  .prepaid-plans-controls {
+    flex-direction: column;
+  }
+}

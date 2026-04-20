@@ -1,0 +1,104 @@
+.lyca-loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 250px;
+  margin: 0 auto;
+}
+
+.lyca-loader-wrapper.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 9999;
+  min-height: auto;
+}
+
+.lyca-loader-container {
+  /* Dynamic size based on viewport so it is natively responsive (shrinks on mobile, grows slightly on tablet) */
+  width: clamp(70px, 10vw, 110px);
+  height: clamp(70px, 10vw, 110px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Tilts the typical geometric heart (-25deg) to perfectly reconstruct the Lyca globe aesthetic angle seen in the image */
+  transform: rotate(-25deg);
+}
+
+.lyca-heart-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+}
+
+.lyca-flow-track {
+  fill: none;
+  stroke: #f3f6fa;
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lyca-flow-blue, .lyca-flow-green {
+  fill: none;
+  stroke-width: 11;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lyca-flow-blue {
+  stroke: #0062cc; /* Deep Lyca Blue */
+  stroke-dasharray: 50 50;
+  stroke-dashoffset: 0;
+  animation: circulateBlue 1.6s linear infinite;
+}
+
+.lyca-flow-green {
+  stroke: #00e57b; /* Vivid Lyca Green */
+  stroke-dasharray: 50 50;
+  stroke-dashoffset: -50; /* Spaced perfectly behind the blue sector */
+  animation: circulateGreen 1.6s linear infinite;
+}
+
+/* Linear infinitely chasing sweep along the dynamic SVG bounds */
+@keyframes circulateBlue {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes circulateGreen {
+  0% {
+    stroke-dashoffset: -50;
+  }
+  100% {
+    stroke-dashoffset: -150;
+  }
+}
+
+.lyca-loader-text {
+  font-family: "Inter", "Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #381a5a;
+  text-align: center;
+  letter-spacing: -0.2px;
+  animation: textPulse 1.6s ease-in-out infinite alternate;
+}
+
+@keyframes textPulse {
+  from { opacity: 0.7; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}

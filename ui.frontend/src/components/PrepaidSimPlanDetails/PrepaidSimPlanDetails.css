@@ -1,0 +1,235 @@
+.plan-details-wrapper {
+  background-color: #fff7f2; /* Perfect cream tone from the image */
+  padding: 40px 20px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.pd-wrapper-bg {
+  background-color: #faf5f0;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-container {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pd-image-col {
+  display: none;
+}
+
+@media(min-width: 768px) {
+  .pd-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px; /* Matches the wider breathable gap in the screenshot */
+  }
+  
+  .pd-image-col {
+    display: flex;
+    flex: 1.1;
+    justify-content: center;
+  }
+}
+
+.pd-offer-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.03); /* Subtle shadow if provided */
+}
+
+.pd-info-col {
+  flex: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pd-badges-row {
+  margin-bottom: 12px;
+}
+
+.pd-yellow-badge {
+  background-color: #fbdb5c;
+  color: #3b2b56;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.pd-icons-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.pd-badge-esim {
+  background-color: #1a153f;
+  color: white;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.pd-badge-5g {
+  background-color: #1a153f;
+  color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pd-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.pd-large-title {
+  font-family: "GTEestiLCDisplayBold", "Inter", sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #381a5a;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.pd-small-title {
+  font-size: 15px;
+  color: #7a8a9e;
+  font-weight: 500;
+}
+
+.pd-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.pd-price-amount {
+  font-family: "GTEestiLCDisplayBold", "Inter", sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #381a5a;
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.pd-validity {
+  font-size: 14px;
+  color: #7a8a9e;
+  font-weight: 500;
+}
+
+.pd-divider {
+  border: none;
+  border-top: 1px solid #e9ebef;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.pd-features-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #7a8a9e;
+  margin-bottom: 16px;
+}
+
+.pd-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.pd-features-list li {
+  font-size: 13px;
+  color: #55667e;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.pd-check-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.pd-feature-text {
+  flex: 1;
+}
+
+.pd-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.pd-btn-primary {
+  background-color: #00e57b; /* Exact Lyca vibrant green */
+  color: white; /* Contrast optimized */
+  border: none;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+  width: 100%;
+}
+
+.pd-btn-primary:hover {
+  background-color: #00cc6d;
+}
+
+.pd-btn-secondary {
+  background-color: transparent;
+  color: #55667e;
+  border: 1px solid #c9d2de;
+  padding: 14px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.pd-btn-secondary:hover {
+  background-color: white;
+  border-color: #a8b7ca;
+}
+
+.pd-loading, .pd-error {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #381a5a;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+}

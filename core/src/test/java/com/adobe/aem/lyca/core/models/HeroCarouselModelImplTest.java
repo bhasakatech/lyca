@@ -64,6 +64,11 @@ class HeroCarouselModelImplTest {
         assertNotNull(model);
     }
 
+    @Test
+    void testSlideTime(){
+        assertEquals(2000, model.getSlideTime());
+    }
+
     /**
      * Verifies that the resource is successfully adapted to the model.
      */

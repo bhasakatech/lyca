@@ -1,0 +1,71 @@
+{
+  "prepaid-sim-plans": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "lyca-spa-react/components/content/prepaid-sim-plans",
+    "heading": "Prepaid SIM Plans",
+    "description": "Choose your prepaid plan",
+    "toggleSwitchButton": ["Popular", "Unlimited"],
+    "fragmentParentPath": "/content/dam/lyca/prepaid-plans",
+    "existingCustomTitle": "Already a customer?",
+    "existingPlanOptions": ["Recharge", "Upgrade"],
+    "ctaLink": "/content/lyca/us/en/prepaid"
+  },
+  "dam": {
+    "lyca": {
+      "prepaid-plans": {
+        "jcr:primaryType": "sling:Folder",
+        "plan1": {
+          "jcr:primaryType": "dam:Asset",
+          "jcr:content": {
+            "jcr:primaryType": "dam:AssetContent",
+            "data": {
+              "jcr:primaryType": "nt:unstructured",
+              "master": {
+                "jcr:primaryType": "nt:unstructured",
+                "planTitle": "Data",
+                "subTitle": "Unlimited",
+                "category": "Popular",
+                "price": "299",
+                "validity": "28 days",
+                "features": ["Feature 1", "Feature 2"],
+                "buyNowCtaLabel": "Buy Now",
+                "buyNowCtaLink": "/buy",
+                "addToBasketCtaLabel": "Add to Basket",
+                "addToBasketCtaLink": "/cart",
+                "viewMoreLabel": "View More",
+                "viewMoreLink": "/details",
+                "footerText": "Get Immediate Activation with eSIM",
+                "image": "/content/dam/img1.png"
+              }
+            }
+          }
+        },
+        "plan2": {
+          "jcr:primaryType": "dam:Asset",
+          "jcr:content": {
+            "jcr:primaryType": "dam:AssetContent",
+            "data": {
+              "jcr:primaryType": "nt:unstructured",
+              "master": {
+                "jcr:primaryType": "nt:unstructured",
+                "planTitle": "Calls",
+                "subTitle": "Unlimited Calls",
+                "category": "Unlimited",
+                "price": "499",
+                "validity": "56 days",
+                "buyNowCtaLabel": "Buy Now",
+                "buyNowCtaLink": "/buy2",
+                "addToBasketCtaLabel": "Add to Basket",
+                "addToBasketCtaLink": "/cart2",
+                "viewMoreLabel": "View More",
+                "viewMoreLink": "/details2",
+                "footerText": "Special Offer",
+                "image": "/content/dam/img2.png"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
