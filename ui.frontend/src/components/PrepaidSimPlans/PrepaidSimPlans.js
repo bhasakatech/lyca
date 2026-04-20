@@ -12,9 +12,6 @@ const SimCard = ({ item }) => {
     localStorage.setItem("basket", JSON.stringify(updatedBasket));
 
   };
-
-
-
   return (
     <div className="prepaid_sim-card">
       <div className="prepaid_card-top-section">
