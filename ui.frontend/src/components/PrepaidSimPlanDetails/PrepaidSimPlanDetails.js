@@ -12,10 +12,7 @@ const PrepaidSimPlanDetails = () => {
     window.scrollTo(0, 0);
     const params = new URLSearchParams(window.location.search);
     const cfPath = params.get("cfPath");
-
-
-   
-
+     
     if (!cfPath) {
       setError("Content Fragment path not found in URL.");
       setLoading(false);
@@ -58,13 +55,9 @@ const PrepaidSimPlanDetails = () => {
     fetchPlan();
   }, []);
 
-
-
   if (loading) return <Loader message="Please Wait...." />
   if (error) return <div className="pd-wrapper-bg"><div className="pd-error">{error}</div></div>;
   if (!plan) return <div className="pd-wrapper-bg"><div className="pd-error">No plan details available.</div></div>;
-
-  console.log("plan is : ",plan)
 
   return (
     <div className="plan-details-wrapper">
