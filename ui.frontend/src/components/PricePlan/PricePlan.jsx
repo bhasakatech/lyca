@@ -2,11 +2,12 @@ import React, { useState, useRef, useEffect } from "react";
 import "./PricePlan.css";
 
 const PricePlan = (props) => {
+  console.log(props);
+  
   const [isYearly, setIsYearly] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const isFirstRender = useRef(true);
   const topRef = useRef(null);
-  const firstRender=useRef(true);
   useEffect(() => {
      if (isFirstRender.current) {
       // skip first render
@@ -43,8 +44,8 @@ const PricePlan = (props) => {
       <div className="plans">
         {visiblePlans.map((plan, index) => (
           <div
-            key={plan.planTitle || index}
-            className={`card ${plan.popular ? "highlight" : ""}`}
+            key={plan.planTitle}
+            className={`priceplan_card ${plan.popular ? "highlight" : ""}`}
           >
             {plan.popular && (
               <div className="badge">Popular Plan</div>
