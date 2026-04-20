@@ -74,6 +74,7 @@ import PerfactPlan from "./PerfactPlan/PerfactPlan";
 import Navigation from "./SpaNavigation/Navigation";
 import HeroCarousel from "./HeroCarousel/HeroCarousel";
 import PricePlan from "./PricePlan/PricePlan";
+import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
@@ -167,3 +168,4 @@ const TextEditConfig = {
 MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
 MapTo('lyca-spa-react/components/priceplan')(PricePlan)
+MapTo('lyca-spa-react/components/helpandsupport')(HelpAndSupport)

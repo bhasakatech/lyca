@@ -1,0 +1,46 @@
+{
+  "sling:resourceType": "lyca-spa-react/components/helpandsupport",
+
+  "heading": "Help & Support",
+  "subHeading": "We are here to assist you",
+
+  "emailSupportLabel": "Email Support",
+  "responseTime": "Within 24 hours",
+  "supportSuggestionText": "Include all details",
+  "supportHoursLabel": "Support Hours",
+  "supportHours": [
+    "Mon-Fri 9AM-6PM"
+  ],
+
+  "emailLabel": "Email",
+  "email": "support@lycamobile.com",
+
+  "requiredInfoLabel": "Required Info",
+  "requiredInfo": [
+    "Name",
+    "Number"
+  ],
+
+  "mentionNoAccountInfoLabel": "Note",
+  "mentionNoAccountInfo": "Do not share OTP",
+  "note": "We will respond soon",
+
+  "callSupportLabel": "Call Support",
+  "customerCareHoursLabel": "customer Care Hours",
+  "customerCareHours": [
+    "24/7"
+  ],
+
+  "callOptionsLabel": "Options",
+
+  "callOptions": {
+    "item0": {
+      "label": "Customer Care",
+      "number": "1800-123-456"
+    },
+    "item1": {
+      "label": "Tech Support",
+      "number": "1800-987-654"
+    }
+  }
+}
