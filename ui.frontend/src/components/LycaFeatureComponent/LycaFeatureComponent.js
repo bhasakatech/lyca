@@ -4,7 +4,6 @@ import './LycaFeature.css';
 const LycaFeatureComponent = (props) => {
 
   return (
-    
 
      <div className="lyca-feature-wrapper">
       <h1 className="lyca-feature-main-heading">{props.lycaFeatureComponentMainHeading}</h1>
@@ -20,11 +19,9 @@ const LycaFeatureComponent = (props) => {
                 </a>
               </div>
             )}
-
-            
+ 
             <h4 className="feature-name">{item.featureHeading || "Feature Name Missing"}</h4>
 
-           
             <div className="feature-desc"
               dangerouslySetInnerHTML={
                 {
