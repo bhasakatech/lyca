@@ -70,43 +70,43 @@ public class PricePlanServiceImpl implements PricePlanService {
             // JCR-SQL2 query to fetch DAM assets under the given path
             String query = "SELECT * FROM [dam:Asset] AS s " +
                     "WHERE ISDESCENDANTNODE(s, '" + damPath + "')";
+            if(damPath!=null) {
+                Iterator<Resource> results = resolver.findResources(query, Query.JCR_SQL2);
 
-            Iterator<Resource> results = resolver.findResources(query, Query.JCR_SQL2);
+                while (results.hasNext()) {
 
-            while (results.hasNext()) {
+                    Resource assetResource = results.next();
 
-                Resource assetResource = results.next();
+                    // Navigate to Content Fragment data node
+                    Resource dataResource = assetResource.getChild("jcr:content/data/master");
 
-                // Navigate to Content Fragment data node
-                Resource dataResource = assetResource.getChild("jcr:content/data/master");
+                    if (dataResource == null) {
+                        LOG.warn("data/master node missing for asset: {}", assetResource.getPath());
+                        continue;
+                    }
+                    // Adapt resource to Sling Model
+                    PricePlanCFModel cfModel = dataResource.adaptTo(PricePlanCFModel.class);
 
-                if (dataResource == null) {
-                    LOG.warn("data/master node missing for asset: {}", assetResource.getPath());
-                    continue;
-                }
-                // Adapt resource to Sling Model
-                PricePlanCFModel cfModel = dataResource.adaptTo(PricePlanCFModel.class);
+                    if (cfModel != null) {
 
-                if (cfModel != null) {
+                        PricePlan plan = new PricePlan();
+                        // Map CF model to POJO
+                        plan.setPlanTitle(cfModel.getPlanTitle());
+                        plan.setPriceMonthly(cfModel.getPriceMonthly());
+                        plan.setPriceYearly(cfModel.getPriceYearly());
+                        plan.setDataLimit(cfModel.getDataLimit());
+                        plan.setFeatures(cfModel.getFeatures());
+                        plan.setPopular(cfModel.isPopular());
+                        plan.setCtaLabel(cfModel.getCtaLabel());
+                        plan.setCtaLink(cfModel.getCtaLink());
 
-                    PricePlan plan = new PricePlan();
-                    // Map CF model to POJO
-                    plan.setPlanTitle(cfModel.getPlanTitle());
-                    plan.setPriceMonthly(cfModel.getPriceMonthly());
-                    plan.setPriceYearly(cfModel.getPriceYearly());
-                    plan.setDataLimit(cfModel.getDataLimit());
-                    plan.setFeatures(cfModel.getFeatures());
-                    plan.setPopular(cfModel.isPopular());
-                    plan.setCtaLabel(cfModel.getCtaLabel());
-                    plan.setCtaLink(cfModel.getCtaLink());
+                        plans.add(plan);
 
-                    plans.add(plan);
-
-                } else {
-                    LOG.warn("Failed to adapt resource to PricePlanCFModel: {}", dataResource.getPath());
+                    } else {
+                        LOG.warn("Failed to adapt resource to PricePlanCFModel: {}", dataResource.getPath());
+                    }
                 }
             }
-
             LOG.info("Successfully fetched {} price plans from {}", plans.size(), damPath);
 
         }
