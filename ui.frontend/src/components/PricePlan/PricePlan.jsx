@@ -45,7 +45,7 @@ const PricePlan = (props) => {
         {visiblePlans.map((plan, index) => (
           <div
             key={plan.planTitle}
-            className={`card ${plan.popular ? "highlight" : ""}`}
+            className={`priceplan_card ${plan.popular ? "highlight" : ""}`}
           >
             {plan.popular && (
               <div className="badge">Popular Plan</div>

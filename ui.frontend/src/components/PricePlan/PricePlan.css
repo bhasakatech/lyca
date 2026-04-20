@@ -82,7 +82,7 @@
 }
 
 /* CARD */
-.card {
+.priceplan_card {
   background: #eaf1f8;
   padding: 25px 20px;
   border-radius: 15px;
@@ -101,13 +101,13 @@
 
 }
 
-.card:hover {
+.priceplan_card:hover {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
   transform: translateY(-5px);
 }
 
 /* Highlight */
-.card.highlight {
+.priceplan_card.highlight {
   background: #dce8f7;
   border: 2px solid #1e5bb8;
 }
@@ -125,38 +125,38 @@
   font-size: 12px;
 }
 /* TEXT */
-.card h4 {
+.priceplan_card h4 {
   font-size: 16px;
   margin-bottom: 1px;
   color: #2b5dab;
 }
 
-.card h2 {
+.priceplan_card h2 {
   font-size: 26px;
   margin-bottom: 3px;
   padding: 0;
 }
 
-.card h2 span {
+.priceplan_card h2 span {
   font-size: 14px;
   color: #555;
   margin-left: 5px;
 }
 
-.card p {
+.priceplan_card p {
   font-size: 14px;
   color: #666;
   margin-bottom: 7px;
 }
 
 /* FEATURES */
-.card ul {
+.priceplan_card ul {
   list-style: none;
   padding: 0;
   margin-bottom: 10px;
 }
 
-.card ul li {
+.priceplan_card ul li {
   font-size: 14px;
   margin-bottom: 4px;
   color: #333;
@@ -187,7 +187,7 @@
   margin-top: auto;
 }
 
-.card.highlight .btn {
+.priceplan_card.highlight .btn {
   background: #1e5bb8;
   color: white;
 }
@@ -250,7 +250,7 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .card {
+  .priceplan_card {
     max-width: 400px;
   }
 }
@@ -284,7 +284,7 @@
     width: 70%;
     max-width: 260px;
   }
-  .card {
+  .priceplan_card {
     width: 80%;
     max-width: 280px;
     margin: 0 auto;
