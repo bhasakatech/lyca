@@ -173,7 +173,7 @@ public class HelpSupportModelImpl implements HelpSupportModel {
      */
     @Override
     public List<String> getSupportHours() {
-        return supportHours != null ? supportHours : Collections.emptyList();
+        return supportHours;
     }
 
     /**
@@ -205,7 +205,7 @@ public class HelpSupportModelImpl implements HelpSupportModel {
      */
     @Override
     public List<String> getRequiredInfo() {
-        return requiredInfo != null ? requiredInfo : Collections.emptyList();
+        return requiredInfo ;
     }
 
     /**
@@ -253,7 +253,7 @@ public class HelpSupportModelImpl implements HelpSupportModel {
      */
     @Override
     public List<String> getCustomerCareHours() {
-        return customerCareHours != null ? customerCareHours : Collections.emptyList();
+        return customerCareHours;
     }
 
     /**
@@ -269,7 +269,7 @@ public class HelpSupportModelImpl implements HelpSupportModel {
      */
     @Override
     public List<CallSupportOption> getCallOptions() {
-        return callOptions != null ? callOptions : Collections.emptyList();
+        return callOptions ;
     }
 
     /**
