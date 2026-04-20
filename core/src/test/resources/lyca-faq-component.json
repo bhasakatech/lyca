@@ -1,0 +1,13 @@
+{
+  "faqMainHeading": "FAQ Main Heading",
+  "faq": {
+    "item0": {
+      "question": "What is Lyca?",
+      "ans": "<p>Lyca is a telecom company</p>"
+    },
+    "item1": {
+      "question": "How to recharge?",
+      "ans": "<p>You can recharge online</p>"
+    }
+  }
+}

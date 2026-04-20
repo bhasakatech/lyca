@@ -15,7 +15,7 @@
  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 import withAsyncImport from "../utils/withAsyncImport";
 import LycaMobileAppComponent from "./LycaMobileAppComponent/LycaMobileAppComponent";
-
+import LycaFAQComponent from "./LycaFAQComponent/LycaFAQComponent";
 
 import './Page/Page';
 import './Container/Container';
@@ -150,6 +150,7 @@ MapTo('lyca-spa-react/components/container')(ContainerV1, { isEmpty: ContainerV1
 MapTo('lyca-spa-react/components/lycahelpcomponent')(LycaHelpComponent);
 
 MapTo('lyca-spa-react/components/lycamobileappcomponent')(LycaMobileAppComponent);
+MapTo('lyca-spa-react/components/lycaFAQComponent')(LycaFAQComponent);
 
 //lazy load of internal component (hello world).
 
