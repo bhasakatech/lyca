@@ -70,7 +70,7 @@
 
 
 /* CARDS GRID */
-.plans {
+.priceplan_plans {
   display: grid;
   gap: 60px;
   max-width: 1800px;
@@ -239,14 +239,14 @@
 
 /* TABLET */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .plans {
+  .priceplan_plans {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 /* DESKTOP */
 @media (min-width: 1024px) {
-  .plans {
+  .priceplan_plans {
     grid-template-columns: repeat(4, 1fr);
   }
 
@@ -257,7 +257,7 @@
 
 /* MOBILE */
 @media (max-width: 767px) {
-  .plans {
+  .priceplan_plans {
     grid-template-columns: repeat(1,1fr);
     margin: 0 auto;
   }

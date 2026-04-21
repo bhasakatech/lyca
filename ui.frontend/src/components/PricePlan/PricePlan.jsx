@@ -41,7 +41,7 @@ const PricePlan = (props) => {
         <span>{props.pricePlanYearlyText || "Yearly"}</span>
       </div>
       {/* Cards */}
-      <div className="plans">
+      <div className="priceplan_plans">
         {visiblePlans.map((plan, index) => (
           <div
             key={plan.planTitle}
