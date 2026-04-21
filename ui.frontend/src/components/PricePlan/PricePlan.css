@@ -14,7 +14,7 @@
 }
 
 /* TOGGLE */
-.toggle {
+.priceplan_toggle {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
   flex-wrap: wrap;
 }
 
-.switch {
+.priceplan_switch {
   position: relative;
   width: 50px;
   height: 25px;
@@ -33,11 +33,11 @@
   margin-left: -30px;
 }
 
-.switch input {
+.priceplan_switch input {
   display: none;
 }
 
-.slider {
+.priceplan_slider {
   position: absolute;
   cursor: pointer;
   background: #ccc;
@@ -47,7 +47,7 @@
   transition: 0.3s;
 }
 
-.slider::before {
+.priceplan_slider::before {
   content: "";
   position: absolute;
   height: 20px;
@@ -59,11 +59,11 @@
   transition: 0.3s;
 }
 
-.switch input:checked + .slider {
+.priceplan_switch input:checked + .priceplan_slider {
   background: #1e5bb8;
 }
 
-.switch input:checked + .slider::before {
+.priceplan_switch input:checked + .priceplan_slider::before {
   transform: translateX(24px);
 }
 
@@ -113,7 +113,7 @@
 }
 
 /* Badge */
-.badge {
+.priceplan_card .badge {
   position: absolute;
   top: -12px;
   left: 50%;
@@ -163,7 +163,7 @@
 }
 
 /* BUTTON */
-.btn {
+.priceplan_btn {
   display: block;
   width: 70%;
   margin: 0 auto;
@@ -187,18 +187,18 @@
   margin-top: auto;
 }
 
-.priceplan_card.highlight .btn {
+.priceplan_card.highlight .priceplan_btn {
   background: #1e5bb8;
   color: white;
 }
 
-.btn:hover {
+.priceplan_btn:hover {
   opacity: 0.9;
   transform: translateY(-2px);
 }
 
 /* BOTTOM BUTTONS */
-.bottom-actions {
+.priceplan_bottom-actions {
   margin-top: 40px;
   display: flex;
   justify-content: center;
@@ -206,7 +206,7 @@
   flex-wrap: wrap;
 }
 
-.outline-btn{
+.priceplan_outline-btn{
   padding: 12px 25px;
   border-radius: 25px;
   cursor: pointer;
@@ -215,7 +215,7 @@
   width: 150px;
   margin-right: 10px;
 }
-.primary-btn {
+.priceplan_primary-btn {
   padding: 12px 25px;
   border-radius: 25px;
   cursor: pointer;
@@ -225,13 +225,13 @@
   margin-left: -10px;
 }
 
-.outline-btn {
+.priceplan_outline-btn {
   border: 1px solid #aaa;
   background: white;
   color: #333;
 }
 
-.primary-btn {
+.priceplan_primary-btn {
   background: #1e5bb8;
   color: white;
   border: none;
@@ -266,21 +266,21 @@
     padding: 40px 20px;
   }
 
-  .btn {
+  .priceplan_btn {
     width: 70%;
   }
 
-  .bottom-actions {
+  .priceplan_bottom-actions {
     flex-direction: column;
     align-items: center;
     margin-top: 20%;
   }
 
-  .outline-btn {
+  .priceplan_outline-btn {
     width: 55%;
     max-width: 260px;
   }
-  .primary-btn {
+  .priceplan_primary-btn {
     width: 70%;
     max-width: 260px;
   }
