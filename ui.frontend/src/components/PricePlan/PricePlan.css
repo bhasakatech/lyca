@@ -113,7 +113,7 @@
 }
 
 /* Badge */
-.priceplan_card .badge {
+.priceplan_card .priceplan_badge {
   position: absolute;
   top: -12px;
   left: 50%;
