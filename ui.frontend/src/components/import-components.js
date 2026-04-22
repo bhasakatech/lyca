@@ -22,6 +22,8 @@ import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
 import './JoinLyca/JoinLyca';
 
+import BhaskarApiTable from "./BhaskarApiTable/BhaskarApiTable";
+
 import RecentBlogs from "./RecentBlogs/RecentBlogs";
 
 
@@ -79,6 +81,7 @@ import PrepaidSimPlanDetails from "./PrepaidSimPlanDetails/PrepaidSimPlanDetails
 import InfoSection from "./InfoSection/InfoSection";
 import LycaReachargeComponent from "./LycaReacargeComponent/LycaReacargeComponent";
 import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
+
 import { DataIntegrationTable } from "./DataIntegrationTable/DataIntegrationTable";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -94,6 +97,8 @@ MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 MapTo("lyca-spa-react/components/footer")(Footer);
 
 MapTo("lyca-spa-react/components/lycaexclusiveoffers")(LycaExclusiveOffers);
+
+MapTo("lyca-spa-react/components/apicontenttable")(ApiContentTable);
 
 MapTo("lyca-spa-react/components/lycareachargecomponent")(LycaReachargeComponent);
 
@@ -113,12 +118,14 @@ MapTo('lyca-spa-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
 
 MapTo("lyca-spa-react/components/topInformationalBannerTextComponent")(TopInformationalBannerText);
 
-
+MapTo("lyca-spa-react/components/content/rest-table-content")(RestTableContent)
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
 MapTo("lyca-spa-react/components/content/prepaid-sim-plans")(PrepaidSimPlans)
 MapTo("lyca-spa-react/components/content/prepaid-sim-plan-details")(PrepaidSimPlanDetails)
 MapTo("lyca-spa-react/components/content/info-section")(InfoSection)
 MapTo('lyca-spa-react/components/recentBlogs')(RecentBlogs);
+
+MapTo("lyca-spa-react/components/bhaskar-api-table")(BhaskarApiTable);
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
 MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
