@@ -7,17 +7,22 @@ const PrepaidSimPlanDetails = () => {
   const [plan, setPlan] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+const params = new URLSearchParams(window.location.search);
+  
+
+  const path = params.get("path");
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const params = new URLSearchParams(window.location.search);
+    
     const cfPath = params.get("cfPath");
-     
     if (!cfPath) {
       setError("Content Fragment path not found in URL.");
       setLoading(false);
       return;
     }
+
+  
 
     const fetchPlan = async () => {
       try {
@@ -152,7 +157,7 @@ const PrepaidSimPlanDetails = () => {
             `${plan.buyNowCtaLink._path ? plan.buyNowCtaLink._path : "/content/lyca-spa-react/us/en/prepaid-plans/buy-now.html"}?cfPath=${encodeURIComponent(plan.path)}`
           )} className="pd-btn-primary">{plan.buyNowCtaLabel || "Buy now"}</button>
             <button onClick={() => history.push(
-            `${plan.viewMoreLink._path?.substring(0, plan.viewMoreLink._path.lastIndexOf('/')) + '.html'}`
+                path
           )} className="pd-btn-secondary">{"View all plans"}</button>
           </div>
         </div>

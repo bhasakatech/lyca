@@ -1,0 +1,225 @@
+/* Unique prefix "rtc-" added to all classes to avoid conflicts */
+.rtc-table-page {
+  width: 100%;
+  padding: 24px;
+  background-color: #f0f7ff; /* Soft light blue */
+  box-sizing: border-box;
+}
+
+.rtc-table-wrapper {
+  width: 100%;
+  max-height: 85vh; /* Increased height to show more rows */
+  overflow-x: auto;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0; /* Remove padding so table is flush with wrapper edges */
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.06); /* Richer, softer shadow */
+  box-sizing: border-box;
+  border: 1px solid #dbeafe; /* Blue 100 border */
+}
+
+.rtc-rest-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.rtc-rest-table th,
+.rtc-rest-table td {
+  padding: 18px 24px; /* Increased padding for luxury feel */
+  text-align: left;
+  vertical-align: middle;
+  font-size: 15px; /* Increased font-size */
+  box-sizing: border-box;
+}
+
+.rtc-rest-table th {
+  position: sticky; /* Make header sticky */
+  top: 0; /* Stick to the top */
+  z-index: 10; /* Keep it above the scrolling rows */
+  background-color: #e0f2fe; /* Light blue header */
+  color: #1e3a8a; /* Deep blue header text */
+  font-weight: 700; /* Richer, bolder header */
+  text-transform: capitalize;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  border: none;
+  box-shadow: inset 0 -1px 0 #bae6fd, inset 0 1px 0 #bae6fd; /* Sky 200 shadow for border */
+}
+
+.rtc-rest-table td {
+  border-bottom: 1px solid #e0f2fe; /* Sky 100 border */
+  border-left: none;
+  border-right: none;
+}
+
+.rtc-rest-table tr:last-child td {
+  border-bottom: none;
+}
+
+.rtc-rest-table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.rtc-rest-table tbody tr:hover {
+  background-color: #f0f9ff; /* Very soft sky hover */
+  transition: background-color 0.2s ease;
+}
+
+.rtc-rest-table td {
+  color: #334155; /* Dark gray data text */
+  word-break: break-word;
+  max-width: 250px;
+}
+
+.rtc-table-image {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  background-color: #f0f7ff;
+  border: 1px solid #dbeafe;
+  display: block;
+}
+
+.rtc-table-error {
+  color: #dc2626;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  padding: 20px;
+  background: #fef2f2;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Tablet Responsive (768px and below) */
+@media screen and (max-width: 768px) {
+  .rtc-table-page {
+    padding: 16px;
+  }
+
+  .rtc-table-wrapper {
+    padding: 12px;
+  }
+
+  .rtc-rest-table th,
+  .rtc-rest-table td {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .rtc-rest-table td {
+    max-width: 180px;
+  }
+
+  .rtc-table-error {
+    font-size: 14px;
+    padding: 16px;
+  }
+}
+
+/* Mobile Responsive (480px and below) - Card layout approach */
+@media screen and (max-width: 480px) {
+  .rtc-table-page {
+    padding: 12px;
+  }
+
+  .rtc-table-wrapper {
+    padding: 0;
+    overflow-x: visible;
+    overflow-y: visible;
+    max-height: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Convert table to block layout */
+  .rtc-rest-table,
+  .rtc-rest-table thead,
+  .rtc-rest-table tbody,
+  .rtc-rest-table tr,
+  .rtc-rest-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .rtc-rest-table thead {
+    display: none; /* Hide header on mobile */
+  }
+
+  .rtc-rest-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #dbeafe; /* Blue 100 */
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.05); /* Blue tinted shadow */
+    overflow: hidden;
+  }
+
+  .rtc-rest-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px; /* Slightly thicker padding on mobile card */
+    font-size: 14px; /* Increased mobile font size */
+    border: none;
+    border-bottom: 1px solid #e0f2fe; /* Sky 100 */
+    text-align: right;
+    max-width: none;
+    word-break: break-word;
+    gap: 16px;
+  }
+
+  .rtc-rest-table td:last-child {
+    border-bottom: none;
+  }
+
+  /* Add label using data attribute */
+  .rtc-rest-table td::before {
+    content: attr(data-label);
+    font-weight: 700; /* Bolder label */
+    text-transform: capitalize;
+    color: #1e3a8a; /* Deep blue label */
+    text-align: left;
+    flex-shrink: 0;
+    max-width: 45%;
+    word-break: break-word;
+    font-size: 14px;
+  }
+
+  .rtc-rest-table tr:hover {
+    background-color: #fff; /* Keep white on hover for mobile cards */
+    transform: translateY(-2px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.08); /* Stronger blue tinted shadow */
+  }
+}
+
+/* Small mobile devices (360px and below) */
+@media screen and (max-width: 360px) {
+  .rtc-table-page {
+    padding: 8px;
+  }
+
+  .rtc-rest-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    text-align: left;
+  }
+
+  .rtc-rest-table td::before {
+    max-width: 100%;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3b82f6; /* Lighter soft blue for label when stacked */
+  }
+}

@@ -81,6 +81,7 @@ import PrepaidSimPlanDetails from "./PrepaidSimPlanDetails/PrepaidSimPlanDetails
 import InfoSection from "./InfoSection/InfoSection";
 import LycaReachargeComponent from "./LycaReacargeComponent/LycaReacargeComponent";
 import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
+import RestTableContent from "./RestTableContent/RestTableContent";
 import ApiContentTable from "./ApiContentTable/ApiContentTable";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
@@ -117,7 +118,7 @@ MapTo('lyca-spa-react/components/title')(TitleV2, {isEmpty: TitleV2IsEmptyFn});
 
 MapTo("lyca-spa-react/components/topInformationalBannerTextComponent")(TopInformationalBannerText);
 
-
+MapTo("lyca-spa-react/components/content/rest-table-content")(RestTableContent)
 MapTo("lyca-spa-react/components/content/best-sim-plans")(BestSimPlans)
 MapTo("lyca-spa-react/components/content/prepaid-sim-plans")(PrepaidSimPlans)
 MapTo("lyca-spa-react/components/content/prepaid-sim-plan-details")(PrepaidSimPlanDetails)
