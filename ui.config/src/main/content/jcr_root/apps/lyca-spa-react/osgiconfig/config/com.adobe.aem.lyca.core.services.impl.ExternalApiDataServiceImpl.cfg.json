@@ -1,0 +1,6 @@
+
+{
+  "enabled":"$[env:FAKE_API_ENABLED_PUBLISH;default=false]",
+  "apiUrl":"$[env:FAKE_API_URL_PUBLISH;default=https://jsonplaceholder.typicode.com/todos]"
+}
+

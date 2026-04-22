@@ -79,12 +79,17 @@ import PrepaidSimPlanDetails from "./PrepaidSimPlanDetails/PrepaidSimPlanDetails
 import InfoSection from "./InfoSection/InfoSection";
 import LycaReachargeComponent from "./LycaReacargeComponent/LycaReacargeComponent";
 import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
+import ExternalApiData from "./ExternalApiData/ExternalApiData";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
 //lazyload / code splitting examples of external components
 const TitleV2 = withAsyncImport(() => import(`@adobe/aem-core-components-react-base/dist/authoring/title/v2/TitleV2`));
 const CarouselV1 = withAsyncImport(() => import(`@adobe/aem-core-components-react-spa/dist/container/carousel/v1/CarouselV1`));
+
+MapTo("lyca-spa-react/components/content/external-api-table")(ExternalApiData);
+
+
 MapTo("lyca-spa-react/components/content/navigation")(Navigation);
 MapTo('lyca-spa-react/components/lycafeaturecomponent')(LycaFeatureComponent);
 //custom component example by Bhaskar
