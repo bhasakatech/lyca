@@ -79,6 +79,7 @@ import PrepaidSimPlanDetails from "./PrepaidSimPlanDetails/PrepaidSimPlanDetails
 import InfoSection from "./InfoSection/InfoSection";
 import LycaReachargeComponent from "./LycaReacargeComponent/LycaReacargeComponent";
 import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
+import ApiContentTable from "./ApiContentTable/ApiContentTable";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
@@ -93,6 +94,8 @@ MapTo("lyca-spa-react/components/joinLyca")(JoinLyca);
 MapTo("lyca-spa-react/components/footer")(Footer);
 
 MapTo("lyca-spa-react/components/lycaexclusiveoffers")(LycaExclusiveOffers);
+
+MapTo("lyca-spa-react/components/apicontenttable")(ApiContentTable);
 
 MapTo("lyca-spa-react/components/lycareachargecomponent")(LycaReachargeComponent);
 

@@ -1,0 +1,21 @@
+.api-table-container {
+  padding: 20px;
+  background: linear-gradient(135deg, #ffc6ff, #0072ff);
+  border-radius: 10px;
+}
+
+.api-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.api-table th, .api-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.api-table th {
+  background: #0072ff;
+  color: #fff;
+}

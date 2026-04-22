@@ -1,0 +1,4 @@
+{
+  "enabled":"$[env:FAKE_API_ENABLED_PUBLISH;default=true]",
+  "apiUrl":"$[env:FAKE_API_URL_PUBLISH;default=https://fakestoreapi.com/products]"
+}
