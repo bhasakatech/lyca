@@ -11,20 +11,20 @@ export const DataIntegrationTable = () => {
       .then(res => {
         console.log("API DATA:", res);
 
-        // 👉 Handle both formats
+        //Handle both formats
         if (res.status === "disabled") {
           setStatus("disabled");
         } else if (res.status === "success") {
           setData(res.data);
         } else {
-          // 👉 If raw array comes
+          //  If raw array comes
           setData(res);
         }
       })
       .catch(err => console.error("Error:", err));
   }, []);
 
-  // 🔴 If disabled via OSGi config
+  //  If disabled via OSGi config
   if (status === "disabled") {
     return <h3>Data is disabled in this environment</h3>;
   }
@@ -49,7 +49,7 @@ export const DataIntegrationTable = () => {
               {Object.values(item).map((val, i) => (
                 <td key={i}>
                   {typeof val === "object"
-                    ? JSON.stringify(val)   // 🔥 FIX HERE
+                    ? JSON.stringify(val) 
                     : val}
                 </td>
               ))}
