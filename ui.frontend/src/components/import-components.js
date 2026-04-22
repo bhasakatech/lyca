@@ -22,6 +22,8 @@ import './Container/Container';
 import './ExperienceFragment/ExperienceFragment';
 import './JoinLyca/JoinLyca';
 
+import BhaskarApiTable from "./BhaskarApiTable/BhaskarApiTable";
+
 import RecentBlogs from "./RecentBlogs/RecentBlogs";
 
 
@@ -118,6 +120,8 @@ MapTo("lyca-spa-react/components/content/prepaid-sim-plans")(PrepaidSimPlans)
 MapTo("lyca-spa-react/components/content/prepaid-sim-plan-details")(PrepaidSimPlanDetails)
 MapTo("lyca-spa-react/components/content/info-section")(InfoSection)
 MapTo('lyca-spa-react/components/recentBlogs')(RecentBlogs);
+
+MapTo("lyca-spa-react/components/bhaskar-api-table")(BhaskarApiTable);
 
 MapTo('lyca-spa-react/components/download')(DownloadV1, { isEmpty: DownloadV1IsEmptyFn });
 MapTo('lyca-spa-react/components/list')(ListV2, { isEmpty: ListV2IsEmptyFn });
