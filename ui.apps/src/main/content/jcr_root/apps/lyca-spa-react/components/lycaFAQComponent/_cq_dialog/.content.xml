@@ -32,10 +32,30 @@
                             sling:resourceType="cq/gui/components/authoring/dialog/richtext"
                             fieldLabel="Answer"
                             name="./ans"
-                            useFixedInlineToolbar="{Boolean}true"/>
+                            useFixedInlineToolbar="{Boolean}true">
+                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                <!-- Enable source edit -->
+                                  <misctools jcr:primaryType="nt:unstructured" features="sourceedit"/>
+
+                                  <paraformat jcr:primaryType="nt:unstructured" features="*"/>
+                                  <format jcr:primaryType="nt:unstructured" features="*"/>
+
+                             </rtePlugins>
+
+                                 <!-- ⭐ THIS IS REQUIRED -->
+    <uiSettings jcr:primaryType="nt:unstructured">
+        <cui jcr:primaryType="nt:unstructured">
+            <inline jcr:primaryType="nt:unstructured"
+                toolbar="[bold,italic,underline,#paraformat,sourceedit]"/>
+            <fullscreen jcr:primaryType="nt:unstructured"
+                toolbar="[bold,italic,underline,#paraformat,sourceedit]"/>
+        </cui>
+    </uiSettings>
+
+                     </answer>
                     </items>
                 </field>
             </faq>
         </items>
-    </content>
+    </content> 
 </jcr:root>
