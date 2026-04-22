@@ -1,0 +1,4 @@
+{
+  "apiUrl": "$[env:API_URL_AUTHOR;default=https://jsonplaceholder.typicode.com/users]",
+  "enable": "$[env:ENABLE_AUTHOR;default=true]"
+}
