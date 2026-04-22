@@ -1,0 +1,97 @@
+
+/* Page container */
+.api-container {
+    padding: 20px;
+    background: #f4f6f9;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Title */
+.api-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* Button */
+.api-button {
+    padding: 8px 16px;
+    margin-bottom: 15px;
+    background: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.api-button:hover {
+    background: #0056b3;
+}
+
+/* Loading text */
+.api-loading {
+    color: #555;
+    font-weight: 500;
+}
+
+/* Error text */
+.api-error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Empty state */
+.api-empty {
+    color: #777;
+    font-style: italic;
+}
+
+/* Table */
+.api-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Table header */
+.api-table th {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Table cells */
+.api-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Hover effect */
+.api-table tr:hover {
+    background: #f1f5ff;
+}
+
+/* Key column (object view) */
+.api-key {
+    font-weight: bold;
+    background: #f8f9fa;
+    width: 200px;
+}
+
+/* JSON fallback */
+.api-json {
+    background: #111;
+    color: #0f0;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
