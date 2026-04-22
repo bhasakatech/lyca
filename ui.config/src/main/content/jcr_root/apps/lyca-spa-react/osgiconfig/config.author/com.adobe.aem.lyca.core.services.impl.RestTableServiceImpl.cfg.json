@@ -1,0 +1,5 @@
+
+{
+  "api.url": "$[env:REST_API_URL_AUTHOR;default=https://fakestoreapi.com/products]",
+  "enabled": "$[env:REST_ENABLE_API_AUTHOR;default=true]"
+}

@@ -2,16 +2,14 @@ import React, { useState, useRef, useEffect } from 'react';
 import './PrepaidSimPlans.css';
 import { useHistory } from "react-router-dom";
 
-const SimCard = ({ item }) => {
+const SimCard = ({ item,path }) => {
   const history = useHistory();
   const handleAddToBasket = (item) => {
-    const existingBasket = JSON.parse(localStorage.getItem("basket")) || [];
-
-    const updatedBasket = [...existingBasket, item];
-
-    localStorage.setItem("basket", JSON.stringify(updatedBasket));
-
-  };
+  const existingBasket = JSON.parse(localStorage.getItem("basket")) || [];
+  const updatedBasket = [...existingBasket, item];
+  localStorage.setItem("basket", JSON.stringify(updatedBasket));
+  window.dispatchEvent(new Event('basketUpdated'));
+};
   return (
     <div className="prepaid_sim-card">
       <div className="prepaid_card-top-section">
@@ -48,12 +46,12 @@ const SimCard = ({ item }) => {
 
         {item.viewMoreLabel && (
           <a onClick={() => history.push(
-            `${item.viewMoreLink ? item.viewMoreLink : "/content/lyca-spa-react/us/en/prepaid-plans/plan-details.html"}?cfPath=${encodeURIComponent(item.path)}`
+            `${item.viewMoreLink ? item.viewMoreLink : "/content/lyca-spa-react/us/en/prepaid-plans/plan-details.html"}?cfPath=${encodeURIComponent(item.path)}&path=${encodeURIComponent(path)}`
           )} className="prepaid_view-more">{item.viewMoreLabel}</a>
         )}
         <div className="prepaid_card-actions">
           <button onClick={() => history.push(
-            `${item.buyNowCtaLink? item.buyNowCtaLink : "/content/lyca-spa-react/us/en/prepaid-plans/buy-now.html"}?cfPath=${encodeURIComponent(item.path)}`
+            `${item.buyNowCtaLink? item.buyNowCtaLink : "/content/lyca-spa-react/us/en/prepaid-plans/buy-now.html"}?cfPath=${encodeURIComponent(item.path)}&path=${encodeURIComponent(path)}`
           )} className="prepaid_btn-buy">{item.buyNowCtaLabel}</button>
           <button onClick={() => handleAddToBasket(item)} className="prepaid_btn-basket">{item.addToBasketCtaLabel}</button>
         </div>
@@ -69,7 +67,7 @@ const SimCard = ({ item }) => {
 const PrepaidSimPlans = (props) => {
   const data = props?.heading ? props : [];
   const basket = JSON.parse(localStorage.getItem('basket'));
-
+  const path = window.location.pathname;
   const validToggles = data?.toggleSwitchButton || [];
 
   const [activeTab, setActiveTab] = useState(validToggles?.length > 0 ? validToggles[0] : '');
@@ -130,7 +128,7 @@ const PrepaidSimPlans = (props) => {
         {/* Render Existing Customer Card on First Row Right if applicable, or just prepend/append based on data size */}
         {filteredPlans?.map((item, index) => {
           // Inserting existing customer card realistically at index 3 if we have enough items, or just render it linearly
-          return <SimCard key={index} item={item} />;
+          return <SimCard key={index} item={item} path={path}/>;
         })}
 
         {/* Existing Customer Card */}

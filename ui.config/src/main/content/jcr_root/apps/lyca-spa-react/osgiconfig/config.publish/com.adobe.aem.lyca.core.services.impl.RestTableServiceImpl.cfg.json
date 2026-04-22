@@ -1,0 +1,5 @@
+
+{
+  "api.url":"$[env:REST_API_URL_PUBLISH;default=https://jsonplaceholder.typicode.com/todos]",
+  "enabled":"$[env:REST_ENABLE_API_PUBLISH;default=true]"
+}
