@@ -1,6 +1,6 @@
 {
   "alloworigin": ["http://localhost:3000"],
-  "allowedpaths": ["/(content|conf)/lyca-spa-react.*"],
+  "allowedpaths": ["/(content|conf)/lyca-spa-react.*","/bin/lyca/api-data"],
   "supportedheaders": [
     "Authorization",
     "Origin",
