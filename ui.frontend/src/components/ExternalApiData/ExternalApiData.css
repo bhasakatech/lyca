@@ -1,0 +1,38 @@
+.api-data-container {
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.api-data-container title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.api-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.api-data-table th {
+  background-color: black;
+  color: white;
+  padding: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.api-data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.api-data-table tbody tr:hover {
+  background-color: #f9fafb;
+  transition: 0.2s;
+}

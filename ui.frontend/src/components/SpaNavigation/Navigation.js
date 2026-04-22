@@ -20,6 +20,19 @@ const Navigation = (props) => {
     const [selectedLocale, setSelectedLocale] = useState(locale[0] || null);
     const [open, setOpen] = useState(false);
 
+   useEffect(() => {
+    const updateCart = () => {
+        const updatedBasket = JSON.parse(localStorage.getItem('basket')) || [];
+        setCartItemsCount(updatedBasket.length);
+    };
+
+    window.addEventListener('basketUpdated', updateCart);
+
+    return () => {
+        window.removeEventListener('basketUpdated', updateCart);
+    };
+}, []);
+
     useEffect(() => {
         if (locale.length > 0) {
             setSelectedLocale(locale[0]);
