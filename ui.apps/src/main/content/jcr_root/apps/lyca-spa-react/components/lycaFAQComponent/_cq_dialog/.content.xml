@@ -42,7 +42,7 @@
 
                              </rtePlugins>
 
-                                 <!-- ⭐ THIS IS REQUIRED -->
+                                 
     <uiSettings jcr:primaryType="nt:unstructured">
         <cui jcr:primaryType="nt:unstructured">
             <inline jcr:primaryType="nt:unstructured"
