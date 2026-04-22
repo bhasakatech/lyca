@@ -1,0 +1,4 @@
+{
+  "apiUrl": "$[env:API_URL_PUBLISH;default=https://jsonplaceholder.typicode.com/users]",
+  "enable": "$[env:ENABLE_PUBLISH;default=true]"
+}

@@ -83,6 +83,7 @@ import LycaReachargeComponent from "./LycaReacargeComponent/LycaReacargeComponen
 import HelpAndSupport from "./HelpAndSupport/HelpAndSupport";
 import RestTableContent from "./RestTableContent/RestTableContent";
 import ApiContentTable from "./ApiContentTable/ApiContentTable";
+import { DataIntegrationTable } from "./DataIntegrationTable/DataIntegrationTable";
 //lazyload / code splitting example of an internal component
 const LazyTextComponent = withAsyncImport(() => import(`./Text/Text`));
  
@@ -184,3 +185,4 @@ MapTo('lyca-spa-react/components/text')(LazyTextComponent, TextEditConfig);
 MapTo('lyca-spa-react/components/lycaworldwide')(LycaWorldWide)
 MapTo('lyca-spa-react/components/priceplan')(PricePlan)
 MapTo('lyca-spa-react/components/helpandsupport')(HelpAndSupport)
+MapTo('lyca-spa-react/components/dataintegrationtable')(DataIntegrationTable)
