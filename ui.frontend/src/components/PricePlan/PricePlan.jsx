@@ -28,27 +28,27 @@ const PricePlan = (props) => {
     <div className="pricing-container" ref={topRef}>
       <h2>{props.pricePlanHeading || "Plans"}</h2>
       {/* Toggle */}
-      <div className="toggle">
+      <div className="priceplan_toggle">
         <span>{props.pricePlanMonthlyText || "Monthly"}</span>
-        <label className="switch">
+        <label className="priceplan_switch">
           <input
             type="checkbox"
             checked={isYearly}
             onChange={() => setIsYearly(prev => !prev)}
           />
-          <span className="slider"></span>
+          <span className="priceplan_slider"></span>
         </label>
         <span>{props.pricePlanYearlyText || "Yearly"}</span>
       </div>
       {/* Cards */}
-      <div className="plans">
+      <div className="priceplan_plans">
         {visiblePlans.map((plan, index) => (
           <div
             key={plan.planTitle}
             className={`priceplan_card ${plan.popular ? "highlight" : ""}`}
           >
             {plan.popular && (
-              <div className="badge">Popular Plan</div>
+              <div className="priceplan_badge">Popular Plan</div>
             )}
 
             <h4>{plan.planTitle}</h4>
@@ -68,7 +68,7 @@ const PricePlan = (props) => {
 
             <a
               href={plan.ctaLink}
-              className="btn"
+              className="priceplan_btn"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -79,16 +79,16 @@ const PricePlan = (props) => {
       </div>
 
       {/* Bottom Buttons */}
-      <div className="bottom-actions">
+      <div className="priceplan_bottom-actions">
         {props.findPlanLink && (
-          <a href={props.findPlanLink} className="outline-btn">
+          <a href={props.findPlanLink} className="priceplan_outline-btn">
             {props.findPlanLabel || "Find a Plan"}
           </a>
         )}
 
         {plans.length > 4 && (
           <button
-            className="primary-btn"
+            className="priceplan_primary-btn"
             onClick={() => {
               setShowAll(prev => !prev);
             }}
